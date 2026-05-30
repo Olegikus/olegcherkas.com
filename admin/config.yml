@@ -1,0 +1,55 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "uploads"
+public_folder: "/uploads"
+site_url: "https://olegcherkas.com"
+display_url: "https://olegcherkas.com"
+logo_url: "/favicon-192x192.png"
+
+collections:
+  - name: "blog_data"
+    label: "Blog"
+    files:
+      - file: "data/posts.json"
+        label: "Blog posts"
+        name: "posts_file"
+        fields:
+          - label: "Posts"
+            name: "posts"
+            widget: "list"
+            summary: "{{fields.title}}"
+            collapsed: false
+            fields:
+              - label: "Title"
+                name: "title"
+                widget: "string"
+              - label: "Slug"
+                name: "slug"
+                widget: "string"
+                hint: "Use lowercase words with hyphens, for example: linkedin-profile-before-outreach"
+              - label: "Date"
+                name: "date"
+                widget: "datetime"
+                date_format: "YYYY-MM-DD"
+                time_format: false
+                format: "YYYY-MM-DD"
+              - label: "Author"
+                name: "author"
+                widget: "string"
+                default: "Oleg Cherkas"
+              - label: "Category"
+                name: "category"
+                widget: "string"
+                default: "LinkedIn growth"
+              - label: "Featured image"
+                name: "image"
+                widget: "image"
+                required: false
+              - label: "Excerpt"
+                name: "excerpt"
+                widget: "text"
+              - label: "Body"
+                name: "body"
+                widget: "markdown"
