@@ -557,6 +557,139 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
 
 /* Blog CMS dynamic additions */
 .post-card[hidden],.featured-post[hidden]{display:none!important}.blog-empty{background:var(--card);border:1px solid var(--border);padding:34px 30px;color:var(--muted);margin-top:40px}.article-wrap blockquote{border-left:2px solid var(--accent);padding:22px 26px;background:var(--card);margin:42px 0;color:var(--muted);font-size:15px;line-height:1.8}.article-wrap a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}.article-wrap strong{color:var(--white);font-weight:500}.article-wrap img{max-width:100%;border:1px solid var(--border)}
+
+/* ===== Restored single blog post layout ===== */
+.article-hero{
+  padding:94px 56px 64px;
+  border-bottom:1px solid var(--border);
+  max-width:1180px;
+  margin:0 auto;
+}
+.breadcrumb{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:12px;
+  color:var(--muted);
+  margin-bottom:36px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+}
+.breadcrumb a:hover{color:var(--accent)}
+.breadcrumb span{color:var(--muted)}
+.article-hero h1{
+  font-family:'Syne',sans-serif;
+  font-weight:800;
+  font-size:clamp(42px,5vw,72px);
+  line-height:1.0;
+  letter-spacing:-0.03em;
+  margin-bottom:22px;
+  max-width:920px;
+}
+.article-meta{
+  font-size:12px;
+  color:var(--muted);
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+}
+.article-visual{
+  height:420px;
+  margin:0 56px;
+  border-bottom:1px solid var(--border);
+  background:
+    radial-gradient(circle at 28% 28%,rgba(200,184,154,0.22),transparent 26%),
+    linear-gradient(135deg,#171717,#0a0a0a 62%);
+  position:relative;
+  overflow:hidden;
+}
+.article-visual::before{
+  content:'';
+  position:absolute;
+  inset:64px;
+  border:1px solid rgba(200,184,154,.26);
+}
+.article-visual::after{
+  content:'';
+  position:absolute;
+  left:64px;
+  right:64px;
+  top:50%;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--accent),transparent);
+  opacity:.6;
+}
+.article-wrap{
+  max-width:860px;
+  margin:0 auto;
+  padding:72px 56px;
+}
+.article-wrap p{
+  font-size:17px;
+  color:var(--muted);
+  line-height:1.9;
+  font-weight:300;
+  margin-bottom:24px;
+}
+.article-wrap h2{
+  font-family:'Syne',sans-serif;
+  font-weight:700;
+  font-size:30px;
+  letter-spacing:-0.02em;
+  margin:48px 0 18px;
+  color:var(--white);
+}
+.article-wrap h3{
+  font-family:'Syne',sans-serif;
+  font-weight:700;
+  font-size:22px;
+  letter-spacing:-0.02em;
+  margin:38px 0 14px;
+  color:var(--white);
+}
+.article-wrap ul,.article-wrap ol{
+  margin:0 0 28px 22px;
+  color:var(--muted);
+  line-height:1.85;
+}
+.article-wrap li{margin-bottom:10px}
+.article-wrap blockquote{
+  border-left:2px solid var(--accent);
+  padding:22px 26px;
+  background:var(--card);
+  margin:42px 0;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.8;
+}
+.article-wrap a{
+  color:var(--accent);
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+.article-wrap strong{color:var(--white);font-weight:500}
+.article-wrap img{
+  max-width:100%;
+  border:1px solid var(--border);
+  margin:28px 0;
+  display:block;
+}
+.article-visual.has-image::before,
+.article-visual.has-image::after{display:none}
+@media(max-width:960px){
+  .article-hero{padding:72px 24px 52px}
+  .article-visual{height:280px;margin:0 24px}
+  .article-visual::before{inset:32px}
+  .article-visual::after{left:32px;right:32px}
+  .article-wrap{padding:56px 24px}
+  .article-wrap p{font-size:16px;line-height:1.85}
+}
+@media(max-width:520px){
+  .article-hero{padding:58px 18px 42px}
+  .article-visual{height:230px;margin:0 18px}
+  .article-wrap{padding:44px 18px}
+  .article-wrap h2{font-size:26px}
+}
+
 </style></head><body><nav>
   <a href="index.html" class="nav-logo">OC</a>
   <ul class="nav-links">
@@ -607,7 +740,12 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
 <script>
 function formatDate(value){if(!value)return '';const d=new Date(value);if(Number.isNaN(d.getTime()))return value;return d.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});}
 function getSlug(){return new URLSearchParams(window.location.search).get('post')||'';}
-async function loadArticle(){try{const slug=getSlug();const res=await fetch('data/posts.json?v='+Date.now());const data=await res.json();const post=(data.posts||[]).find(p=>p.slug===slug)||(data.posts||[])[0];if(!post)throw new Error('No post found');document.title=post.title+' - Oleg Cherkas';const md=document.querySelector('meta[name="description"]');if(md)md.setAttribute('content',post.excerpt||post.title);document.getElementById('crumbTitle').textContent=post.title;document.getElementById('articleCategory').textContent=post.category||'LinkedIn growth';document.getElementById('articleTitle').textContent=post.title||'';document.getElementById('articleMeta').textContent=[formatDate(post.date),post.author||'Oleg Cherkas'].filter(Boolean).join(' · ');if(post.image){document.getElementById('articleVisual').style.background='linear-gradient(135deg,rgba(10,10,10,.10),rgba(10,10,10,.72)), url("'+post.image+'") center/cover';}document.getElementById('articleContent').innerHTML=marked.parse(post.body||'');}catch(e){document.getElementById('articleTitle').textContent='Article not found';document.getElementById('articleContent').innerHTML='<p>This article could not be loaded.</p><p><a href="blog.html">Back to blog</a></p>';}}
+async function loadArticle(){try{const slug=getSlug();const res=await fetch('data/posts.json?v='+Date.now());const data=await res.json();const post=(data.posts||[]).find(p=>p.slug===slug)||(data.posts||[])[0];if(!post)throw new Error('No post found');document.title=post.title+' - Oleg Cherkas';const md=document.querySelector('meta[name="description"]');if(md)md.setAttribute('content',post.excerpt||post.title);document.getElementById('crumbTitle').textContent=post.title;document.getElementById('articleCategory').textContent=post.category||'LinkedIn growth';document.getElementById('articleTitle').textContent=post.title||'';document.getElementById('articleMeta').textContent=[formatDate(post.date),post.author||'Oleg Cherkas'].filter(Boolean).join(' · ');const imageValue = post.image && (typeof post.image === 'string' ? post.image : (post.image.url || post.image.path || post.image.src || ''));
+if(imageValue){
+  const visual=document.getElementById('articleVisual');
+  visual.classList.add('has-image');
+  visual.style.background='linear-gradient(135deg,rgba(10,10,10,.10),rgba(10,10,10,.72)), url("'+imageValue+'") center/cover';
+}document.getElementById('articleContent').innerHTML=marked.parse(post.body||'');}catch(e){document.getElementById('articleTitle').textContent='Article not found';document.getElementById('articleContent').innerHTML='<p>This article could not be loaded.</p><p><a href="blog.html">Back to blog</a></p>';}}
 loadArticle();
 </script>
 <script>
