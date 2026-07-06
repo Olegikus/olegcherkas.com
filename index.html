@@ -284,6 +284,31 @@ footer{padding:28px 56px;
 .mobile-menu.open{visibility:visible;opacity:1}
 .mobile-menu a{font-family:'Sora',sans-serif;font-size:28px;font-weight:700;color:#f0ede8;letter-spacing:-0.02em;padding:14px 24px;transition:color 0.2s;text-align:center;text-decoration:none}
 .mobile-menu a:hover{color:#c8b89a}
+.mobile-services-toggle{
+  position:relative;appearance:none;-webkit-appearance:none;-moz-appearance:none;
+  font-family:'Sora',sans-serif;font-size:28px;font-weight:700;color:#f0ede8;letter-spacing:-0.02em;line-height:1.65;
+  padding:14px 24px;margin:0;background:none;border:none;outline:none;-webkit-tap-highlight-color:transparent;cursor:pointer;
+  transition:color 0.2s;text-align:center;
+}
+.mobile-services-toggle:focus{outline:none}
+.mobile-services-toggle:hover{color:#c8b89a}
+.mobile-services-arrow{font-size:16px;position:absolute;top:50%;right:2px;transform:translateY(-50%);transition:transform 0.25s ease}
+.mobile-services-toggle.open .mobile-services-arrow{transform:translateY(-50%) rotate(180deg)}
+.mobile-services-submenu{
+  max-height:0;overflow:hidden;transition:max-height 0.3s ease;
+  display:flex;flex-direction:column;align-items:center;gap:0;width:100%;
+}
+.mobile-services-submenu.open{max-height:480px}
+.mobile-services-submenu a{
+  font-family:'DM Sans',sans-serif!important;font-size:15px!important;font-weight:400!important;
+  color:#8f8a80!important;padding:9px 24px!important;text-transform:none!important;letter-spacing:normal!important;
+}
+.mobile-services-submenu a.mobile-sub-main{
+  color:#c8b89a!important;font-weight:600!important;
+  border:1px solid rgba(200,184,154,0.4)!important;background:rgba(200,184,154,0.08)!important;
+  border-radius:4px!important;margin:2px 24px 10px!important;padding:10px 20px!important;
+}
+
 .mobile-menu .mobile-cta{font-size:14px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;border:1px solid #c8b89a;color:#c8b89a;padding:12px 32px;border-radius:2px;margin-top:20px;font-family:'DM Sans',sans-serif}
 @media(max-width:960px){.burger{display:flex}.nav-cta{display:none}}
 
@@ -1064,6 +1089,53 @@ footer{padding:28px 56px;
   .meeting-name{font-size:15px !important}
 }
 /* ===== End results block refinement ===== */
+
+
+/* ===== Mobile services menu alignment fix ===== */
+@media (max-width: 960px) {
+  .mobile-menu .mobile-services-toggle {
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 12px 16px !important;
+    font-family: 'Sora', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.02em !important;
+    color: #f0ede8 !important;
+    text-align: center !important;
+    gap: 0 !important;
+  }
+
+  .mobile-menu .mobile-services-arrow {
+    position: absolute !important;
+    left: calc(100% + 6px) !important;
+    top: 50% !important;
+    width: auto !important;
+    margin: 0 !important;
+    font-size: 13px !important;
+    line-height: 1 !important;
+    transform: translateY(-50%) !important;
+    transform-origin: center !important;
+  }
+
+  .mobile-menu .mobile-services-toggle.open .mobile-services-arrow {
+    transform: translateY(-50%) rotate(180deg) !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .mobile-menu .mobile-services-toggle {
+    font-size: 22px !important;
+  }
+}
+/* ===== End mobile services menu alignment fix ===== */
+
 </style>
 </head>
 <body>
@@ -1095,8 +1167,14 @@ footer{padding:28px 56px;
 </button>
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html" onclick="toggleMenu()">Home</a>
-  <a href="services.html" onclick="toggleMenu()">Services</a>
-  <a href="b2b-lead-generation-service.html" onclick="toggleMenu()">B2B lead generation</a>
+  <button class="mobile-services-toggle" id="mobileServicesBtn" onclick="toggleMobileServices()" aria-expanded="false">Services<span class="mobile-services-arrow">&#9662;</span></button>
+<div class="mobile-services-submenu" id="mobileServicesSubmenu">
+  <a href="b2b-lead-generation-service.html" onclick="toggleMenu()" class="mobile-sub-main">B2B lead generation</a>
+  <a href="service-monthly-linkedin-outreach-management.html" onclick="toggleMenu()">Monthly LinkedIn outreach management</a>
+  <a href="service-lead-generation.html" onclick="toggleMenu()">LinkedIn lead generation setup</a>
+  <a href="service-profile-optimization.html" onclick="toggleMenu()">LinkedIn profile optimization</a>
+  <a href="service-linkedin-content-for-founders.html" onclick="toggleMenu()">LinkedIn content for founders</a>
+</div>
   <a href="index.html#results" onclick="toggleMenu()">Results</a>
   <a href="blog.html" onclick="toggleMenu()">Blog</a>
   
@@ -1135,11 +1213,11 @@ footer{padding:28px 56px;
     </div>
     <div class="stat">
       <div class="stat-num stat-title">For decision makers</div>
-      <div class="stat-label">founders, consultants, entrepreneurs and sales leaders</div>
+      <div class="stat-label">consultants, entrepreneurs and sales leaders</div>
     </div>
     <div class="stat">
       <div class="stat-num stat-title">Expert-led businesses</div>
-      <div class="stat-label">Consulting, advisory, agencies, professional services and high-value B2B.</div>
+      <div class="stat-label">IT, SaaS, consulting, recruitment and other high-value B2B services</div>
     </div>
   </div>
 </section>
@@ -1342,6 +1420,15 @@ function toggleMenu(){
   menu.classList.toggle('open');
   burger.classList.toggle('open');
   document.body.style.overflow=menu.classList.contains('open')?'hidden':'';
+}
+
+function toggleMobileServices(){
+  var sub=document.getElementById('mobileServicesSubmenu');
+  var btn=document.getElementById('mobileServicesBtn');
+  if(!sub||!btn)return;
+  sub.classList.toggle('open');
+  btn.classList.toggle('open');
+  btn.setAttribute('aria-expanded', sub.classList.contains('open'));
 }
 </script>
 

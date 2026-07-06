@@ -68,6 +68,31 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
 .mobile-menu.open{visibility:visible;opacity:1}
 .mobile-menu a{font-family:'Sora',sans-serif;font-size:28px;font-weight:700;color:#f0ede8;letter-spacing:-0.02em;padding:14px 24px;transition:color .2s;text-align:center;text-decoration:none}
 .mobile-menu a:hover{color:#c8b89a}
+.mobile-services-toggle{
+  position:relative;appearance:none;-webkit-appearance:none;-moz-appearance:none;
+  font-family:'Sora',sans-serif;font-size:28px;font-weight:700;color:#f0ede8;letter-spacing:-0.02em;line-height:1.65;
+  padding:14px 24px;margin:0;background:none;border:none;outline:none;-webkit-tap-highlight-color:transparent;cursor:pointer;
+  transition:color 0.2s;text-align:center;
+}
+.mobile-services-toggle:focus{outline:none}
+.mobile-services-toggle:hover{color:#c8b89a}
+.mobile-services-arrow{font-size:16px;position:absolute;top:50%;right:2px;transform:translateY(-50%);transition:transform 0.25s ease}
+.mobile-services-toggle.open .mobile-services-arrow{transform:translateY(-50%) rotate(180deg)}
+.mobile-services-submenu{
+  max-height:0;overflow:hidden;transition:max-height 0.3s ease;
+  display:flex;flex-direction:column;align-items:center;gap:0;width:100%;
+}
+.mobile-services-submenu.open{max-height:480px}
+.mobile-services-submenu a{
+  font-family:'DM Sans',sans-serif!important;font-size:15px!important;font-weight:400!important;
+  color:#8f8a80!important;padding:9px 24px!important;text-transform:none!important;letter-spacing:normal!important;
+}
+.mobile-services-submenu a.mobile-sub-main{
+  color:#c8b89a!important;font-weight:600!important;
+  border:1px solid rgba(200,184,154,0.4)!important;background:rgba(200,184,154,0.08)!important;
+  border-radius:4px!important;margin:2px 24px 10px!important;padding:10px 20px!important;
+}
+
 .mobile-menu .mobile-cta{font-size:14px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;border:1px solid #c8b89a;color:#c8b89a;padding:12px 32px;border-radius:2px;margin-top:20px;font-family:'DM Sans',sans-serif}
 .whatsapp-float{position:fixed;right:22px;top:50%;transform:translateY(-50%);z-index:220;width:54px;height:54px;border-radius:50%;background:var(--accent);color:var(--black);display:flex;align-items:center;justify-content:center;box-shadow:0 14px 36px rgba(0,0,0,.42);border:1px solid rgba(226,206,176,.65);transition:all .2s}
 .whatsapp-float:hover{background:var(--accent2);transform:translateY(-50%) translateX(-2px)}
@@ -616,6 +641,53 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
 @keyframes gbDriftM2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-12px,-10px) scale(1.05)}}
 .mini-hero-fg{position:relative;z-index:1}
 @media(prefers-reduced-motion:reduce){.mini-hero-bg .glow-blob{animation:none!important}}
+
+
+/* ===== Mobile services menu alignment fix ===== */
+@media (max-width: 960px) {
+  .mobile-menu .mobile-services-toggle {
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 12px 16px !important;
+    font-family: 'Sora', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.02em !important;
+    color: #f0ede8 !important;
+    text-align: center !important;
+    gap: 0 !important;
+  }
+
+  .mobile-menu .mobile-services-arrow {
+    position: absolute !important;
+    left: calc(100% + 6px) !important;
+    top: 50% !important;
+    width: auto !important;
+    margin: 0 !important;
+    font-size: 13px !important;
+    line-height: 1 !important;
+    transform: translateY(-50%) !important;
+    transform-origin: center !important;
+  }
+
+  .mobile-menu .mobile-services-toggle.open .mobile-services-arrow {
+    transform: translateY(-50%) rotate(180deg) !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .mobile-menu .mobile-services-toggle {
+    font-size: 22px !important;
+  }
+}
+/* ===== End mobile services menu alignment fix ===== */
+
 </style></head><body><nav>
   <a href="index.html" class="nav-logo"><svg width="45" height="20" viewBox="0 0 360 160" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke="#D6CBB4" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"><circle cx="92" cy="80" r="52"/><path d="M284.9 41.1 A55 55 0 1 0 284.9 118.9"/></g></svg></a>
   <ul class="nav-links">
@@ -643,8 +715,14 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
   <button class="burger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
   <div class="mobile-menu" id="mobileMenu">
     <a href="index.html" onclick="toggleMenu()">Home</a>
-    <a href="services.html" onclick="toggleMenu()">Services</a>
-      <a href="b2b-lead-generation-service.html" onclick="toggleMenu()">B2B lead generation</a>
+    <button class="mobile-services-toggle" id="mobileServicesBtn" onclick="toggleMobileServices()" aria-expanded="false">Services<span class="mobile-services-arrow">&#9662;</span></button>
+<div class="mobile-services-submenu" id="mobileServicesSubmenu">
+  <a href="b2b-lead-generation-service.html" onclick="toggleMenu()" class="mobile-sub-main">B2B lead generation</a>
+  <a href="service-monthly-linkedin-outreach-management.html" onclick="toggleMenu()">Monthly LinkedIn outreach management</a>
+  <a href="service-lead-generation.html" onclick="toggleMenu()">LinkedIn lead generation setup</a>
+  <a href="service-profile-optimization.html" onclick="toggleMenu()">LinkedIn profile optimization</a>
+  <a href="service-linkedin-content-for-founders.html" onclick="toggleMenu()">LinkedIn content for founders</a>
+</div>
   <a href="index.html#results" onclick="toggleMenu()">Results</a>
     <a href="blog.html" onclick="toggleMenu()">Blog</a>
     <a href="contact.html" onclick="toggleMenu()">Contact</a>
@@ -666,7 +744,6 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
   <nav class="footer-nav">
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
-    <a href="b2b-lead-generation-service.html">B2B lead generation</a>
     <a href="blog.html">Blog</a>
     <a href="contact.html">Contact</a>
   </nav>
@@ -688,6 +765,15 @@ function toggleMenu(){
   menu.classList.toggle('open');
   burger.classList.toggle('open');
   document.body.style.overflow=menu.classList.contains('open')?'hidden':'';
+}
+
+function toggleMobileServices(){
+  var sub=document.getElementById('mobileServicesSubmenu');
+  var btn=document.getElementById('mobileServicesBtn');
+  if(!sub||!btn)return;
+  sub.classList.toggle('open');
+  btn.classList.toggle('open');
+  btn.setAttribute('aria-expanded', sub.classList.contains('open'));
 }
 </script><script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>if(window.netlifyIdentity){window.netlifyIdentity.on("init",function(user){if(!user){window.netlifyIdentity.on("login",function(){document.location.href="/admin/";});}});}</script>
