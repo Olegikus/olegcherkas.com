@@ -570,6 +570,55 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
 
 /* ===== End final mobile fixes ===== */
 
+
+/* ===== priority services dropdown (injected) ===== */
+.nav-services-menu.priority-menu{
+  width:360px;
+  padding:10px;
+  gap:5px;
+}
+.nav-menu-label{
+  padding:8px 13px 4px;
+  font-size:9px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:var(--accent);
+  opacity:0.78;
+  font-family:'DM Sans',sans-serif;
+}
+.nav-menu-divider{
+  height:1px;
+  background:var(--border2);
+  margin:6px 6px 4px;
+  opacity:0.65;
+}
+.nav-services-menu a.nav-service-main{
+  border:1px solid rgba(200,184,154,0.42);
+  background:rgba(200,184,154,0.08);
+  color:var(--white);
+  padding:14px 14px;
+  margin-bottom:4px;
+}
+.nav-services-menu a.nav-service-main:hover{
+  background:rgba(200,184,154,0.14);
+  color:var(--accent2);
+}
+.nav-service-main span{
+  display:block;
+  font-size:12px;
+  letter-spacing:0.1em;
+  font-weight:600;
+}
+.nav-service-main small{
+  display:block;
+  margin-top:5px;
+  font-size:10px;
+  line-height:1.35;
+  letter-spacing:0.04em;
+  text-transform:none;
+  color:var(--muted);
+  font-weight:300;
+}
 </style>
 </head>
 <body>
@@ -579,11 +628,17 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
     <li><a href="index.html#about">About</a></li>
     <li class="nav-services">
       <a href="services.html">Services</a>
-      <div class="nav-services-menu">
-  <a href="service-lead-generation.html">LinkedIn lead generation setup</a>
+      <div class="nav-services-menu priority-menu">
+  <div class="nav-menu-label">Main service</div>
+  <a href="b2b-lead-generation-service.html" class="nav-service-main"><span>B2B lead generation</span><small>LinkedIn + email, managed end to end</small></a>
+  <div class="nav-menu-divider"></div>
+  <div class="nav-menu-label">LinkedIn outreach</div>
   <a href="service-monthly-linkedin-outreach-management.html">Monthly LinkedIn outreach management</a>
-  <a href="service-linkedin-content-for-founders.html">LinkedIn content for founders</a>
+  <a href="service-lead-generation.html">LinkedIn lead generation setup</a>
+  <div class="nav-menu-divider"></div>
+  <div class="nav-menu-label">LinkedIn presence</div>
   <a href="service-profile-optimization.html">LinkedIn profile optimization</a>
+  <a href="service-linkedin-content-for-founders.html">LinkedIn content for founders</a>
 </div>
     </li>
     <li><a href="index.html#results">Results</a></li>
@@ -596,6 +651,7 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html" onclick="toggleMenu()">Home</a>
   <a href="services.html" onclick="toggleMenu()">Services</a>
+    <a href="b2b-lead-generation-service.html" onclick="toggleMenu()">B2B lead generation</a>
   <a href="index.html#results" onclick="toggleMenu()">Results</a>
   <a href="blog.html" onclick="toggleMenu()">Blog</a>
   
@@ -732,6 +788,7 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
   <nav class="footer-nav">
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
+    <a href="b2b-lead-generation-service.html">B2B lead generation</a>
     
     <a href="contact.html">Contact</a>
   </nav>

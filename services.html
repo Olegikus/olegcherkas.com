@@ -54,7 +54,12 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
 .footer-nav{display:flex;gap:28px}
 .footer-nav a{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);transition:color 0.2s}
 .footer-nav a:hover{color:var(--accent)}
-@media(max-width:960px){nav{padding:16px 24px}.nav-links{display:none}.page-hero{padding:72px 24px 56px}.page-hero::before,.page-hero::after{display:none}.services-list{padding:0 24px 64px}.service-row{grid-template-columns:1fr;gap:16px}.service-row-arrow{display:none}.cta-strip{padding:48px 24px;flex-direction:column;text-align:center}footer{padding:24px;flex-direction:column;gap:20px;text-align:center}}
+.main-service-block{margin:0 56px 56px;padding:48px;border:1px solid rgba(200,184,154,0.42);background:linear-gradient(180deg,rgba(200,184,154,0.07),rgba(200,184,154,0.02));border-radius:2px;display:flex;justify-content:space-between;align-items:center;gap:48px}
+.main-service-block .eyebrow{margin-bottom:16px}
+.main-service-block h2{font-family:'Sora',sans-serif;font-weight:800;font-size:clamp(28px,3.4vw,40px);letter-spacing:-0.02em;margin-bottom:14px}
+.main-service-block p{color:var(--muted);font-size:15px;line-height:1.75;font-weight:300;max-width:560px}
+.secondary-services-label{padding:0 56px;margin-bottom:8px;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted)}
+@media(max-width:960px){nav{padding:16px 24px}.nav-links{display:none}.page-hero{padding:72px 24px 56px}.page-hero::before,.page-hero::after{display:none}.services-list{padding:0 24px 64px}.service-row{grid-template-columns:1fr;gap:16px}.service-row-arrow{display:none}.cta-strip{padding:48px 24px;flex-direction:column;text-align:center}footer{padding:24px;flex-direction:column;gap:20px;text-align:center}.main-service-block{margin:0 24px 40px;padding:32px 24px;flex-direction:column;text-align:center;gap:24px}.secondary-services-label{padding:0 24px}}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:300;position:relative}
 .burger span{display:block;width:22px;height:1.5px;background:var(--white);transition:all 0.3s}
 .burger.open span{background:var(--white)}
@@ -549,6 +554,65 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
 
 /* ===== End final mobile fixes ===== */
 
+
+/* ===== priority services dropdown (injected) ===== */
+.nav-services-menu.priority-menu{
+  width:360px;
+  padding:10px;
+  gap:5px;
+}
+.nav-menu-label{
+  padding:8px 13px 4px;
+  font-size:9px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:var(--accent);
+  opacity:0.78;
+  font-family:'DM Sans',sans-serif;
+}
+.nav-menu-divider{
+  height:1px;
+  background:var(--border2);
+  margin:6px 6px 4px;
+  opacity:0.65;
+}
+.nav-services-menu a.nav-service-main{
+  border:1px solid rgba(200,184,154,0.42);
+  background:rgba(200,184,154,0.08);
+  color:var(--white);
+  padding:14px 14px;
+  margin-bottom:4px;
+}
+.nav-services-menu a.nav-service-main:hover{
+  background:rgba(200,184,154,0.14);
+  color:var(--accent2);
+}
+.nav-service-main span{
+  display:block;
+  font-size:12px;
+  letter-spacing:0.1em;
+  font-weight:600;
+}
+.nav-service-main small{
+  display:block;
+  margin-top:5px;
+  font-size:10px;
+  line-height:1.35;
+  letter-spacing:0.04em;
+  text-transform:none;
+  color:var(--muted);
+  font-weight:300;
+}
+
+/* ===== mini hero background: soft glow blobs, blended into black ===== */
+.mini-hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.mini-hero-bg .glow-blob{position:absolute;border-radius:50%;filter:blur(60px)}
+.mini-hero-bg .mgb1{width:260px;height:260px;left:-6%;top:-30%;background:radial-gradient(circle,rgba(200,184,154,0.26),transparent 70%);animation:gbDriftM1 20s ease-in-out infinite}
+.mini-hero-bg .mgb2{width:200px;height:200px;left:30%;bottom:-40%;background:radial-gradient(circle,rgba(226,206,176,0.16),transparent 70%);animation:gbDriftM2 25s ease-in-out infinite}
+@keyframes gbDriftM1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(16px,12px) scale(1.08)}}
+@keyframes gbDriftM2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-12px,-10px) scale(1.05)}}
+.mini-hero-fg{position:relative;z-index:1}
+@media(prefers-reduced-motion:reduce){.mini-hero-bg .glow-blob{animation:none!important}}
 </style>
 </head>
 <body>
@@ -558,11 +622,17 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
     <li><a href="index.html#about">About</a></li>
     <li class="nav-services">
       <a href="services.html">Services</a>
-      <div class="nav-services-menu">
-  <a href="service-lead-generation.html">LinkedIn lead generation setup</a>
+      <div class="nav-services-menu priority-menu">
+  <div class="nav-menu-label">Main service</div>
+  <a href="b2b-lead-generation-service.html" class="nav-service-main"><span>B2B lead generation</span><small>LinkedIn + email, managed end to end</small></a>
+  <div class="nav-menu-divider"></div>
+  <div class="nav-menu-label">LinkedIn outreach</div>
   <a href="service-monthly-linkedin-outreach-management.html">Monthly LinkedIn outreach management</a>
-  <a href="service-linkedin-content-for-founders.html">LinkedIn content for founders</a>
+  <a href="service-lead-generation.html">LinkedIn lead generation setup</a>
+  <div class="nav-menu-divider"></div>
+  <div class="nav-menu-label">LinkedIn presence</div>
   <a href="service-profile-optimization.html">LinkedIn profile optimization</a>
+  <a href="service-linkedin-content-for-founders.html">LinkedIn content for founders</a>
 </div>
     </li>
     <li><a href="index.html#results">Results</a></li>
@@ -575,6 +645,7 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html" onclick="toggleMenu()">Home</a>
   <a href="services.html" onclick="toggleMenu()">Services</a>
+    <a href="b2b-lead-generation-service.html" onclick="toggleMenu()">B2B lead generation</a>
   <a href="index.html#results" onclick="toggleMenu()">Results</a>
   <a href="blog.html" onclick="toggleMenu()">Blog</a>
   
@@ -585,11 +656,27 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
 </nav>
 
 <div class="page-hero">
-  <div class="eyebrow">Services</div>
-  <h1>What we do.</h1>
-  <p class="lead">LinkedIn profile, content and outreach services for founders, partners and B2B firms who want a stronger professional presence and more qualified conversations.</p>
+  <div class="mini-hero-bg" aria-hidden="true">
+    <span class="glow-blob mgb1"></span>
+    <span class="glow-blob mgb2"></span>
+  </div>
+  <div class="mini-hero-fg">
+    <div class="eyebrow">Services</div>
+    <h1>What we do.</h1>
+    <p class="lead">LinkedIn profile, content and outreach services for founders, partners and B2B firms who want a stronger professional presence and more qualified conversations.</p>
+  </div>
 </div>
 
+<div class="main-service-block">
+  <div>
+    <div class="eyebrow">Main service</div>
+    <h2>B2B lead generation</h2>
+    <p>A complete outbound system that turns targeted data into qualified conversations across LinkedIn and email.</p>
+  </div>
+  <a href="b2b-lead-generation-service.html" class="btn-primary">Explore service &rarr;</a>
+</div>
+
+<div class="secondary-services-label">Secondary services</div>
 <div class="services-list">
   <a href="service-lead-generation.html" class="service-row">
     <div class="service-row-num">01</div>
@@ -645,6 +732,7 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
   <nav class="footer-nav">
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
+    <a href="b2b-lead-generation-service.html">B2B lead generation</a>
     
     <a href="contact.html">Contact</a>
   </nav>
@@ -665,6 +753,5 @@ function toggleMenu(){
     <path d="M16.04 3C9.42 3 4.03 8.34 4.03 14.91c0 2.1.55 4.15 1.6 5.96L4 27l6.3-1.64a12.1 12.1 0 0 0 5.74 1.46C22.66 26.82 28 21.48 28 14.91S22.66 3 16.04 3Zm0 21.8c-1.8 0-3.55-.48-5.1-1.4l-.37-.22-3.74.97 1-3.62-.24-.38a9.78 9.78 0 0 1-1.52-5.24c0-5.46 4.47-9.9 9.97-9.9 5.49 0 9.95 4.44 9.95 9.9 0 5.46-4.46 9.9-9.95 9.9Zm5.46-7.42c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.49s1.07 2.9 1.22 3.1c.15.2 2.1 3.19 5.08 4.47.71.3 1.26.48 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/>
   </svg>
 </a>
-
 </body>
 </html>
