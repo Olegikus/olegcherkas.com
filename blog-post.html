@@ -619,9 +619,11 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
   text-transform:uppercase;
 }
 .article-visual{
-  height:800px;
-  margin:0 56px;
-  border-bottom:1px solid var(--border);
+  width:calc(100% - 112px);
+  max-width:1180px;
+  height:480px;
+  margin:0 auto;
+  border:1px solid var(--border);
   background:
     radial-gradient(circle at 28% 28%,rgba(200,184,154,0.22),transparent 26%),
     linear-gradient(135deg,#171717,#0a0a0a 62%);
@@ -703,7 +705,7 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
 .article-visual.has-image::after{display:none}
 @media(max-width:960px){
   .article-hero{padding:72px 24px 52px}
-  .article-visual{height:280px;margin:0 24px}
+  .article-visual{width:calc(100% - 48px);height:280px;margin:0 24px}
   .article-visual::before{inset:32px}
   .article-visual::after{left:32px;right:32px}
   .article-wrap{padding:56px 24px}
@@ -711,7 +713,7 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
 }
 @media(max-width:520px){
   .article-hero{padding:58px 18px 42px}
-  .article-visual{height:230px;margin:0 18px}
+  .article-visual{width:calc(100% - 36px);height:230px;margin:0 18px}
   .article-wrap{padding:44px 18px}
   .article-wrap h2{font-size:26px}
 }
