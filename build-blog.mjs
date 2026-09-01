@@ -177,14 +177,22 @@ function renderBlogPosts() {
   const featuredImage = featured.image
     ? ` style="background:linear-gradient(135deg,rgba(10,10,10,.12),rgba(10,10,10,.72)),url('${escapeHtml(encodeURI(featured.image))}') center/cover"`
     : '';
-  const cards = posts.slice(1).map((post) => `
+  const cards = posts.slice(1).map((post) => {
+    const cardImage = post.image
+      ? `<div class="post-card-visual" style="background-image:url('${escapeHtml(encodeURI(post.image))}')"></div>`
+      : '';
+    return `
 <a class="post-card" href="${localArticleUrl(post.slug)}">
-  <div class="blog-tag">${escapeHtml(post.category || 'LinkedIn growth')}</div>
-  <div class="blog-meta"><time datetime="${escapeHtml(post.date || '')}">${escapeHtml(formatDate(post.date))}</time></div>
-  <h3>${escapeHtml(post.title)}</h3>
-  <p>${escapeHtml(cleanText(post.excerpt || '', 260))}</p>
-  <span class="blog-arrow">Read article →</span>
-</a>`).join('');
+  ${cardImage}
+  <div class="post-card-content">
+    <div class="blog-tag">${escapeHtml(post.category || 'LinkedIn growth')}</div>
+    <div class="blog-meta"><time datetime="${escapeHtml(post.date || '')}">${escapeHtml(formatDate(post.date))}</time></div>
+    <h3>${escapeHtml(post.title)}</h3>
+    <p>${escapeHtml(cleanText(post.excerpt || '', 260))}</p>
+    <span class="blog-arrow">Read article →</span>
+  </div>
+</a>`;
+  }).join('');
 
   return `<section class="blog-list"><!-- BLOG_POSTS_START -->
 <a class="featured-post" href="${localArticleUrl(featured.slug)}">

@@ -52,8 +52,11 @@ h1{font-family:'Sora',sans-serif;font-weight:800;font-size:clamp(42px,5vw,72px);
 .blog-arrow{font-size:18px;color:var(--accent);transition:transform .2s;display:inline-block}
 .featured-post:hover .blog-arrow,.post-card:hover .blog-arrow{transform:translate(3px,-3px)}
 .posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
-.post-card{background:var(--card);padding:34px 30px;min-height:280px;display:flex;flex-direction:column;transition:background .2s}
+.post-card{background:var(--card);min-height:500px;display:flex;flex-direction:column;transition:background .2s;overflow:hidden}
 .post-card:hover{background:#191919}
+.post-card-visual{width:100%;aspect-ratio:16/9;background-position:center;background-size:cover;border-bottom:1px solid var(--border);filter:saturate(.82) contrast(1.03) brightness(.88);transition:filter .2s,transform .35s}
+.post-card:hover .post-card-visual{filter:saturate(.95) contrast(1.03) brightness(.96);transform:scale(1.015)}
+.post-card-content{padding:30px;display:flex;flex-direction:column;flex:1}
 .post-card h3{font-family:'Sora',sans-serif;font-size:18px;line-height:1.32;margin-bottom:14px}
 .post-card p{font-size:13px;color:var(--muted);line-height:1.75;font-weight:300;margin-bottom:24px}
 .post-card .blog-arrow{margin-top:auto}
@@ -699,8 +702,8 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
 }
 /* ===== End mobile services menu alignment fix ===== */
 
-</style></head><body><nav>
-  <a href="index.html" class="nav-logo"><svg width="45" height="20" viewBox="0 0 360 160" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke="#D6CBB4" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"><circle cx="92" cy="80" r="52"/><path d="M284.9 41.1 A55 55 0 1 0 284.9 118.9"/></g></svg></a>
+</style><link rel="stylesheet" href="/readability-preview.css"></head><body><nav>
+  <a href="index.html" class="nav-logo" aria-label="Linkeol home"><img src="/uploads/linkeol-logo.png" alt="Linkeol" style="display:block;width:auto;height:clamp(40px,3vw,52px)"></a>
   <ul class="nav-links">
     <li><a href="index.html#about">About</a></li>
     <li class="nav-services">
@@ -744,44 +747,76 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
     <span class="glow-blob mgb1"></span>
     <span class="glow-blob mgb2"></span>
   </div><div class="mini-hero-fg"><div class="eyebrow">Blog</div><h1>Practical notes on LinkedIn growth.</h1><p class="lead">Articles on B2B outreach, founder positioning, LinkedIn content and sales systems.</p></div></section><section class="blog-list"><!-- BLOG_POSTS_START -->
-<a class="featured-post" href="/insights/dubai-and-riyadh-are-not-the-same-b2b-market/">
-  <div class="featured-visual" style="background:linear-gradient(135deg,rgba(10,10,10,.12),rgba(10,10,10,.72)),url('/uploads/dubai-riyadh-b2b-markets.jpg') center/cover"></div>
+<a class="featured-post" href="/insights/b2b-lead-generation-dubai-uae/">
+  <div class="featured-visual" style="background:linear-gradient(135deg,rgba(10,10,10,.12),rgba(10,10,10,.72)),url('/uploads/b2b-lead-generation-dubai-uae.jpg') center/cover"></div>
   <div class="featured-content">
-    <div class="blog-tag">GCC outbound</div>
+    <div class="blog-tag">UAE Lead Generation</div>
     <div class="blog-meta"><time datetime="2026-09-01">September 1, 2026</time> · Oleg Cherkas</div>
-    <h2>Dubai and Riyadh Are Not the Same B2B Market</h2>
-    <p>Dubai and Riyadh are only 90 minutes apart by plane, but the same LinkedIn message should not be sent to both markets.</p>
+    <h2>B2B Lead Generation in Dubai and the UAE: What Actually Works</h2>
+    <p>A practical guide to B2B lead generation in Dubai and the UAE, covering Abu Dhabi, Sharjah, Ajman and all seven emirates.</p>
     <span class="blog-arrow">Read article →</span>
   </div>
 </a>
 <div class="posts-grid">
+<a class="post-card" href="/insights/b2b-lead-generation-saudi-arabia-regional-guide/">
+  <div class="post-card-visual" style="background-image:url('/uploads/b2b-lead-generation-saudi-arabia.jpg')"></div>
+  <div class="post-card-content">
+    <div class="blog-tag">Saudi Lead Generation</div>
+    <div class="blog-meta"><time datetime="2026-09-01">September 1, 2026</time></div>
+    <h3>B2B Lead Generation in Saudi Arabia: A Regional Guide</h3>
+    <p>A practical regional guide to B2B lead generation in Saudi Arabia, from Riyadh and Jeddah to Makkah, Madinah, Dammam and beyond.</p>
+    <span class="blog-arrow">Read article →</span>
+  </div>
+</a>
+<a class="post-card" href="/insights/dubai-and-riyadh-are-not-the-same-b2b-market/">
+  <div class="post-card-visual" style="background-image:url('/uploads/dubai-riyadh-b2b-markets.jpg')"></div>
+  <div class="post-card-content">
+    <div class="blog-tag">GCC Outbound</div>
+    <div class="blog-meta"><time datetime="2026-09-01">September 1, 2026</time></div>
+    <h3>Dubai and Riyadh Are Not the Same B2B Market</h3>
+    <p>Dubai and Riyadh are only 90 minutes apart by plane, but the same LinkedIn message should not be sent to both markets.</p>
+    <span class="blog-arrow">Read article →</span>
+  </div>
+</a>
 <a class="post-card" href="/insights/from-cold-profile-to-50-enterprise-meetings-a-linkedin-growth-case-study/">
-  <div class="blog-tag">LinkedIn growth</div>
-  <div class="blog-meta"><time datetime="2026-06-17">June 17, 2026</time></div>
-  <h3>From cold profile to 200 enterprise meetings: a LinkedIn growth case study</h3>
-  <p>Most LinkedIn profiles in B2B look the same. A headshot, a job title, a list of previous roles. No clear message. No reason for anyone to connect, follow, or reach out. That was the starting point when I began working with the founder of a Dubai-based AI soft…</p>
-  <span class="blog-arrow">Read article →</span>
+  <div class="post-card-visual" style="background-image:url('/uploads/gcc-linkedin-growth-case-study.jpg')"></div>
+  <div class="post-card-content">
+    <div class="blog-tag">Case Studies</div>
+    <div class="blog-meta"><time datetime="2026-06-17">June 17, 2026</time></div>
+    <h3>From cold profile to 200 enterprise meetings: a LinkedIn growth case study</h3>
+    <p>Most LinkedIn profiles in B2B look the same. A headshot, a job title, a list of previous roles. No clear message. No reason for anyone to connect, follow, or reach out. That was the starting point when I began working with the founder of a Dubai-based AI soft…</p>
+    <span class="blog-arrow">Read article →</span>
+  </div>
 </a>
 <a class="post-card" href="/insights/the-linkedin-profile-optimization-guide-for-b2b-outreach/">
-  <div class="blog-tag">LinkedIn growth</div>
-  <div class="blog-meta"><time datetime="2026-06-15">June 15, 2026</time></div>
-  <h3>The LinkedIn profile optimization guide for B2B outreach</h3>
-  <p>Most people treat LinkedIn profile optimization as a one-time task they do when they first create an account. They upload a photo, write a headline, add their work history and move on. Then they launch an outreach campaign and wonder why the results are disap…</p>
-  <span class="blog-arrow">Read article →</span>
+  <div class="post-card-visual" style="background-image:url('/uploads/linkedin-profile-optimization-guide.jpg')"></div>
+  <div class="post-card-content">
+    <div class="blog-tag">LinkedIn Strategy</div>
+    <div class="blog-meta"><time datetime="2026-06-15">June 15, 2026</time></div>
+    <h3>The LinkedIn profile optimization guide for B2B outreach</h3>
+    <p>Most people treat LinkedIn profile optimization as a one-time task they do when they first create an account. They upload a photo, write a headline, add their work history and move on. Then they launch an outreach campaign and wonder why the results are disap…</p>
+    <span class="blog-arrow">Read article →</span>
+  </div>
 </a>
 <a class="post-card" href="/insights/the-5-mistakes-b2b-founders-make-in-their-first-outreach-campaign/">
-  <div class="blog-tag">LinkedIn growth</div>
-  <div class="blog-meta"><time datetime="2026-06-10">June 10, 2026</time></div>
-  <h3>The 5 mistakes B2B founders make in their first outreach campaign</h3>
-  <p>Most founders launch their first LinkedIn outreach campaign with good intentions and poor results. The problem is rarely the product. It is almost always the execution. Here are the five mistakes that kill response rates before the conversation even starts.</p>
-  <span class="blog-arrow">Read article →</span>
+  <div class="post-card-visual" style="background-image:url('/uploads/five-b2b-outreach-mistakes.jpg')"></div>
+  <div class="post-card-content">
+    <div class="blog-tag">B2B Outbound</div>
+    <div class="blog-meta"><time datetime="2026-06-10">June 10, 2026</time></div>
+    <h3>The 5 mistakes B2B founders make in their first outreach campaign</h3>
+    <p>Most founders launch their first LinkedIn outreach campaign with good intentions and poor results. The problem is rarely the product. It is almost always the execution. Here are the five mistakes that kill response rates before the conversation even starts.</p>
+    <span class="blog-arrow">Read article →</span>
+  </div>
 </a>
 <a class="post-card" href="/insights/why-your-linkedin-profile-matters-before-outreach-starts/">
-  <div class="blog-tag">LinkedIn growth</div>
-  <div class="blog-meta"><time datetime="2026-05-30">May 30, 2026</time></div>
-  <h3>Why your LinkedIn profile matters before outreach starts</h3>
-  <p>Outreach does not happen only inside the message box. It also happens on the profile page, where trust is either supported or damaged.</p>
-  <span class="blog-arrow">Read article →</span>
+  <div class="post-card-visual" style="background-image:url('/uploads/linkedin-profile-before-outreach.jpg')"></div>
+  <div class="post-card-content">
+    <div class="blog-tag">LinkedIn Strategy</div>
+    <div class="blog-meta"><time datetime="2026-05-30">May 30, 2026</time></div>
+    <h3>Why your LinkedIn profile matters before outreach starts</h3>
+    <p>Outreach does not happen only inside the message box. It also happens on the profile page, where trust is either supported or damaged.</p>
+    <span class="blog-arrow">Read article →</span>
+  </div>
 </a>
 </div>
 <!-- BLOG_POSTS_END --></section><section class="cta-strip"><div><h2>Want a LinkedIn system that brings real conversations?</h2><p>Book a free 30-minute call and let’s review your current setup.</p></div><a href="https://calendly.com/oleg-olegcherkas/30min" target="_blank" class="btn-primary">Book a call →</a></section><footer>

@@ -1,0 +1,203 @@
+/* Local readability preview — intentionally not published yet. */
+
+/* The warm gold works well on the near-black background. The muted text is
+   lifted slightly so secondary copy remains readable without turning white. */
+:root {
+  --muted: #b7b0a6;
+}
+
+body {
+  font-size: 18px;
+}
+
+/* Header */
+body > nav {
+  min-height: 96px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+body > nav .nav-logo {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+body > nav .nav-logo img {
+  width: auto !important;
+  height: clamp(52px, 3.9vw, 68px) !important;
+}
+
+body > nav .nav-links {
+  gap: 40px;
+}
+
+body > nav .nav-links > li > a,
+body > nav .nav-links > li > button {
+  font-size: 15px !important;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+body > nav .nav-cta {
+  font-size: 14px !important;
+  padding: 11px 24px;
+}
+
+/* Services dropdown */
+.nav-services-menu.priority-menu {
+  min-width: 420px;
+}
+
+.nav-menu-label {
+  font-size: 12px !important;
+  line-height: 1.4;
+  color: var(--accent) !important;
+  opacity: 0.68;
+}
+
+.nav-services-menu a {
+  font-size: 14px !important;
+  line-height: 1.45;
+  padding-top: 11px;
+  padding-bottom: 11px;
+}
+
+.nav-service-main span {
+  font-size: 15px !important;
+}
+
+.nav-service-main small {
+  font-size: 13px !important;
+  line-height: 1.5;
+}
+
+/* Small labels and metadata */
+.eyebrow,
+.hero-tag,
+.hero-role,
+.hero-kicker,
+.breadcrumb,
+.blog-tag,
+.blog-meta,
+.secondary-services-label,
+.process-label,
+.audience-index,
+.meeting-role,
+.nav-menu-label,
+.fg label {
+  font-size: 14px !important;
+}
+
+.section-eyebrow,
+.stat .stat-label,
+.meeting-role {
+  font-size: 14px !important;
+}
+
+.about-item-body strong {
+  font-size: 16px !important;
+}
+
+.about-item-body span,
+.about-item-body p {
+  font-size: 15px !important;
+  line-height: 1.7;
+}
+
+/* Body copy that was visually undersized */
+.lead,
+.hero-sub,
+.contact-left > p,
+.service-row-desc,
+.main-service-block p,
+.featured-content p,
+.post-card p,
+.body-text p,
+.step p,
+.hero-info-card p,
+.info-card p,
+.fit-list li,
+.section-lead,
+.campaign-stat p,
+.client-proof-stat,
+.outreach-metric small,
+.outreach-note,
+.process-step p,
+.faq-item p {
+  font-size: 16px !important;
+  line-height: 1.75;
+}
+
+.channel {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.ch-text strong,
+.faq-item strong {
+  font-size: 16px !important;
+}
+
+.ch-text span {
+  font-size: 14px !important;
+}
+
+.fg input,
+.fg textarea,
+.fg select {
+  font-size: 16px !important;
+  padding: 14px 16px;
+}
+
+.btn-primary,
+.btn-outline,
+.form-btn {
+  font-size: 14px !important;
+}
+
+/* Footer */
+footer {
+  padding-top: 34px;
+  padding-bottom: 34px;
+}
+
+.footer-copy {
+  font-size: 15px !important;
+}
+
+.footer-nav a {
+  font-size: 14px !important;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+.footer-service-links a {
+  font-size: 13px !important;
+}
+
+.social-link {
+  width: 38px;
+  height: 38px;
+  font-size: 15px !important;
+}
+
+@media (max-width: 960px) {
+  body > nav {
+    min-height: 82px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  body > nav .nav-logo img {
+    height: 54px !important;
+  }
+
+  .mobile-services-submenu a {
+    font-size: 16px !important;
+  }
+
+  .footer-nav a {
+    font-size: 13px !important;
+  }
+}
