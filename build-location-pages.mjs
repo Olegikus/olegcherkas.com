@@ -184,19 +184,80 @@ const pages = [
   }
 ];
 
+const metaDescriptions = {
+  Sharjah: 'LinkedIn B2B lead generation in Sharjah for manufacturing, education, logistics and SME decision makers through focused, personalised outreach.',
+  Ajman: 'LinkedIn B2B lead generation in Ajman for owner-led SMEs, manufacturers, traders and service businesses using precise targeting and structured follow-up.',
+  'Ras Al Khaimah': 'LinkedIn B2B lead generation in Ras Al Khaimah for manufacturing, tourism, construction and free-zone companies through account-focused outreach.',
+  Fujairah: 'LinkedIn B2B lead generation in Fujairah for port, shipping, energy, logistics and hospitality buyers through sector-specific outreach.',
+  Jeddah: 'LinkedIn B2B lead generation in Jeddah for family groups, trade, logistics, tourism and technology companies through locally relevant outreach.',
+  'Dammam and Al Khobar': 'LinkedIn B2B lead generation across Dammam and Al Khobar for energy, engineering, industrial and logistics companies.',
+  Makkah: 'LinkedIn B2B lead generation in Makkah for hospitality, infrastructure, construction and visitor-economy businesses.',
+  Madinah: 'LinkedIn B2B lead generation in Madinah for hospitality, development, healthcare, education and urban-service decision makers.',
+  Doha: 'LinkedIn B2B lead generation in Doha for energy, finance, infrastructure and professional-service decision makers through account-based outreach.',
+  Singapore: 'LinkedIn B2B lead generation in Singapore for SaaS, technology, finance and regional HQ teams through precise, evidence-led outreach.',
+  Dubai: 'LinkedIn B2B lead generation in Dubai with targeted outreach for founders, executives and decision makers in technology and professional services.',
+  'Abu Dhabi': 'LinkedIn B2B lead generation in Abu Dhabi for institutional, technology, energy and professional-service markets through targeted outreach.',
+  Riyadh: 'LinkedIn B2B lead generation in Riyadh through account-based outreach for technology, finance, professional services and enterprise markets.'
+};
+
+const uaeGuide = {
+  title: 'B2B Lead Generation in Dubai and the UAE: What Actually Works',
+  href: '/insights/b2b-lead-generation-dubai-uae/',
+  text: 'How account selection, positioning and outreach should change across UAE business markets.'
+};
+const saudiGuide = {
+  title: 'B2B Lead Generation in Saudi Arabia: A Regional Guide',
+  href: '/insights/b2b-lead-generation-saudi-arabia-regional-guide/',
+  text: 'How Saudi regions, industries and buying environments change B2B outreach strategy.'
+};
+const relatedInsights = {
+  Sharjah: uaeGuide,
+  Ajman: uaeGuide,
+  'Ras Al Khaimah': uaeGuide,
+  Fujairah: uaeGuide,
+  Jeddah: saudiGuide,
+  'Dammam and Al Khobar': saudiGuide,
+  Makkah: saudiGuide,
+  Madinah: saudiGuide,
+  Doha: {
+    title: 'From Cold Profile to 200 Enterprise Meetings: A LinkedIn Growth Case Study',
+    href: '/insights/from-cold-profile-to-50-enterprise-meetings-a-linkedin-growth-case-study/',
+    text: 'A GCC campaign that opened enterprise conversations across the UAE, Saudi Arabia and Qatar.'
+  },
+  Singapore: {
+    title: 'LinkedIn Lead Generation for SaaS Companies in Singapore',
+    href: '/insights/linkedin-lead-generation-saas-companies-singapore/',
+    text: 'A practical framework for reaching regional headquarters and technology buyers in Singapore.'
+  },
+  Dubai: {
+    title: 'LinkedIn Lead Generation for SaaS Companies in Dubai and the UAE',
+    href: '/insights/linkedin-lead-generation-saas-companies-dubai-uae/',
+    text: 'How SaaS companies can target Dubai and UAE buyers with market-specific outreach.'
+  },
+  'Abu Dhabi': uaeGuide,
+  Riyadh: {
+    title: 'LinkedIn Lead Generation for SaaS Companies in Riyadh and Saudi Arabia',
+    href: '/insights/linkedin-lead-generation-saas-companies-riyadh-saudi-arabia/',
+    text: 'How SaaS companies can build credible outreach for Riyadh and Saudi enterprise buyers.'
+  }
+};
+
 const esc = value => String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 const telegramIcon = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>';
 const whatsappIcon = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>';
 const headerSocials = `<div class="header-socials" aria-label="Contact Oleg Cherkas"><a class="header-social" href="https://www.linkedin.com/in/oleg-cherkas" target="_blank" rel="noopener" aria-label="LinkedIn">in</a><a class="header-social" href="https://t.me/olegikus" target="_blank" rel="noopener" aria-label="Telegram">${telegramIcon}</a><a class="header-social header-whatsapp" href="https://wa.me/971563462566" target="_blank" rel="noopener" aria-label="WhatsApp">${whatsappIcon}</a></div>`;
 const mobileSocials = `<div class="mobile-socials" aria-label="Contact Oleg Cherkas"><a href="https://www.linkedin.com/in/oleg-cherkas" target="_blank" rel="noopener" aria-label="LinkedIn">in</a><a href="https://t.me/olegikus" target="_blank" rel="noopener" aria-label="Telegram">${telegramIcon}</a><a href="https://wa.me/971563462566" target="_blank" rel="noopener" aria-label="WhatsApp">${whatsappIcon}</a></div>`;
 const footerSocials = `<div class="social-links" aria-label="Contact Oleg Cherkas"><a href="https://www.linkedin.com/in/oleg-cherkas" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">in</a><a href="https://t.me/olegikus" target="_blank" rel="noopener" class="social-link" aria-label="Telegram">${telegramIcon}</a><a href="https://wa.me/971563462566" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp">${whatsappIcon}</a></div>`;
-const locationNav = `<nav class="site-nav"><a href="/" class="nav-logo" aria-label="Linkeol home"><img src="/uploads/linkeol-logo-clean.png" alt="Linkeol"></a><ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/about/">About</a></li><li><a href="/services">Services</a></li><li><a href="/locations/" aria-current="page">Locations</a></li><li><a href="/results/">Results</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul><div class="nav-actions">${headerSocials}<a href="https://calendly.com/oleg-olegcherkas/30min" target="_blank" class="nav-cta">Book a call</a></div><button class="burger" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button></nav>`;
+const locationNav = `<nav class="site-nav"><a href="/" class="nav-logo" aria-label="Oleg Cherkas home"><img src="/uploads/linkeol-logo-clean.png" alt="Linkeol"></a><ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/about/">About</a></li><li><a href="/services">Services</a></li><li><a href="/locations/" aria-current="page">Locations</a></li><li><a href="/results/">Results</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul><div class="nav-actions">${headerSocials}<a href="https://calendly.com/oleg-olegcherkas/30min" target="_blank" class="nav-cta">Book a call</a></div><button class="burger" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button></nav>`;
 const locationMobileMenu = `<div class="mobile-menu" id="mobileMenu"><a href="/">Home</a><a href="/about/">About</a><a href="/services">Services</a><a href="/locations/">Locations</a><a href="/results/">Results</a><a href="/blog">Blog</a><a href="/contact">Contact</a>${mobileSocials}</div>`;
 const locationFooter = `<footer><div class="footer-left"><div class="footer-copy">© 2026 Oleg Cherkas</div>${footerSocials}</div><nav class="footer-nav"><a href="/">Home</a><a href="/about/">About</a><a href="/services">Services</a><a href="/locations/">Locations</a><a href="/results/">Results</a><a href="/blog">Blog</a><a href="/contact">Contact</a></nav></footer>`;
 function render(page) {
   const canonical = `https://olegcherkas.com/${page.path.replace(/index\.html$/, '')}`;
   const title = `LinkedIn B2B Lead Generation in ${page.city} | Oleg Cherkas`;
-  const description = `LinkedIn B2B lead generation in ${page.city} with market-specific targeting, personalised outreach and structured follow-up.`;
+  const description = metaDescriptions[page.city];
+  if (!description) throw new Error(`Meta description not found for ${page.city}`);
+  const insight = relatedInsights[page.city];
+  if (!insight) throw new Error(`Related insight not found for ${page.city}`);
   const faqJson = page.faq.map(([question,answer]) => ({'@type':'Question',name:question,acceptedAnswer:{'@type':'Answer',text:answer}}));
   const area = page.city === 'Dammam and Al Khobar'
     ? [
@@ -215,6 +276,7 @@ function render(page) {
   const signalCards = page.signals.map(([label,text]) => `<div class="signal"><small>${esc(label)}</small><strong>${esc(text)}</strong></div>`).join('');
   const faqs = page.faq.map(([q,a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('');
   const related = page.related.map(([name,href,text]) => `<a class="related-card" href="${href}"><small>LinkedIn B2B lead generation</small><strong>${esc(name)}</strong><span>${esc(text)} →</span></a>`).join('');
+  const relatedInsight = `<!-- RELATED_INSIGHT_START --><section class="page-section"><div class="section-inner"><div class="section-heading"><div class="eyebrow">Related insight</div><h2>Read more about this market</h2></div><div class="related-grid related-insight-grid"><a class="related-card" href="${insight.href}"><small>Market strategy</small><strong>${esc(insight.title)}</strong><span>${esc(insight.text)} Read article →</span></a></div></div></section><!-- RELATED_INSIGHT_END -->`;
   const steps = [
     ['Define the market segment',`Choose the ${page.city} company types, sectors, sizes and roles with the strongest reason to buy.`],
     ['Research accounts and people','Verify companies, map relevant stakeholders and collect evidence for personalisation.'],
@@ -234,7 +296,8 @@ ${locationMobileMenu}
 <section class="page-section"><div class="section-inner"><div class="split"><div class="section-heading"><div class="eyebrow">Why ${esc(page.city)} is different</div><h2>${esc(page.whyTitle)}</h2></div><div class="body-copy">${page.paragraphs.map(p=>`<p>${p}</p>`).join('')}</div></div><div class="signal-list">${signalCards}</div><p class="source-note">Market context informed by <a href="${page.sourceUrl}" target="_blank" rel="noopener">${esc(page.sourceName)}</a>.</p></div></section>
 <section class="page-section"><div class="section-inner"><div class="section-heading"><div class="eyebrow">Ideal customer profiles</div><h2>Who we can target in ${esc(page.city)}</h2><p>Campaigns are filtered by sector, company type, seniority and a credible reason for the conversation.</p></div><div class="card-grid">${sectorCards}</div></div></section>
 <section class="page-section"><div class="section-inner"><div class="section-heading"><div class="eyebrow">Execution</div><h2>How ${esc(page.city)} LinkedIn outreach is built</h2></div><div class="process-list">${steps}</div></div></section>
-<section class="page-section"><div class="section-inner"><div class="proof"><div class="proof-number">200+</div><div class="proof-copy"><strong>enterprise meetings opened through LinkedIn</strong><p>The operating system combines profile positioning, account research, personalised sequences and consistent follow-up.</p></div><a class="proof-link" href="/insights/from-cold-profile-to-50-enterprise-meetings-a-linkedin-growth-case-study/">Read the case study →</a></div></div></section>
+<section class="page-section"><div class="section-inner"><div class="proof"><div class="proof-number">200+</div><div class="proof-copy"><strong>enterprise meetings opened through LinkedIn</strong><p>The operating system combines profile positioning, account research, personalised sequences and consistent follow-up.</p></div><a class="proof-link" href="/results/">See campaign results →</a></div></div></section>
+${relatedInsight}
 <section class="page-section"><div class="section-inner"><div class="section-heading"><div class="eyebrow">Questions</div><h2>${esc(page.city)} LinkedIn B2B lead generation FAQ</h2></div><div class="faq-list">${faqs}</div></div></section>
 <section class="page-section"><div class="section-inner"><div class="section-heading"><div class="eyebrow">Related markets</div><h2>Continue exploring</h2></div><div class="related-grid">${related}</div></div></section></main>
 <section class="cta"><div class="cta-inner"><div><h2>${esc(page.cta)}</h2><p>Start with the market, the account and the decision maker - not a generic regional template.</p></div><a href="https://calendly.com/oleg-olegcherkas/30min" target="_blank" class="btn-primary">Book a strategy call →</a></div></section>
@@ -250,16 +313,19 @@ for (const page of pages) {
 const existingPageHrCards = [
   {
     path: 'locations/uae/dubai/index.html',
+    city: 'Dubai',
     marker: '<article class="card"><div class="card-index">06</div><h3>Regional expansion teams</h3><p>International companies entering the UAE or using Dubai as a base for GCC growth.</p></article>',
     card: '<article class="card"><div class="card-index">07</div><h3>HR, recruitment &amp; talent</h3><p>Recruitment agencies, executive-search firms, HR technology, staffing and people consultancies serving Dubai employers.</p></article>'
   },
   {
     path: 'locations/uae/abu-dhabi/index.html',
+    city: 'Abu Dhabi',
     marker: '<article class="card"><div class="card-index">06</div><h3>Advisory and professional services</h3><p>Consultancies, legal and accounting firms, recruitment companies and expert-led service providers.</p></article>',
     card: '<article class="card"><div class="card-index">07</div><h3>HR &amp; workforce solutions</h3><p>Executive search, specialist recruitment, workforce consulting and HR technology for institutional and enterprise employers.</p></article>'
   },
   {
     path: 'locations/saudi-arabia/riyadh/index.html',
+    city: 'Riyadh',
     marker: '<article class="card"><div class="card-index">06</div><h3>Professional services</h3><p>Consulting, legal, recruitment, advisory and specialist B2B firms pursuing high-value relationships.</p></article>',
     card: '<article class="card"><div class="card-index">07</div><h3>HR, recruitment &amp; people tech</h3><p>Executive search, staffing, HR platforms and workforce advisory supporting Riyadh organisations and transformation programmes.</p></article>'
   }
@@ -276,6 +342,17 @@ for (const item of existingPageHrCards) {
   if (navIndex < 0 || mainIndex < 0) throw new Error(`Navigation markers not found in ${item.path}`);
   html = html.slice(0, navIndex) + locationNav + '\n' + locationMobileMenu + '\n\n' + html.slice(mainIndex);
   html = html.replace(/<footer>[\s\S]*?<\/footer>/, locationFooter);
+  const description = metaDescriptions[item.city];
+  const insight = relatedInsights[item.city];
+  if (!description || !insight) throw new Error(`SEO data not found for ${item.city}`);
+  html = html.replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${esc(description)}">`);
+  const relatedInsight = `<!-- RELATED_INSIGHT_START --><section class="page-section"><div class="section-inner"><div class="section-heading"><div class="eyebrow">Related insight</div><h2>Read more about this market</h2></div><div class="related-grid related-insight-grid"><a class="related-card" href="${insight.href}"><small>Market strategy</small><strong>${esc(insight.title)}</strong><span>${esc(insight.text)} Read article →</span></a></div></div></section><!-- RELATED_INSIGHT_END -->`;
+  if (html.includes('<!-- RELATED_INSIGHT_START -->')) {
+    html = html.replace(/<!-- RELATED_INSIGHT_START -->[\s\S]*?<!-- RELATED_INSIGHT_END -->/, relatedInsight);
+  } else {
+    html = html.replace(/(<section class="page-section"><div class="section-inner"><div class="section-heading"><div class="eyebrow">Questions<\/div>)/, `${relatedInsight}\n$1`);
+  }
+  html = html.replace('<a class="proof-link" href="/insights/from-cold-profile-to-50-enterprise-meetings-a-linkedin-growth-case-study/">Read the case study →</a>', '<a class="proof-link" href="/results/">See campaign results →</a>');
   html = html.replace(/<script>const burger=document\.querySelector\('\.burger'\);[\s\S]*?<\/script>/, '');
   if (!html.includes('/site-navigation.js')) {
     html = html.replace('</body>', '<script src="/site-navigation.js"></script>\n</body>');

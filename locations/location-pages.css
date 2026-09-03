@@ -90,6 +90,7 @@ h1{font-size:clamp(42px,5.7vw,76px);line-height:1.02;letter-spacing:-.045em;marg
 .faq-list details[open] summary:after{content:"−"}
 .faq-list p{color:var(--muted);font-size:16px;line-height:1.8;max-width:900px;padding-top:14px}
 .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.related-insight-grid{grid-template-columns:minmax(0,1fr)}
 .related-card{border:1px solid var(--border);background:var(--card);padding:28px;transition:.2s}
 .related-card:hover{border-color:var(--accent);transform:translateY(-2px)}
 .related-card small{display:block;color:var(--accent);font-size:13px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px}
