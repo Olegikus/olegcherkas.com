@@ -27,13 +27,31 @@
     .universal-services-divider{height:1px;margin:7px 15px;background:#282828}
     .universal-mobile-services{width:100%;text-align:center}
     .universal-mobile-services-toggle{appearance:none;border:0;background:none;color:#f0ede8;font-family:'Sora',sans-serif;font-size:inherit;font-weight:inherit;line-height:1.2;padding:10px 30px;cursor:pointer;position:relative;text-transform:none}
-    .universal-mobile-services-toggle:after{content:"+";position:absolute;right:8px;color:#c8b89a;font-family:'DM Sans',sans-serif;font-weight:400}
+    .universal-mobile-services-toggle:after{content:"+";position:absolute;left:calc(100% - 20px);top:50%;transform:translateY(-50%);color:#c8b89a;font-family:'DM Sans',sans-serif;font-weight:400}
     .universal-mobile-services-toggle[aria-expanded="true"]:after{content:"-"}
-    .universal-mobile-services-menu{display:none;max-width:430px;margin:3px auto 10px;padding:6px;border:1px solid #282828;background:#111;text-align:left}
-    .universal-mobile-services-menu.open{display:grid}
-    .mobile-menu .universal-mobile-services-menu a{display:block!important;padding:10px 12px!important;color:#b7b0a6!important;font-family:'DM Sans',sans-serif!important;font-size:14px!important;font-weight:500!important;line-height:1.35!important;letter-spacing:.02em!important;text-transform:none!important;text-align:left!important;text-decoration:none!important}
-    .mobile-menu .universal-mobile-services-menu a:first-child{color:#f0ede8!important;border-bottom:1px solid #282828!important;margin-bottom:3px!important}
-    @media(max-width:980px){.nav-services-menu.universal-services-menu{display:none!important}.universal-mobile-services-toggle{font-size:20px}.mobile-menu .universal-mobile-services{order:initial}}
+    .universal-mobile-services-menu{display:none;max-width:430px;margin:4px auto 12px;padding:8px;border:1px solid #34312d;background:#111;text-align:left}
+    .universal-mobile-services-menu.open{display:block}
+    .mobile-menu .universal-mobile-services-menu a{display:block!important;padding:10px 13px!important;color:#b7b0a6!important;font-family:'DM Sans',sans-serif!important;font-size:15px!important;font-weight:500!important;line-height:1.35!important;letter-spacing:.01em!important;text-transform:none!important;text-align:left!important;text-decoration:none!important}
+    .mobile-menu .universal-mobile-services-menu a.universal-service-primary{border:1px solid rgba(200,184,154,.55)!important;background:rgba(200,184,154,.08)!important;margin:0 0 8px!important;padding:13px 14px!important;color:#f0ede8!important}
+    .mobile-menu .universal-mobile-services-menu a.universal-service-primary strong{display:block!important;font-size:15px!important;color:#e2ceb0!important;letter-spacing:.055em!important}
+    .mobile-menu .universal-mobile-services-menu a.universal-service-primary span{display:block!important;margin-top:4px!important;font-size:13px!important;color:#aaa299!important;letter-spacing:0!important}
+    .mobile-menu .universal-services-label{padding:8px 13px 4px;color:#8c8275;font-family:'DM Sans',sans-serif;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-align:left}
+    .mobile-menu .universal-services-divider{height:1px;margin:6px 13px;background:#282828}
+    @media(max-width:980px){
+      .nav-services-menu.universal-services-menu{display:none!important}
+      .header-socials{display:none!important}
+      .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)!important}
+      .burger.open span:nth-child(2){opacity:0!important}
+      .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)!important}
+      .universal-mobile-services-toggle{font-size:26px!important;font-weight:700!important;letter-spacing:-.02em!important;padding:11px 30px!important}
+      .mobile-menu .universal-mobile-services{order:initial}
+      .mobile-menu{overflow-y:auto!important;overscroll-behavior:contain!important}
+      .whatsapp-float{display:none!important}
+    }
+    @media(max-width:520px){
+      .universal-mobile-services-toggle{font-size:24px!important}
+      .universal-mobile-services-menu{width:min(100%,390px);max-height:47vh;overflow-y:auto;margin-top:2px}
+    }
     @media(min-width:981px){.universal-mobile-services{display:none!important}}
   `;
   document.head.appendChild(style);
@@ -72,7 +90,7 @@
 
     const wrapper = document.createElement('div');
     wrapper.className = 'universal-mobile-services';
-    wrapper.innerHTML = `<button class="universal-mobile-services-toggle" type="button" aria-expanded="false">Services</button><div class="universal-mobile-services-menu">${services.map((service) => `<a href="${service.href}">${service.label}</a>`).join('')}</div>`;
+    wrapper.innerHTML = `<button class="universal-mobile-services-toggle" type="button" aria-expanded="false">Services</button><div class="universal-mobile-services-menu">${serviceMenuMarkup()}</div>`;
     insertionPoint.before(wrapper);
     if (oldButton) oldButton.remove();
     if (oldSubmenu) oldSubmenu.remove();
@@ -94,6 +112,7 @@
     burger.dataset.universalBound = 'true';
     burger.addEventListener('click', () => {
       const open = mobile.classList.toggle('open');
+      burger.classList.toggle('open', open);
       burger.setAttribute('aria-expanded', String(open));
     });
   });

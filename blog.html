@@ -702,6 +702,74 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
 }
 /* ===== End mobile services menu alignment fix ===== */
 
+/* ===== Compact mobile blog cards ===== */
+@media (max-width: 640px) {
+  .page-hero {
+    padding: 46px 18px 36px !important;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(36px, 11vw, 46px) !important;
+    line-height: 1.04 !important;
+  }
+
+  .blog-list {
+    padding: 0 18px 48px !important;
+  }
+
+  .featured-post {
+    margin-top: 28px !important;
+    margin-bottom: 18px !important;
+  }
+
+  .featured-visual {
+    min-height: 165px !important;
+  }
+
+  .featured-content {
+    padding: 22px 20px !important;
+  }
+
+  .featured-content h2 {
+    font-size: 24px !important;
+    line-height: 1.18 !important;
+  }
+
+  .featured-content p {
+    display: none !important;
+  }
+
+  .posts-grid {
+    gap: 14px !important;
+    border: 0 !important;
+    background: transparent !important;
+  }
+
+  .post-card {
+    min-height: 0 !important;
+    border: 1px solid var(--border) !important;
+  }
+
+  .post-card-visual {
+    aspect-ratio: 16 / 8 !important;
+  }
+
+  .post-card-content {
+    padding: 19px !important;
+  }
+
+  .post-card h3 {
+    font-size: 18px !important;
+    line-height: 1.28 !important;
+    margin-bottom: 10px !important;
+  }
+
+  .post-card p {
+    display: none !important;
+  }
+}
+/* ===== End compact mobile blog cards ===== */
+
 </style><link rel="stylesheet" href="/readability-preview.css"></head><body><nav>
   <a href="index.html" class="nav-logo" aria-label="Linkeol home"><img src="/uploads/linkeol-logo-clean.png" alt="Linkeol" style="display:block;width:auto;height:clamp(40px,3vw,52px)"></a>
   <ul class="nav-links">
@@ -751,17 +819,47 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
     <span class="glow-blob mgb1"></span>
     <span class="glow-blob mgb2"></span>
   </div><div class="mini-hero-fg"><div class="eyebrow">Blog</div><h1>Practical notes on LinkedIn growth.</h1><p class="lead">Articles on B2B outreach, founder positioning, LinkedIn content and sales systems.</p></div></section><section class="blog-list"><!-- BLOG_POSTS_START -->
-<a class="featured-post" href="/insights/b2b-lead-generation-dubai-uae/">
-  <div class="featured-visual" style="background:linear-gradient(135deg,rgba(10,10,10,.12),rgba(10,10,10,.72)),url('/uploads/b2b-lead-generation-dubai-uae.jpg') center/cover"></div>
+<a class="featured-post" href="/insights/linkedin-lead-generation-saas-companies-singapore/">
+  <div class="featured-visual" style="background:linear-gradient(135deg,rgba(10,10,10,.12),rgba(10,10,10,.72)),url('/uploads/saas-lead-generation-singapore-editorial.jpg') center/cover"></div>
   <div class="featured-content">
-    <div class="blog-tag">UAE Lead Generation</div>
-    <div class="blog-meta"><time datetime="2026-09-01">September 1, 2026</time> · Oleg Cherkas</div>
-    <h2>B2B Lead Generation in Dubai and the UAE: What Actually Works</h2>
-    <p>A practical guide to B2B lead generation in Dubai and the UAE, covering Abu Dhabi, Sharjah, Ajman and all seven emirates.</p>
+    <div class="blog-tag">SaaS Lead Generation</div>
+    <div class="blog-meta"><time datetime="2026-09-03">September 3, 2026</time> · Oleg Cherkas</div>
+    <h2>LinkedIn Lead Generation for SaaS Companies in Singapore</h2>
+    <p>A practical LinkedIn lead generation framework for SaaS companies targeting regional headquarters, technology firms and B2B decision makers in Singapore.</p>
     <span class="blog-arrow">Read article →</span>
   </div>
 </a>
 <div class="posts-grid">
+<a class="post-card" href="/insights/linkedin-lead-generation-saas-companies-dubai-uae/">
+  <div class="post-card-visual" style="background-image:url('/uploads/saas-lead-generation-dubai-uae-editorial.jpg')"></div>
+  <div class="post-card-content">
+    <div class="blog-tag">SaaS Lead Generation</div>
+    <div class="blog-meta"><time datetime="2026-09-03">September 3, 2026</time></div>
+    <h3>LinkedIn Lead Generation for SaaS Companies in Dubai and the UAE</h3>
+    <p>A practical LinkedIn lead generation framework for SaaS companies targeting buyers in Dubai, Abu Dhabi, Sharjah and across the UAE.</p>
+    <span class="blog-arrow">Read article →</span>
+  </div>
+</a>
+<a class="post-card" href="/insights/linkedin-lead-generation-saas-companies-riyadh-saudi-arabia/">
+  <div class="post-card-visual" style="background-image:url('/uploads/saas-lead-generation-riyadh-saudi-arabia-editorial.jpg')"></div>
+  <div class="post-card-content">
+    <div class="blog-tag">SaaS Lead Generation</div>
+    <div class="blog-meta"><time datetime="2026-09-03">September 3, 2026</time></div>
+    <h3>LinkedIn Lead Generation for SaaS Companies in Riyadh and Saudi Arabia</h3>
+    <p>How SaaS companies can use LinkedIn to reach decision makers in Riyadh, Jeddah, Dammam, Al Khobar and across Saudi Arabia.</p>
+    <span class="blog-arrow">Read article →</span>
+  </div>
+</a>
+<a class="post-card" href="/insights/b2b-lead-generation-dubai-uae/">
+  <div class="post-card-visual" style="background-image:url('/uploads/b2b-lead-generation-dubai-uae.jpg')"></div>
+  <div class="post-card-content">
+    <div class="blog-tag">UAE Lead Generation</div>
+    <div class="blog-meta"><time datetime="2026-09-01">September 1, 2026</time></div>
+    <h3>B2B Lead Generation in Dubai and the UAE: What Actually Works</h3>
+    <p>A practical guide to B2B lead generation in Dubai and the UAE, covering Abu Dhabi, Sharjah, Ajman and all seven emirates.</p>
+    <span class="blog-arrow">Read article →</span>
+  </div>
+</a>
 <a class="post-card" href="/insights/b2b-lead-generation-saudi-arabia-regional-guide/">
   <div class="post-card-visual" style="background-image:url('/uploads/b2b-lead-generation-saudi-arabia.jpg')"></div>
   <div class="post-card-content">

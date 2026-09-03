@@ -321,16 +321,33 @@ function buildArticles() {
 
 function buildSitemap() {
   const staticUrls = [
-    '/',
-    '/b2b-lead-generation-service',
-    '/service-lead-generation',
-    '/service-monthly-linkedin-outreach-management',
-    '/service-linkedin-content-for-founders',
-    '/service-profile-optimization',
-    '/contact',
-    '/blog',
+    { url: '/' },
+    { url: '/about/', lastmod: '2026-09-03' },
+    { url: '/results/', lastmod: '2026-09-03' },
+    { url: '/services' },
+    { url: '/b2b-lead-generation-service' },
+    { url: '/service-lead-generation' },
+    { url: '/service-monthly-linkedin-outreach-management' },
+    { url: '/service-linkedin-content-for-founders' },
+    { url: '/service-profile-optimization' },
+    { url: '/contact' },
+    { url: '/blog' },
+    { url: '/locations/', lastmod: '2026-09-03' },
+    { url: '/locations/uae/dubai/', lastmod: '2026-09-02' },
+    { url: '/locations/uae/abu-dhabi/', lastmod: '2026-09-02' },
+    { url: '/locations/uae/sharjah/', lastmod: '2026-09-02' },
+    { url: '/locations/uae/ajman/', lastmod: '2026-09-02' },
+    { url: '/locations/uae/ras-al-khaimah/', lastmod: '2026-09-02' },
+    { url: '/locations/uae/fujairah/', lastmod: '2026-09-02' },
+    { url: '/locations/saudi-arabia/riyadh/', lastmod: '2026-09-02' },
+    { url: '/locations/saudi-arabia/jeddah/', lastmod: '2026-09-02' },
+    { url: '/locations/saudi-arabia/dammam-khobar/', lastmod: '2026-09-02' },
+    { url: '/locations/saudi-arabia/makkah/', lastmod: '2026-09-02' },
+    { url: '/locations/saudi-arabia/madinah/', lastmod: '2026-09-02' },
+    { url: '/locations/qatar/doha/', lastmod: '2026-09-02' },
+    { url: '/locations/singapore/', lastmod: '2026-09-02' },
   ];
-  const urls = staticUrls.map((url) => `  <url><loc>${siteUrl}${url}</loc></url>`);
+  const urls = staticUrls.map(({ url, lastmod }) => `  <url><loc>${siteUrl}${url}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ''}</url>`);
   for (const post of posts) {
     urls.push(`  <url><loc>${articleUrl(post.slug)}</loc><lastmod>${escapeHtml(post.updated || post.date || '')}</lastmod></url>`);
   }
