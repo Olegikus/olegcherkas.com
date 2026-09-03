@@ -59,7 +59,7 @@ nav{
   content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
   background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0.3;
 }
-/* HERO BACKGROUND — single warm diagonal wash, no shapes, no layered elements */
+/* HERO BACKGROUND - single warm diagonal wash, no shapes, no layered elements */
 .hero{
   background:
     linear-gradient(125deg,rgba(200,184,154,0.22) 0%,rgba(30,26,18,0.5) 30%,rgba(10,10,10,0) 55%),
@@ -1235,7 +1235,8 @@ footer{padding:28px 56px;
 <nav>
   <a href="index.html" class="nav-logo" aria-label="Linkeol home"><img src="/uploads/linkeol-logo-clean.png" alt="Linkeol" style="display:block;width:auto;height:clamp(40px,3vw,52px)"></a>
   <ul class="nav-links">
-    <li><a href="index.html#about">About</a></li>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about/">About</a></li>
     <li class="nav-services">
       <a href="services.html">Services</a>
       <div class="nav-services-menu">
@@ -1251,7 +1252,7 @@ footer{padding:28px 56px;
 </div>
     </li>
     <li><a href="/locations/">Locations</a></li>
-    <li><a href="#results">Results</a></li>
+    <li><a href="/results/">Results</a></li>
     <li><a href="blog.html">Blog</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
@@ -1259,7 +1260,8 @@ footer{padding:28px 56px;
   <span></span><span></span><span></span>
 </button>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="index.html" onclick="toggleMenu()">Home</a>
+  <a href="/" onclick="toggleMenu()">Home</a>
+  <a href="/about/" onclick="toggleMenu()">About</a>
   <button class="mobile-services-toggle" id="mobileServicesBtn" onclick="toggleMobileServices()" aria-expanded="false">Services<span class="mobile-services-arrow">&#9662;</span></button>
 <div class="mobile-services-submenu" id="mobileServicesSubmenu">
   <a href="b2b-lead-generation-service.html" onclick="toggleMenu()" class="mobile-sub-main">B2B lead generation</a>
@@ -1269,7 +1271,7 @@ footer{padding:28px 56px;
   <a href="service-linkedin-content-for-founders.html" onclick="toggleMenu()">LinkedIn content for founders</a>
 </div>
   <a href="/locations/" onclick="toggleMenu()">Locations</a>
-  <a href="index.html#results" onclick="toggleMenu()">Results</a>
+  <a href="/results/" onclick="toggleMenu()">Results</a>
   <a href="blog.html" onclick="toggleMenu()">Blog</a>
   
   <a href="contact.html" onclick="toggleMenu()">Contact</a>
@@ -1373,7 +1375,7 @@ footer{padding:28px 56px;
       <div class="about-item">
         <div class="about-item-icon">&#10022;</div>
         <div class="about-item-body">
-          <strong>1000+ touches</strong>
+          <strong>3000+ touches</strong>
           <span>Personalized touches sent to prospects every month across LinkedIn and email.</span>
         </div>
       </div>
@@ -1555,12 +1557,13 @@ footer{padding:28px 56px;
     </div>
   </div>
   <nav class="footer-nav">
-    <a href="index.html#about">About</a>
-    <a href="services.html">Services</a>
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/services">Services</a>
     <a href="/locations/">Locations</a>
-    <a href="#results">Results</a>
-    
-    <a href="contact.html">Contact</a>
+    <a href="/results/">Results</a>
+    <a href="/blog">Blog</a>
+    <a href="/contact">Contact</a>
   </nav>
 </footer>
 

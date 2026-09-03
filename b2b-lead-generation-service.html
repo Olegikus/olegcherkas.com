@@ -1060,6 +1060,7 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
 }
 /* ===== End mobile services menu alignment fix ===== */
 
+.campaign-proof-section{padding:56px 72px;border-bottom:1px solid var(--border);background:#0d0d0d}.campaign-proof-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:minmax(0,.8fr) minmax(360px,1.2fr);gap:48px;align-items:center}.campaign-proof-kicker{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:13px}.campaign-proof-copy h2{font-family:'Sora',sans-serif;font-size:clamp(30px,3.3vw,46px);line-height:1.12;margin-bottom:16px}.campaign-proof-copy p{color:var(--muted);font-size:17px;line-height:1.75}.campaign-proof-metrics{display:flex;gap:22px;flex-wrap:wrap;margin-top:22px}.campaign-proof-metric strong{display:block;font-family:'Sora',sans-serif;font-size:24px;color:var(--white)}.campaign-proof-metric span{font-size:12px;color:var(--muted)}.campaign-proof-link{display:inline-block;margin-top:22px;color:var(--accent);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em}.campaign-proof-image{background:#f5f7fb;border:1px solid var(--border2);height:390px;padding:16px;display:flex;align-items:center;justify-content:center}.campaign-proof-image img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}@media(max-width:900px){.campaign-proof-section{padding:42px 22px}.campaign-proof-inner{grid-template-columns:1fr;gap:28px}.campaign-proof-image{height:340px}}
 </style>
 <link rel="stylesheet" href="/readability-preview.css">
 </head>
@@ -1067,7 +1068,8 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
 <nav>
   <a href="index.html" class="nav-logo" aria-label="Linkeol home"><img src="/uploads/linkeol-logo-clean.png" alt="Linkeol" style="display:block;width:auto;height:clamp(40px,3vw,52px)"></a>
   <ul class="nav-links">
-    <li><a href="index.html#about">About</a></li>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about/">About</a></li>
     <li class="nav-services">
       <a href="services.html">Services</a>
       <div class="nav-services-menu priority-menu">
@@ -1083,7 +1085,8 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
         <a href="service-linkedin-content-for-founders.html">LinkedIn content for founders</a>
       </div>
     </li>
-    <li><a href="index.html#results">Results</a></li>
+    <li><a href="/locations/">Locations</a></li>
+    <li><a href="/results/">Results</a></li>
     <li><a href="blog.html">Blog</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
@@ -1091,7 +1094,8 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
   <span></span><span></span><span></span>
 </button>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="index.html" onclick="toggleMenu()">Home</a>
+  <a href="/" onclick="toggleMenu()">Home</a>
+  <a href="/about/" onclick="toggleMenu()">About</a>
   <button class="mobile-services-toggle" id="mobileServicesBtn" onclick="toggleMobileServices()" aria-expanded="false">Services<span class="mobile-services-arrow">&#9662;</span></button>
 <div class="mobile-services-submenu" id="mobileServicesSubmenu">
   <a href="b2b-lead-generation-service.html" onclick="toggleMenu()" class="mobile-sub-main">B2B lead generation</a>
@@ -1100,7 +1104,8 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
   <a href="service-profile-optimization.html" onclick="toggleMenu()">LinkedIn profile optimization</a>
   <a href="service-linkedin-content-for-founders.html" onclick="toggleMenu()">LinkedIn content for founders</a>
 </div>
-  <a href="index.html#results" onclick="toggleMenu()">Results</a>
+  <a href="/locations/" onclick="toggleMenu()">Locations</a>
+  <a href="/results/" onclick="toggleMenu()">Results</a>
   <a href="blog.html" onclick="toggleMenu()">Blog</a>
   
   <a href="contact.html" onclick="toggleMenu()">Contact</a>
@@ -1136,6 +1141,19 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
   </div>
 </section>
 
+<section class="campaign-proof-section" aria-labelledby="b2b-campaign-proof-title">
+  <div class="campaign-proof-inner">
+    <div class="campaign-proof-copy">
+      <div class="campaign-proof-kicker">B2B SaaS campaign example</div>
+      <h2 id="b2b-campaign-proof-title">41 replies from a focused LinkedIn campaign</h2>
+      <p>A real campaign example showing how clear targeting, relevant messaging and structured follow-up can create qualified conversations at scale.</p>
+      <div class="campaign-proof-metrics"><div class="campaign-proof-metric"><strong>531</strong><span>requests sent</span></div><div class="campaign-proof-metric"><strong>164</strong><span>accepted</span></div><div class="campaign-proof-metric"><strong>41</strong><span>replies</span></div></div>
+      <a class="campaign-proof-link" href="/results/">See more campaign results →</a>
+    </div>
+    <div class="campaign-proof-image"><img src="/uploads/results/campaign-b2b-saas-scale.png" alt="B2B SaaS LinkedIn campaign showing 531 requests, 164 accepted and 41 replies"></div>
+  </div>
+</section>
+
 <div class="service-content" id="how-it-works">
   <div class="breadcrumb">
     <a href="services.html">Services</a>
@@ -1162,7 +1180,7 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
       <div class="info-card outreach-card">
         <strong>LinkedIn and email outreach</strong>
         <div class="outreach-metrics">
-          <div class="outreach-metric"><b>1,000<span>+</span></b><small>unique personalized touches every month</small></div>
+          <div class="outreach-metric"><b>3,000<span>+</span></b><small>unique personalized touches every month</small></div>
           <div class="outreach-metric"><b>36<span>%</span></b><small>connection acceptance rate we aim for</small></div>
         </div>
         <p class="outreach-note">A coordinated sequence of LinkedIn and email follow-ups running over several weeks, built to turn familiarity into qualified conversations.</p>
@@ -1184,7 +1202,7 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
       </div>
       <div class="step process-step process-core">
         <div class="step-num">03</div>
-        <div><span class="process-label">Core sequence</span><strong>Multi-step follow-up</strong><p>A structured sequence runs over several weeks, with 400–1,000 LinkedIn messages per month including follow-ups. Each message adds context instead of repeating the same pitch.</p></div>
+        <div><span class="process-label">Core sequence</span><strong>Multi-step follow-up</strong><p>A structured sequence runs over several weeks, with 400-1,000 LinkedIn messages per month including follow-ups. Each message adds context instead of repeating the same pitch.</p></div>
       </div>
       <div class="step process-step process-core">
         <div class="step-num">04</div>
@@ -1349,9 +1367,13 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
     </div>
   </div>
   <nav class="footer-nav">
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/services">Services</a>
+    <a href="/locations/">Locations</a>
+    <a href="/results/">Results</a>
+    <a href="/blog">Blog</a>
+    <a href="/contact">Contact</a>
   </nav>
 </footer>
 <script>
