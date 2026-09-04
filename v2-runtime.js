@@ -1,15 +1,17 @@
 (() => {
   const query = new URL(document.currentScript.src).searchParams;
   const route = window.location.pathname.replace(/\/+$/, '') || '/';
-  const previewPage = route === '/'
-    ? 'index.html'
-    : route === '/about'
-      ? 'about/index.html'
-      : route === '/locations'
-        ? 'locations/index.html'
-        : route === '/results'
-          ? 'results/index.html'
-          : route.split('/').pop();
+  const routePages = {
+    '/': 'index.html', '/about': 'about/index.html', '/locations': 'locations/index.html',
+    '/results': 'results/index.html', '/blog': 'blog.html', '/contact': 'contact.html',
+    '/services': 'services.html', '/b2b-lead-generation-service': 'b2b-lead-generation-service.html',
+    '/service-monthly-linkedin-outreach-management': 'service-monthly-linkedin-outreach-management.html',
+    '/service-lead-generation': 'service-lead-generation.html',
+    '/service-profile-optimization': 'service-profile-optimization.html',
+    '/service-linkedin-content-for-founders': 'service-linkedin-content-for-founders.html'
+  };
+  const normalizedRoute = route.endsWith('/index.html') ? (route.slice(0, -11) || '/') : route;
+  const previewPage = routePages[normalizedRoute] || route.split('/').pop();
   const logoSrc = '/uploads/oc-logo-exact.jpg';
   const locationAssetRoot = '/uploads/location-assets';
   const pageNames = {
@@ -142,13 +144,21 @@
 
   if (previewPage === 'contact.html') {
     const photo = document.querySelector('.contact-hero-img');
-    if (photo && !photo.closest('.oc-contact-photo-stage')) {
+    if (photo) {
       const stage = document.createElement('div');
-      stage.className = 'oc-contact-photo-stage';
-      stage.style.backgroundImage = `linear-gradient(90deg, rgba(3,26,19,.78), rgba(3,26,19,.18) 34%, rgba(3,26,19,.18) 66%, rgba(3,26,19,.78)), url("${photo.getAttribute('src')}")`;
-      photo.before(stage);
-      stage.append(photo);
+      stage.className = 'oc-contact-network-visual';
+      stage.setAttribute('role', 'img');
+      stage.setAttribute('aria-label', 'International B2B conversations connected across markets');
+      stage.innerHTML = `<div class="oc-network-orbit orbit-one"></div><div class="oc-network-orbit orbit-two"></div><div class="oc-network-core"><span>OC</span><small>Growth systems</small></div><span class="oc-network-node node-one">Target</span><span class="oc-network-node node-two">Connect</span><span class="oc-network-node node-three">Follow up</span><span class="oc-network-node node-four">Convert</span>`;
+      photo.replaceWith(stage);
     }
+  }
+
+  if (previewPage === 'service-linkedin-content-for-founders.html') {
+    document.querySelector('.content-transformation')?.remove();
+    const engagement = document.querySelector('.content-engagement');
+    const introSection = document.querySelector('.content-value-grid')?.closest('section');
+    if (engagement && introSection) introSection.after(engagement);
   }
 
   if (previewPage === 'locations/index.html') {
@@ -171,7 +181,7 @@
         <div class="oc-market-summary"><span><strong>21</strong> cities</span><span><strong>7</strong> countries</span></div>
         <img class="oc-global-network" src="${locationAssetRoot}/global-network.png" alt="Global B2B outbound network connecting priority markets">
         <div class="oc-market-priority" aria-label="Priority markets">
-          <span>UAE</span><span>Saudi Arabia</span><span>Singapore</span><span>United Kingdom</span><span>Qatar</span><span>Malaysia</span><span>Australia</span>
+          <a href="#uae">UAE</a><a href="#saudi-arabia">Saudi Arabia</a><a href="#singapore">Singapore</a><a href="#united-kingdom">United Kingdom</a><a href="#qatar">Qatar</a><a href="#malaysia">Malaysia</a><a href="#australia">Australia</a>
         </div>`;
     }
 
@@ -246,7 +256,8 @@
       featuredGrid.className = 'oc-country-priority-grid';
       featuredGrid.innerHTML = marketData.map((market) => `
         <a class="oc-country-priority-card" href="#${market.id}">
-          <small>${market.label}</small><strong>${market.title.replace('LinkedIn B2B outbound ', '')}</strong>
+          <img src="${market.cities[0][1]}" alt="${market.label.split(' · ')[1]} market" loading="lazy">
+          <small>${market.label}</small><strong>${market.label.split(' · ')[1]}</strong>
           <span>${market.cities.length} ${market.cities.length === 1 ? 'market' : 'cities'} →</span>
         </a>`).join('');
     }
@@ -262,7 +273,7 @@
           </div>
           <div class="location-grid oc-expanded-location-grid ${market.cities.length === 1 ? 'oc-single-city' : ''}">
             ${market.cities.map(([city, image, description]) => `
-              <a class="location-card with-image" href="/locations/${market.id}/${city.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-')}/">
+              <a class="location-card with-image" href="${market.id === 'singapore' ? '/locations/singapore/' : `/locations/${market.id}/${market.id === 'saudi-arabia' && (city === 'Dammam' || city === 'Al Khobar') ? 'dammam-khobar' : city.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-')}/`}">
                 <img class="location-thumb" src="${image}" alt="${city} business district" width="800" height="400" loading="lazy">
                 <div class="location-card-content"><span class="status">Explore</span><div><h3>${city}</h3><p>${description}</p></div><span class="arrow">Explore ${city} →</span></div>
               </a>`).join('')}
@@ -284,97 +295,47 @@
     }
   }
 
-  const services = [
-    ['B2B lead generation', 'b2b-lead-generation-service.html'],
-    ['Monthly LinkedIn outreach', 'service-monthly-linkedin-outreach-management.html'],
-    ['LinkedIn lead generation setup', 'service-lead-generation.html'],
-    ['LinkedIn profile optimization', 'service-profile-optimization.html'],
-    ['LinkedIn content for founders', 'service-linkedin-content-for-founders.html']
-  ];
-  const locations = [
-    ['UAE', '/locations/uae.html'],
-    ['Saudi Arabia', '/locations/saudi-arabia.html'],
-    ['Singapore', '/locations/singapore.html'],
-    ['United Kingdom', '/locations/united-kingdom.html'],
-    ['Qatar', '/locations/qatar.html'],
-    ['Malaysia', '/locations/malaysia.html'],
-    ['Australia', '/locations/australia.html']
-  ];
-
-  const buildDesktopDropdown = (label, className, menuClass, items) => {
-    document.querySelectorAll('.nav-links').forEach((list) => {
-      const link = [...list.querySelectorAll(':scope > li > a, :scope > a')]
-        .find((item) => item.textContent.trim().toLowerCase() === label.toLowerCase());
-      if (!link) return;
-      let holder = link.parentElement?.tagName === 'LI' ? link.parentElement : null;
-      if (!holder) {
-        holder = document.createElement('li');
-        link.replaceWith(holder);
-        holder.append(link);
-      }
-      holder.classList.add(className, 'oc-nav-dropdown');
-      if (holder.querySelector(`.${menuClass}`)) return;
-      const menu = document.createElement('div');
-      menu.className = `${menuClass} oc-nav-dropdown-menu`;
-      menu.innerHTML = items.map(([name, href]) => `<a href="${href}">${name}</a>`).join('');
-      holder.append(menu);
-    });
-  };
-
-  buildDesktopDropdown('Services', 'nav-services', 'nav-services-menu', services);
-  buildDesktopDropdown('Locations', 'nav-locations', 'nav-locations-menu', locations);
-
-  const buildMobileDropdown = (label, slug, items) => {
-    document.querySelectorAll('.mobile-menu').forEach((menu) => {
-      if (menu.querySelector(`.oc-mobile-${slug}-toggle`)) return;
-      const link = [...menu.children].find((item) => item.tagName === 'A' && item.textContent.trim().toLowerCase() === label.toLowerCase());
-      if (!link) return;
-      const button = document.createElement('button');
-      button.className = `oc-mobile-menu-toggle oc-mobile-${slug}-toggle`;
-      button.type = 'button';
-      button.setAttribute('aria-expanded', 'false');
-      button.innerHTML = `${label}<span aria-hidden="true">⌄</span>`;
-      const submenu = document.createElement('div');
-      submenu.className = `oc-mobile-submenu oc-mobile-${slug}-submenu`;
-      submenu.innerHTML = items.map(([name, href]) => `<a href="${href}">${name}</a>`).join('');
-      link.replaceWith(button, submenu);
-      button.addEventListener('click', () => {
-        const open = submenu.classList.toggle('open');
-        button.classList.toggle('open', open);
-        button.setAttribute('aria-expanded', String(open));
+  if (previewPage === 'blog.html') {
+    const categories = ['All', 'Lead Generation', 'LinkedIn Strategy', 'Content', 'Markets', 'Case Studies'];
+    const normalizeCategory = (value) => {
+      const category = value.toLowerCase();
+      if (category.includes('case')) return 'Case Studies';
+      if (category.includes('content')) return 'Content';
+      if (category.includes('strategy') || category.includes('profile')) return 'LinkedIn Strategy';
+      if (category.includes('uae') || category.includes('saudi') || category.includes('gcc') || category.includes('market')) return 'Markets';
+      return 'Lead Generation';
+    };
+    const list = document.querySelector('.blog-list');
+    if (list && !list.querySelector('.oc-blog-filters')) {
+      const filters = document.createElement('div');
+      filters.className = 'oc-blog-filters';
+      filters.setAttribute('aria-label', 'Filter articles by topic');
+      filters.innerHTML = categories.map((category, index) => `<button type="button" class="${index === 0 ? 'active' : ''}" data-filter="${category}">${category}</button>`).join('');
+      list.prepend(filters);
+      const cards = list.querySelectorAll('.featured-post, .post-card');
+      cards.forEach((card) => {
+        const tag = card.querySelector('.blog-tag');
+        const normalized = normalizeCategory(tag?.textContent || '');
+        card.dataset.category = normalized;
+        if (tag) tag.textContent = normalized;
       });
-    });
-  };
-
-  buildMobileDropdown('Services', 'services', services);
-  buildMobileDropdown('Locations', 'locations', locations);
-
-  document.querySelectorAll('.mobile-services-toggle').forEach((button) => button.classList.add('oc-mobile-menu-toggle'));
-  document.querySelectorAll('.mobile-services-submenu').forEach((menu) => menu.classList.add('oc-mobile-submenu'));
+      filters.querySelectorAll('button').forEach((button) => button.addEventListener('click', () => {
+        filters.querySelectorAll('button').forEach((item) => item.classList.toggle('active', item === button));
+        cards.forEach((card) => { card.hidden = button.dataset.filter !== 'All' && card.dataset.category !== button.dataset.filter; });
+      }));
+    }
+  }
 
   if (menuState === 'mobile' || menuState === 'mobile-locations' || menuState === 'mobile-services') {
     document.querySelectorAll('.mobile-menu').forEach((menu) => menu.classList.add('open'));
     document.querySelectorAll('.burger').forEach((burger) => burger.classList.add('open'));
   }
   if (menuState === 'mobile-locations') {
-    document.querySelectorAll('.oc-mobile-locations-submenu').forEach((menu) => menu.classList.add('open'));
-    document.querySelectorAll('.oc-mobile-locations-toggle').forEach((button) => {
-      button.classList.add('open');
-      button.setAttribute('aria-expanded', 'true');
-    });
+    [...document.querySelectorAll('.oc-mobile-accordion-toggle')].find((button) => button.textContent.trim() === 'Locations')?.click();
   }
   if (menuState === 'mobile-services') {
     document.documentElement.classList.add('preview-menu-mobile-services');
-    document.querySelectorAll('.oc-mobile-services-submenu, .mobile-services-submenu, .universal-mobile-services-menu').forEach((menu) => menu.classList.add('open'));
-    document.querySelectorAll('.oc-mobile-services-toggle, .mobile-services-toggle, .universal-mobile-services-toggle').forEach((button) => {
-      button.classList.add('open');
-      button.setAttribute('aria-expanded', 'true');
-    });
-    setTimeout(() => {
-      const originalButton = document.querySelector('.universal-mobile-services-toggle, .mobile-services-toggle');
-      const originalMenu = document.querySelector('.universal-mobile-services-menu, .mobile-services-submenu');
-      if (originalButton && originalMenu && originalMenu.getBoundingClientRect().height < 40) originalButton.click();
-    }, 650);
+    [...document.querySelectorAll('.oc-mobile-accordion-toggle')].find((button) => button.textContent.trim() === 'Services')?.click();
   }
 
   /* One restrained emphasis per text block: never more than a short 1–3 word phrase. */
@@ -428,28 +389,5 @@
   if (menuState === 'locations') {
     document.documentElement.classList.add('preview-menu-locations');
   }
-
-  /* Keep the long mobile navigation usable: Services and Locations behave as an accordion. */
-  setTimeout(() => {
-    const servicesButton = document.querySelector('.universal-mobile-services-toggle, .mobile-services-toggle, .oc-mobile-services-toggle');
-    const servicesMenu = document.querySelector('.universal-mobile-services-menu, .mobile-services-submenu, .oc-mobile-services-submenu');
-    const locationsButton = document.querySelector('.oc-mobile-locations-toggle');
-    const locationsMenu = document.querySelector('.oc-mobile-locations-submenu');
-    if (servicesButton && locationsButton && !servicesButton.dataset.ocAccordionReady) {
-      servicesButton.dataset.ocAccordionReady = 'true';
-      servicesButton.addEventListener('click', () => {
-        if (servicesButton.getAttribute('aria-expanded') !== 'true') return;
-        locationsMenu?.classList.remove('open');
-        locationsButton.classList.remove('open');
-        locationsButton.setAttribute('aria-expanded', 'false');
-      });
-      locationsButton.addEventListener('click', () => {
-        if (locationsButton.getAttribute('aria-expanded') !== 'true') return;
-        servicesMenu?.classList.remove('open');
-        servicesButton.classList.remove('open');
-        servicesButton.setAttribute('aria-expanded', 'false');
-      });
-    }
-  }, 0);
 
 })();

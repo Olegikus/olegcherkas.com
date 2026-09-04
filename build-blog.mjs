@@ -346,6 +346,17 @@ function buildSitemap() {
     { url: '/locations/saudi-arabia/madinah/', lastmod: '2026-09-02' },
     { url: '/locations/qatar/doha/', lastmod: '2026-09-02' },
     { url: '/locations/singapore/', lastmod: '2026-09-02' },
+    { url: '/locations/united-kingdom/london/', lastmod: '2026-09-05' },
+    { url: '/locations/united-kingdom/manchester/', lastmod: '2026-09-05' },
+    { url: '/locations/united-kingdom/birmingham/', lastmod: '2026-09-05' },
+    { url: '/locations/united-kingdom/leeds/', lastmod: '2026-09-05' },
+    { url: '/locations/malaysia/kuala-lumpur/', lastmod: '2026-09-05' },
+    { url: '/locations/malaysia/cyberjaya/', lastmod: '2026-09-05' },
+    { url: '/locations/malaysia/johor-bahru/', lastmod: '2026-09-05' },
+    { url: '/locations/australia/sydney/', lastmod: '2026-09-05' },
+    { url: '/locations/australia/melbourne/', lastmod: '2026-09-05' },
+    { url: '/locations/australia/brisbane/', lastmod: '2026-09-05' },
+    { url: '/locations/australia/perth/', lastmod: '2026-09-05' },
   ];
   const urls = staticUrls.map(({ url, lastmod }) => `  <url><loc>${siteUrl}${url}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ''}</url>`);
   for (const post of posts) {

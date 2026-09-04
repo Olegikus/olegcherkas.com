@@ -184,6 +184,41 @@ const pages = [
   }
 ];
 
+const expansionCities = [
+  ['United Kingdom','united-kingdom','London','london','Global headquarters, finance, technology and professional services.',['Finance','Technology','Consulting','Enterprise']],
+  ['United Kingdom','united-kingdom','Manchester','manchester','Technology, media, professional services and advanced manufacturing.',['Technology','Media','Services','Manufacturing']],
+  ['United Kingdom','united-kingdom','Birmingham','birmingham','Manufacturing, logistics, property and mid-market professional services.',['Manufacturing','Logistics','Property','Services']],
+  ['United Kingdom','united-kingdom','Leeds','leeds','Finance, legal, healthcare and northern technology networks.',['Finance','Legal','Healthcare','Technology']],
+  ['Malaysia','malaysia','Kuala Lumpur','kuala-lumpur','Regional headquarters, finance, technology and enterprise services.',['Regional HQ','Finance','Technology','Consulting']],
+  ['Malaysia','malaysia','Cyberjaya','cyberjaya','Technology campuses, cloud, digital infrastructure and shared services.',['Cloud','Technology','Infrastructure','Shared services']],
+  ['Malaysia','malaysia','Johor Bahru','johor-bahru','Manufacturing, logistics, data centres and Singapore-linked commerce.',['Manufacturing','Logistics','Data centres','Trade']],
+  ['Australia','australia','Sydney','sydney','Corporate headquarters, finance, technology and consulting.',['Enterprise','Finance','Technology','Consulting']],
+  ['Australia','australia','Melbourne','melbourne','Technology, finance, healthcare, education and professional services.',['Technology','Finance','Healthcare','Education']],
+  ['Australia','australia','Brisbane','brisbane','Technology, infrastructure, energy and growing mid-market businesses.',['Technology','Infrastructure','Energy','Mid-market']],
+  ['Australia','australia','Perth','perth','Resources, engineering, logistics and specialist professional services.',['Resources','Engineering','Logistics','Services']]
+];
+
+for (const [region,regionSlug,city,citySlug,market,tags] of expansionCities) {
+  const peers = expansionCities.filter((entry) => entry[1] === regionSlug && entry[2] !== city).slice(0,3);
+  pages.push({
+    path:`locations/${regionSlug}/${citySlug}/index.html`,city,region,image:`location-assets/${citySlug}.png`,
+    imageAlt:`${city} business district`,
+    lead:`Reach relevant ${city} decision makers with LinkedIn B2B outreach built around the city's commercial landscape.`,
+    signal:market,tags,whyTitle:`${city} needs its own account and message strategy`,
+    paragraphs:[
+      `${city} has a distinct mix of ${market.toLowerCase()} A useful campaign starts by separating the accounts and roles with a credible reason to buy.`,
+      `We build <strong>market-specific targeting</strong> around company type, seniority, commercial context and timing instead of reusing a generic international list.`,
+      `The result is a focused LinkedIn and email sequence that sounds relevant to the buyer and gives each follow-up a clear purpose.`
+    ],
+    signals:[['Market structure',market],['Buying reality','Credibility depends on sector, role and local commercial context'],['Outbound implication','Research the account before writing the message']],
+    sectors:[[tags[0],`Relevant ${tags[0].toLowerCase()} companies and decision makers in ${city}.`],[tags[1],`Senior ${tags[1].toLowerCase()} buyers and commercial teams.`],[tags[2],`Established and growing organisations connected to ${tags[2].toLowerCase()}.`],[tags[3],`Specialist ${tags[3].toLowerCase()} businesses with a clear B2B need.`],['Professional services','Consulting, recruitment, legal, finance and expert-led firms.'],['B2B technology','SaaS, platforms and technology providers serving local organisations.'],['HR & recruitment','Talent, staffing, executive search and people-technology providers.']],
+    faq:[[ `Can LinkedIn generate B2B leads in ${city}?`,`Yes. It works best when the account list, proof and message are specific to the buyer's sector and role.`],[`Who can you target in ${city}?`,'Campaigns can reach founders, executives, commercial leaders and relevant functional decision makers.'],['Can LinkedIn and email work together?','Yes. Both channels can use the same account research and coordinated follow-up logic.'],[`Should ${city} use a separate campaign?`,'Yes when the market, buyer expectations or sector mix differ from the rest of the region.']],
+    sourceName:`${region} market overview`,sourceUrl:'https://www.worldbank.org/',
+    related:peers.map((entry)=>[entry[2],`/locations/${regionSlug}/${entry[3]}/`,entry[4]]),
+    cta:`Build a ${city} campaign around accounts that can actually buy.`
+  });
+}
+
 const metaDescriptions = {
   Sharjah: 'LinkedIn B2B lead generation in Sharjah for manufacturing, education, logistics and SME decision makers through focused, personalised outreach.',
   Ajman: 'LinkedIn B2B lead generation in Ajman for owner-led SMEs, manufacturers, traders and service businesses using precise targeting and structured follow-up.',
@@ -254,10 +289,11 @@ const locationFooter = `<footer><div class="footer-left"><div class="footer-copy
 function render(page) {
   const canonical = `https://olegcherkas.com/${page.path.replace(/index\.html$/, '')}`;
   const title = `LinkedIn B2B Lead Generation in ${page.city} | Oleg Cherkas`;
-  const description = metaDescriptions[page.city];
-  if (!description) throw new Error(`Meta description not found for ${page.city}`);
-  const insight = relatedInsights[page.city];
-  if (!insight) throw new Error(`Related insight not found for ${page.city}`);
+  const description = metaDescriptions[page.city] || `LinkedIn B2B lead generation in ${page.city} with focused account research, personalised outreach and structured follow-up.`;
+  const insight = relatedInsights[page.city] || {
+    title: 'Practical notes on LinkedIn growth', href: '/blog',
+    text: `Explore targeting, positioning and outreach ideas for B2B growth in ${page.region}.`
+  };
   const faqJson = page.faq.map(([question,answer]) => ({'@type':'Question',name:question,acceptedAnswer:{'@type':'Answer',text:answer}}));
   const area = page.city === 'Dammam and Al Khobar'
     ? [
@@ -286,13 +322,13 @@ function render(page) {
   return `<!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${esc(title)}</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="${canonical}">
-<meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(page.lead)}"><meta property="og:url" content="${canonical}"><meta property="og:image" content="https://olegcherkas.com/uploads/locations/${page.image}">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="LinkedIn B2B Lead Generation in ${esc(page.city)}"><meta name="twitter:description" content="${esc(page.lead)}"><meta name="twitter:image" content="https://olegcherkas.com/uploads/locations/${page.image}">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="/locations/location-pages.css"><script type="application/ld+json">${JSON.stringify(schema)}</script></head>
+<meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(page.lead)}"><meta property="og:url" content="${canonical}"><meta property="og:image" content="https://olegcherkas.com/uploads/${page.image.includes('/') ? page.image : `locations/${page.image}`}">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="LinkedIn B2B Lead Generation in ${esc(page.city)}"><meta name="twitter:description" content="${esc(page.lead)}"><meta name="twitter:image" content="https://olegcherkas.com/uploads/${page.image.includes('/') ? page.image : `locations/${page.image}`}">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="/locations/location-pages.css"><link rel="stylesheet" href="/v2-overrides.css?v=19"><script type="application/ld+json">${JSON.stringify(schema)}</script></head>
 <body><a class="skip-link" href="#main">Skip to content</a>
 ${locationNav}
 ${locationMobileMenu}
-<main id="main"><section class="hero"><div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/locations/">Locations</a><span>/</span><span>${esc(page.city)}</span></div><div class="hero-grid"><div><div class="eyebrow">${esc(page.city)} · ${esc(page.region)}</div><h1>LinkedIn B2B lead generation in ${esc(page.city)}</h1><p class="hero-lead">${esc(page.lead)}</p><div class="hero-actions"><a href="https://calendly.com/oleg-olegcherkas/30min" target="_blank" class="btn-primary">Discuss a ${esc(page.city)} campaign →</a><a href="/b2b-lead-generation-service" class="btn-secondary">See the full service</a></div></div><aside class="city-panel city-visual"><figure class="city-image"><img src="/uploads/locations/${page.image}" alt="${esc(page.imageAlt)}" width="1600" height="800" fetchpriority="high"></figure><div class="city-market"><small>Market signal</small><strong>${esc(page.signal)}</strong><div class="city-tags">${page.tags.map(tag=>`<span>${esc(tag)}</span>`).join('')}</div></div></aside></div></section>
+<main id="main"><section class="hero"><div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/locations/">Locations</a><span>/</span><span>${esc(page.city)}</span></div><div class="hero-grid"><div><div class="eyebrow">${esc(page.city)} · ${esc(page.region)}</div><h1>LinkedIn B2B lead generation in ${esc(page.city)}</h1><p class="hero-lead">${esc(page.lead)}</p><div class="hero-actions"><a href="https://calendly.com/oleg-olegcherkas/30min" target="_blank" class="btn-primary">Discuss a ${esc(page.city)} campaign →</a><a href="/b2b-lead-generation-service" class="btn-secondary">See the full service</a></div></div><aside class="city-panel city-visual"><figure class="city-image"><img src="/uploads/${page.image.includes('/') ? page.image : `locations/${page.image}` }" alt="${esc(page.imageAlt)}" width="1600" height="800" fetchpriority="high"></figure><div class="city-market"><small>Market signal</small><strong>${esc(page.signal)}</strong><div class="city-tags">${page.tags.map(tag=>`<span>${esc(tag)}</span>`).join('')}</div></div></aside></div></section>
 <section class="page-section"><div class="section-inner"><div class="split"><div class="section-heading"><div class="eyebrow">Why ${esc(page.city)} is different</div><h2>${esc(page.whyTitle)}</h2></div><div class="body-copy">${page.paragraphs.map(p=>`<p>${p}</p>`).join('')}</div></div><div class="signal-list">${signalCards}</div><p class="source-note">Market context informed by <a href="${page.sourceUrl}" target="_blank" rel="noopener">${esc(page.sourceName)}</a>.</p></div></section>
 <section class="page-section"><div class="section-inner"><div class="section-heading"><div class="eyebrow">Ideal customer profiles</div><h2>Who we can target in ${esc(page.city)}</h2><p>Campaigns are filtered by sector, company type, seniority and a credible reason for the conversation.</p></div><div class="card-grid">${sectorCards}</div></div></section>
 <section class="page-section"><div class="section-inner"><div class="section-heading"><div class="eyebrow">Execution</div><h2>How ${esc(page.city)} LinkedIn outreach is built</h2></div><div class="process-list">${steps}</div></div></section>
@@ -356,6 +392,9 @@ for (const item of existingPageHrCards) {
   html = html.replace(/<script>const burger=document\.querySelector\('\.burger'\);[\s\S]*?<\/script>/, '');
   if (!html.includes('/site-navigation.js')) {
     html = html.replace('</body>', '<script src="/site-navigation.js"></script>\n</body>');
+  }
+  if (!html.includes('/v2-overrides.css')) {
+    html = html.replace('</head>', '<link rel="stylesheet" href="/v2-overrides.css?v=19"></head>');
   }
   fs.writeFileSync(item.path, html);
 }
