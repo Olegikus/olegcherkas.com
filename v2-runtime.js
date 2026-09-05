@@ -172,16 +172,16 @@
     if (featuredHeading) featuredHeading.textContent = 'Priority markets for international B2B growth';
 
     const featuredLead = document.querySelector('#featured .section-heading p');
-    if (featuredLead) featuredLead.textContent = 'Seven markets, prioritised around current outbound activity and practical commercial opportunity.';
+    if (featuredLead) featuredLead.textContent = 'Ten markets, prioritised around current outbound activity and practical commercial opportunity.';
 
     const panel = document.querySelector('.locations-hero .city-panel');
     if (panel) {
       panel.classList.add('oc-locations-visual');
       panel.innerHTML = `
-        <div class="oc-market-summary"><span><strong>21</strong> cities</span><span><strong>7</strong> countries</span></div>
+        <div class="oc-market-summary"><span><strong>27</strong> cities</span><span><strong>10</strong> countries</span></div>
         <img class="oc-global-network" src="${locationAssetRoot}/global-network.png" alt="Global B2B outbound network connecting priority markets">
         <div class="oc-market-priority" aria-label="Priority markets">
-          <a href="#uae">UAE</a><a href="#saudi-arabia">Saudi Arabia</a><a href="#singapore">Singapore</a><a href="#united-kingdom">United Kingdom</a><a href="#qatar">Qatar</a><a href="#malaysia">Malaysia</a><a href="#australia">Australia</a>
+          <a href="#uae">UAE</a><a href="#saudi-arabia">Saudi Arabia</a><a href="#qatar">Qatar</a><a href="#bahrain">Bahrain</a><a href="#kuwait">Kuwait</a><a href="#oman">Oman</a><a href="#singapore">Singapore</a><a href="#united-kingdom">United Kingdom</a><a href="#malaysia">Malaysia</a><a href="#australia">Australia</a>
         </div>`;
     }
 
@@ -193,7 +193,9 @@
           ['Dubai', '/uploads/locations/thumbs/dubai.jpg', 'International headquarters, technology, financial services, logistics and professional services.'],
           ['Abu Dhabi', '/uploads/locations/thumbs/abu-dhabi.jpg', 'Institutional buyers, energy, advanced technology, finance and government-related enterprise.'],
           ['Sharjah', '/uploads/locations/thumbs/sharjah.jpg', 'Industrial, education, manufacturing, cultural and mid-market business audiences.'],
-          ['Ras Al Khaimah', '/uploads/locations/thumbs/ras-al-khaimah.jpg', 'Manufacturing, tourism, construction, logistics and internationally owned businesses.']
+          ['Ajman', '/uploads/locations/thumbs/ajman.jpg', 'Owner-led SMEs, manufacturing, trade, property and practical business services.'],
+          ['Ras Al Khaimah', '/uploads/locations/thumbs/ras-al-khaimah.jpg', 'Manufacturing, tourism, construction, logistics and internationally owned businesses.'],
+          ['Fujairah', '/uploads/locations/thumbs/fujairah.jpg', 'Ports, shipping, energy services, logistics and East Coast business networks.']
         ]
       },
       {
@@ -202,19 +204,48 @@
         cities: [
           ['Riyadh', '/uploads/locations/thumbs/riyadh.jpg', 'Enterprise headquarters, government programmes, technology, finance and strategic projects.'],
           ['Jeddah', '/uploads/locations/thumbs/jeddah.jpg', 'Trade, logistics, family businesses, tourism, professional services and Red Sea commerce.'],
-          ['Dammam', '/uploads/locations/thumbs/dammam-khobar.jpg', 'Energy, industry, engineering, logistics and Eastern Province enterprise buyers.'],
-          ['Al Khobar', `${locationAssetRoot}/al-khobar.png`, 'Corporate services, energy-sector suppliers, technology and Gulf-facing business networks.']
+          ['Dammam & Al Khobar', '/uploads/locations/thumbs/dammam-khobar.jpg', 'Energy, industry, engineering, logistics, corporate services and Eastern Province business networks.', 'dammam-khobar'],
+          ['Makkah', '/uploads/locations/thumbs/makkah.jpg', 'Hospitality, infrastructure, construction and visitor-economy services.'],
+          ['Madinah', '/uploads/locations/thumbs/madinah.jpg', 'Hospitality, healthcare, urban development and service organisations.']
         ]
       },
       {
-        id: 'singapore', label: '03 · Singapore', title: 'LinkedIn B2B outbound in Singapore',
+        id: 'qatar', label: '03 · Qatar', title: 'LinkedIn B2B outbound in Qatar',
+        intro: 'Doha concentrates Qatar’s enterprise, energy, infrastructure and professional-services activity. Outreach should be narrow, credible and relationship-led.',
+        cities: [
+          ['Doha', '/uploads/locations/thumbs/doha.jpg', 'Energy, infrastructure, finance, professional services and regional enterprise relationships.']
+        ]
+      },
+      {
+        id: 'bahrain', label: '04 · Bahrain', title: 'LinkedIn B2B outbound in Bahrain',
+        intro: 'Bahrain brings finance, ICT, logistics, manufacturing and professional services into a compact market where senior decision-makers are unusually accessible.',
+        cities: [
+          ['Manama', '/uploads/location-assets/manama-bahrain.jpg', 'Financial services, fintech, ICT, logistics, manufacturing and regional professional-services buyers.']
+        ]
+      },
+      {
+        id: 'kuwait', label: '05 · Kuwait', title: 'LinkedIn B2B outbound in Kuwait',
+        intro: 'Kuwait combines institutional buyers, family-owned groups and ambitious infrastructure and technology programmes. Credibility and account selection matter more than volume.',
+        cities: [
+          ['Kuwait City', '/uploads/location-assets/kuwait-city.jpg', 'Finance, technology, infrastructure, logistics, professional services and diversified business groups.']
+        ]
+      },
+      {
+        id: 'oman', label: '06 · Oman', title: 'LinkedIn B2B outbound in Oman',
+        intro: 'Oman offers focused opportunities across logistics, energy, manufacturing, tourism, mining and ICT, with relationship-led access centred in Muscat.',
+        cities: [
+          ['Muscat', '/uploads/location-assets/muscat-oman.jpg', 'Logistics, energy, manufacturing, tourism, mining, ICT and advisory services.']
+        ]
+      },
+      {
+        id: 'singapore', label: '07 · Singapore', title: 'LinkedIn B2B outbound in Singapore',
         intro: 'Singapore is a concentrated gateway to APAC decision makers. Strong outreach here depends on precise segmentation, concise proof and senior-level relevance.',
         cities: [
           ['Singapore', '/uploads/locations/thumbs/singapore.jpg', 'Regional headquarters, SaaS, technology, finance and Asia-Pacific B2B decision makers.']
         ]
       },
       {
-        id: 'united-kingdom', label: '04 · United Kingdom', title: 'LinkedIn B2B outbound across the United Kingdom',
+        id: 'united-kingdom', label: '08 · United Kingdom', title: 'LinkedIn B2B outbound across the United Kingdom',
         intro: 'The UK combines dense professional-services networks with mature technology and industrial clusters. Messaging should reflect the commercial identity of each city.',
         cities: [
           ['London', `${locationAssetRoot}/london.png`, 'Global headquarters, finance, technology, consulting and high-value professional services.'],
@@ -224,14 +255,7 @@
         ]
       },
       {
-        id: 'qatar', label: '05 · Qatar', title: 'LinkedIn B2B outbound in Qatar',
-        intro: 'Doha concentrates Qatar’s enterprise, energy, infrastructure and professional-services activity. Outreach should be narrow, credible and relationship-led.',
-        cities: [
-          ['Doha', '/uploads/locations/thumbs/doha.jpg', 'Energy, infrastructure, finance, professional services and regional enterprise relationships.']
-        ]
-      },
-      {
-        id: 'malaysia', label: '06 · Malaysia', title: 'LinkedIn B2B outbound across Malaysia',
+        id: 'malaysia', label: '09 · Malaysia', title: 'LinkedIn B2B outbound across Malaysia',
         intro: 'Malaysia offers a strong mix of regional headquarters, technology operations, manufacturing and cross-border services. We focus on its three clearest B2B centres.',
         cities: [
           ['Kuala Lumpur', `${locationAssetRoot}/kuala-lumpur.png`, 'Regional headquarters, finance, technology, consulting and enterprise services.'],
@@ -240,7 +264,7 @@
         ]
       },
       {
-        id: 'australia', label: '07 · Australia', title: 'LinkedIn B2B outbound across Australia',
+        id: 'australia', label: '10 · Australia', title: 'LinkedIn B2B outbound across Australia',
         intro: 'Australia rewards clear commercial relevance and credible proof. Each major city has a distinct mix of enterprise, technology and professional-services buyers.',
         cities: [
           ['Sydney', `${locationAssetRoot}/sydney.png`, 'Corporate headquarters, finance, technology, consulting and enterprise services.'],
@@ -272,8 +296,8 @@
             <p>${market.intro}</p>
           </div>
           <div class="location-grid oc-expanded-location-grid ${market.cities.length === 1 ? 'oc-single-city' : ''}">
-            ${market.cities.map(([city, image, description]) => `
-              <a class="location-card with-image" href="${market.id === 'singapore' ? '/locations/singapore/' : `/locations/${market.id}/${market.id === 'saudi-arabia' && (city === 'Dammam' || city === 'Al Khobar') ? 'dammam-khobar' : city.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-')}/`}">
+            ${market.cities.map(([city, image, description, slug]) => `
+              <a class="location-card with-image" href="${market.id === 'singapore' ? '/locations/singapore/' : `/locations/${market.id}/${slug || city.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-')}/`}">
                 <img class="location-thumb" src="${image}" alt="${city} business district" width="800" height="400" loading="lazy">
                 <div class="location-card-content"><span class="status">Explore</span><div><h3>${city}</h3><p>${description}</p></div><span class="arrow">Explore ${city} →</span></div>
               </a>`).join('')}

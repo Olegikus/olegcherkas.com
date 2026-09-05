@@ -181,6 +181,60 @@ const pages = [
     sourceName: 'Singapore Economic Development Board', sourceUrl: 'https://www.edb.gov.sg/en/our-industries/headquarters.html',
     related: [['Dubai','/locations/uae/dubai/','International headquarters and Middle East growth'],['Doha','/locations/qatar/doha/','Concentrated enterprise and institutional buyers'],['Riyadh','/locations/saudi-arabia/riyadh/','Strategic enterprise and transformation programmes']],
     cta: 'Give Singapore buyers a specific reason to respond.'
+  },
+  {
+    path: 'locations/bahrain/manama/index.html', city: 'Manama', region: 'Bahrain', image: 'location-assets/manama-bahrain.jpg',
+    imageAlt: 'Manama skyline and Bahrain World Trade Center at dusk',
+    lead: "Reach finance, fintech, technology, logistics and professional-service leaders through focused LinkedIn B2B outreach in Bahrain.",
+    signal: 'Compact market. Regional finance. Accessible senior buyers.', tags: ['Finance','Fintech','ICT','Logistics'],
+    whyTitle: 'Manama rewards focused targeting and credible regional proof',
+    paragraphs: [
+      "Manama concentrates much of Bahrain's financial-services, technology and professional-services activity within a compact business market.",
+      "Decision-makers are reachable, but a small market makes generic outreach visible quickly. Campaigns need <strong>precise account selection</strong>, a clear business reason and proof that fits the buyer's regional context.",
+      "We segment accounts by sector, scale and role, then coordinate LinkedIn, email and patient follow-up around a credible commercial outcome."
+    ],
+    signals: [['Market structure','Financial services and ICT sit beside logistics, manufacturing and professional services'],['Buying reality','Senior buyers operate inside a compact, connected business community'],['Outbound implication','Research fewer accounts more deeply and avoid repetitive messaging']],
+    sectors: [['Financial services','Banks, investment, insurance, payments and wealth businesses.'],['Fintech','Payments, regtech, digital banking and financial infrastructure.'],['ICT & cloud','Software, cloud, cybersecurity, telecom and digital transformation.'],['Logistics','Ports, freight, warehousing and regional supply-chain providers.'],['Manufacturing','Industrial operators, suppliers and specialised technology businesses.'],['Professional services','Consulting, legal, accounting, recruitment and advisory firms.'],['Regional businesses','Bahrain-based teams serving Saudi Arabia and the wider GCC.']],
+    faq: [['Can LinkedIn generate B2B leads in Bahrain?','Yes. Bahrain is especially suitable for focused campaigns where the target account value justifies deeper research.'],['Which Manama roles can be targeted?','Campaigns can reach founders, executives, commercial leaders, technology, operations, finance and other relevant stakeholders.'],['Should Bahrain share a Saudi campaign?','The markets are connected, but Bahrain should keep its own account list, evidence and message variants.'],['Can LinkedIn and email work together?','Yes. Both channels can use the same research and coordinated follow-up sequence.']],
+    sourceName: 'Bahrain Economic Development Board', sourceUrl: 'https://www.bahrainedb.com/about-us',
+    related: [['Riyadh','/locations/saudi-arabia/riyadh/','Saudi headquarters and strategic enterprise'],['Dammam & Al Khobar','/locations/saudi-arabia/dammam-khobar/','Eastern Province business networks'],['Doha','/locations/qatar/doha/','Concentrated enterprise and institutional buyers']],
+    cta: 'Build a Bahrain campaign around the accounts with a real reason to buy.'
+  },
+  {
+    path: 'locations/kuwait/kuwait-city/index.html', city: 'Kuwait City', region: 'Kuwait', image: 'location-assets/kuwait-city.jpg',
+    imageAlt: 'Kuwait Towers and Kuwait City skyline at dusk',
+    lead: 'Reach institutional buyers, diversified business groups and technology, infrastructure and professional-service leaders with account-based LinkedIn outreach in Kuwait.',
+    signal: 'Institutional buyers. Diversified groups. High-value accounts.', tags: ['Finance','Technology','Infrastructure','Logistics'],
+    whyTitle: 'Kuwait City is an account-quality market, not a volume market',
+    paragraphs: [
+      "Kuwait City brings together institutional organisations, banks, investment companies, diversified family groups, technology buyers and infrastructure-related businesses.",
+      "The addressable account list may be concentrated, while buying committees can be senior and complex. Strong outreach depends on <strong>account-level relevance</strong> rather than broad regional claims.",
+      "We map the organisations and stakeholders with a plausible need, then build concise messages and follow-up around their commercial context."
+    ],
+    signals: [['Market structure','Institutional organisations and diversified groups shape a concentrated B2B market'],['Buying reality','High-value purchases can involve executive, technical and commercial stakeholders'],['Outbound implication','Prioritise account depth, credible proof and patient follow-up']],
+    sectors: [['Financial services','Banks, investment, insurance, payments and financial technology.'],['Technology','Software, cloud, cybersecurity, AI and enterprise systems.'],['Infrastructure','Construction, engineering, utilities and project services.'],['Logistics','Warehousing, transport, ports and supply-chain operations.'],['Professional services','Consulting, legal, accounting, recruitment and specialist advisory.'],['Diversified groups','Family-owned and multi-sector organisations with central leadership teams.'],['Industrial services','Technical suppliers, maintenance and operational technology.']],
+    faq: [['Can LinkedIn reach decision-makers in Kuwait?','Yes, when targeting is specific and the message is supported by relevant proof.'],['Which Kuwait City roles can be targeted?','Campaigns can reach executives, commercial leaders, technology, operations, procurement, finance and other functional buyers.'],['Is a Kuwait-only campaign large enough?','It can be for high-value offers; broader offers can include Kuwait as a distinct segment inside a GCC programme.'],['Should outreach be in English or Arabic?','That depends on the audience. Language should be chosen by account and role rather than applied as a blanket rule.']],
+    sourceName: 'Kuwait Direct Investment Promotion Authority', sourceUrl: 'https://kdipa.gov.kw/invest-in-kuwait/investment-opportunities/',
+    related: [['Riyadh','/locations/saudi-arabia/riyadh/','Strategic enterprise and headquarters'],['Doha','/locations/qatar/doha/','Energy, finance and institutional buyers'],['Manama','/locations/bahrain/manama/','Finance, fintech and regional services']],
+    cta: 'Focus Kuwait outreach on high-value accounts and the right stakeholders.'
+  },
+  {
+    path: 'locations/oman/muscat/index.html', city: 'Muscat', region: 'Oman', image: 'location-assets/muscat-oman.jpg',
+    imageAlt: 'Muscat waterfront, mountains and Mutrah Corniche at sunset',
+    lead: 'Reach logistics, energy, manufacturing, tourism, mining, technology and advisory decision-makers through relationship-led LinkedIn B2B outreach in Oman.',
+    signal: 'Strategic sectors. Relationship-led buying. Focused accounts.', tags: ['Logistics','Energy','Manufacturing','ICT'],
+    whyTitle: 'Muscat outreach needs patience, relevance and sector context',
+    paragraphs: [
+      "Muscat concentrates many of Oman's senior commercial, institutional and professional-service relationships, while the wider economy creates opportunities across logistics, energy, manufacturing, tourism, mining and ICT.",
+      "Buyers need a clear reason to engage and evidence that the sender understands their operating context. A campaign should favour <strong>credible relationship building</strong> over aggressive volume.",
+      "We research the account, map relevant stakeholders and use measured LinkedIn and email follow-up to create familiarity before asking for a call."
+    ],
+    signals: [['Market structure','Strategic sectors connect institutional organisations, operators and specialist suppliers'],['Buying reality','Trust and practical relevance shape access to senior stakeholders'],['Outbound implication','Use sector-specific research and measured multi-step follow-up']],
+    sectors: [['Logistics','Ports, freight, aviation, warehousing and supply-chain technology.'],['Energy','Operators, renewables, services, engineering and specialist suppliers.'],['Manufacturing','Industrial operators, materials, food production and technology.'],['Tourism','Hotels, destination services, operators and hospitality suppliers.'],['Mining','Operators, technical services, equipment and environmental solutions.'],['ICT','Software, cloud, cybersecurity, communications and digital transformation.'],['Professional services','Consulting, recruitment, finance, legal and specialist advisory.']],
+    faq: [['Can LinkedIn generate B2B leads in Oman?','Yes. It works best for focused sectors and high-value offers where account research matters.'],['Which Muscat roles can be targeted?','Campaigns can target executives, commercial leaders, operations, technology, procurement, finance and relevant functional stakeholders.'],['Should Oman use the same message as the UAE?','No. The account base, buying pace and sector context are different and need their own message variants.'],['Can Oman be part of a full GCC campaign?','Yes, as a distinct segment with its own account list, positioning and follow-up logic.']],
+    sourceName: 'Invest Oman', sourceUrl: 'https://investoman.om/start-investing/sectors',
+    related: [['Dubai','/locations/uae/dubai/','Regional headquarters and international teams'],['Doha','/locations/qatar/doha/','Concentrated enterprise markets'],['Kuwait City','/locations/kuwait/kuwait-city/','Institutional and diversified-group buyers']],
+    cta: 'Build Oman outreach around strategic sectors and credible relationships.'
   }
 ];
 
@@ -230,6 +284,9 @@ const metaDescriptions = {
   Madinah: 'LinkedIn B2B lead generation in Madinah for hospitality, development, healthcare, education and urban-service decision makers.',
   Doha: 'LinkedIn B2B lead generation in Doha for energy, finance, infrastructure and professional-service decision makers through account-based outreach.',
   Singapore: 'LinkedIn B2B lead generation in Singapore for SaaS, technology, finance and regional HQ teams through precise, evidence-led outreach.',
+  Manama: 'LinkedIn B2B lead generation in Bahrain for finance, fintech, ICT, logistics and professional-service decision makers through focused outreach.',
+  'Kuwait City': 'LinkedIn B2B lead generation in Kuwait for institutional, technology, infrastructure and professional-service buyers through account-based outreach.',
+  Muscat: 'LinkedIn B2B lead generation in Oman for logistics, energy, manufacturing, technology and advisory decision makers through relationship-led outreach.',
   Dubai: 'LinkedIn B2B lead generation in Dubai with targeted outreach for founders, executives and decision makers in technology and professional services.',
   'Abu Dhabi': 'LinkedIn B2B lead generation in Abu Dhabi for institutional, technology, energy and professional-service markets through targeted outreach.',
   Riyadh: 'LinkedIn B2B lead generation in Riyadh through account-based outreach for technology, finance, professional services and enterprise markets.'
@@ -283,17 +340,14 @@ const whatsappIcon = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="
 const headerSocials = `<div class="header-socials" aria-label="Contact Oleg Cherkas"><a class="header-social" href="https://www.linkedin.com/in/oleg-cherkas" target="_blank" rel="noopener" aria-label="LinkedIn">in</a><a class="header-social" href="https://t.me/olegikus" target="_blank" rel="noopener" aria-label="Telegram">${telegramIcon}</a><a class="header-social header-whatsapp" href="https://wa.me/971563462566" target="_blank" rel="noopener" aria-label="WhatsApp">${whatsappIcon}</a></div>`;
 const mobileSocials = `<div class="mobile-socials" aria-label="Contact Oleg Cherkas"><a href="https://www.linkedin.com/in/oleg-cherkas" target="_blank" rel="noopener" aria-label="LinkedIn">in</a><a href="https://t.me/olegikus" target="_blank" rel="noopener" aria-label="Telegram">${telegramIcon}</a><a href="https://wa.me/971563462566" target="_blank" rel="noopener" aria-label="WhatsApp">${whatsappIcon}</a></div>`;
 const footerSocials = `<div class="social-links" aria-label="Contact Oleg Cherkas"><a href="https://www.linkedin.com/in/oleg-cherkas" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">in</a><a href="https://t.me/olegikus" target="_blank" rel="noopener" class="social-link" aria-label="Telegram">${telegramIcon}</a><a href="https://wa.me/971563462566" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp">${whatsappIcon}</a></div>`;
-const locationNav = `<nav class="site-nav"><a href="/" class="nav-logo" aria-label="Oleg Cherkas home"><img src="/uploads/linkeol-logo-clean.png" alt="Linkeol"></a><ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/about/">About</a></li><li><a href="/services">Services</a></li><li><a href="/locations/" aria-current="page">Locations</a></li><li><a href="/results/">Results</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul><div class="nav-actions">${headerSocials}<a href="https://calendly.com/oleg-olegcherkas/30min" target="_blank" class="nav-cta">Book a call</a></div><button class="burger" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button></nav>`;
-const locationMobileMenu = `<div class="mobile-menu" id="mobileMenu"><a href="/">Home</a><a href="/about/">About</a><a href="/services">Services</a><a href="/locations/">Locations</a><a href="/results/">Results</a><a href="/blog">Blog</a><a href="/contact">Contact</a>${mobileSocials}</div>`;
-const locationFooter = `<footer><div class="footer-left"><div class="footer-copy">© 2026 Oleg Cherkas</div>${footerSocials}</div><nav class="footer-nav"><a href="/">Home</a><a href="/about/">About</a><a href="/services">Services</a><a href="/locations/">Locations</a><a href="/results/">Results</a><a href="/blog">Blog</a><a href="/contact">Contact</a></nav></footer>`;
+const locationNav = `<nav class="site-nav"><a href="/" class="nav-logo" aria-label="Oleg Cherkas home"><img src="/uploads/linkeol-logo-clean.png" alt="Linkeol"></a><ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/about/">About</a></li><li><a href="/services.html">Services</a></li><li><a href="/locations/" aria-current="page">Locations</a></li><li><a href="/results/">Results</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul><div class="nav-actions">${headerSocials}<a href="https://calendly.com/oleg-olegcherkas/30min" target="_blank" class="nav-cta">Book a call</a></div><button class="burger" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button></nav>`;
+const locationMobileMenu = `<div class="mobile-menu" id="mobileMenu"><a href="/">Home</a><a href="/about/">About</a><a href="/services.html">Services</a><a href="/locations/">Locations</a><a href="/results/">Results</a><a href="/blog">Blog</a><a href="/contact">Contact</a>${mobileSocials}</div>`;
+const locationFooter = `<footer><div class="footer-left"><div class="footer-copy">© 2026 Oleg Cherkas</div>${footerSocials}</div><nav class="footer-nav"><a href="/">Home</a><a href="/about/">About</a><a href="/services.html">Services</a><a href="/locations/">Locations</a><a href="/results/">Results</a><a href="/blog">Blog</a><a href="/contact">Contact</a></nav></footer>`;
 function render(page) {
   const canonical = `https://olegcherkas.com/${page.path.replace(/index\.html$/, '')}`;
   const title = `LinkedIn B2B Lead Generation in ${page.city} | Oleg Cherkas`;
   const description = metaDescriptions[page.city] || `LinkedIn B2B lead generation in ${page.city} with focused account research, personalised outreach and structured follow-up.`;
-  const insight = relatedInsights[page.city] || {
-    title: 'Practical notes on LinkedIn growth', href: '/blog',
-    text: `Explore targeting, positioning and outreach ideas for B2B growth in ${page.region}.`
-  };
+  const insight = relatedInsights[page.city] || null;
   const faqJson = page.faq.map(([question,answer]) => ({'@type':'Question',name:question,acceptedAnswer:{'@type':'Answer',text:answer}}));
   const area = page.city === 'Dammam and Al Khobar'
     ? [
@@ -312,7 +366,7 @@ function render(page) {
   const signalCards = page.signals.map(([label,text]) => `<div class="signal"><small>${esc(label)}</small><strong>${esc(text)}</strong></div>`).join('');
   const faqs = page.faq.map(([q,a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('');
   const related = page.related.map(([name,href,text]) => `<a class="related-card" href="${href}"><small>LinkedIn B2B lead generation</small><strong>${esc(name)}</strong><span>${esc(text)} →</span></a>`).join('');
-  const relatedInsight = `<!-- RELATED_INSIGHT_START --><section class="page-section"><div class="section-inner"><div class="section-heading"><div class="eyebrow">Related insight</div><h2>Read more about this market</h2></div><div class="related-grid related-insight-grid"><a class="related-card" href="${insight.href}"><small>Market strategy</small><strong>${esc(insight.title)}</strong><span>${esc(insight.text)} Read article →</span></a></div></div></section><!-- RELATED_INSIGHT_END -->`;
+  const relatedInsight = insight ? `<!-- RELATED_INSIGHT_START --><section class="page-section"><div class="section-inner"><div class="section-heading"><div class="eyebrow">Related insight</div><h2>Read more about this market</h2></div><div class="related-grid related-insight-grid"><a class="related-card" href="${insight.href}"><small>Market strategy</small><strong>${esc(insight.title)}</strong><span>${esc(insight.text)} Read article →</span></a></div></div></section><!-- RELATED_INSIGHT_END -->` : '';
   const steps = [
     ['Define the market segment',`Choose the ${page.city} company types, sectors, sizes and roles with the strongest reason to buy.`],
     ['Research accounts and people','Verify companies, map relevant stakeholders and collect evidence for personalisation.'],
@@ -324,7 +378,7 @@ function render(page) {
 <title>${esc(title)}</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="${canonical}">
 <meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(page.lead)}"><meta property="og:url" content="${canonical}"><meta property="og:image" content="https://olegcherkas.com/uploads/${page.image.includes('/') ? page.image : `locations/${page.image}`}">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="LinkedIn B2B Lead Generation in ${esc(page.city)}"><meta name="twitter:description" content="${esc(page.lead)}"><meta name="twitter:image" content="https://olegcherkas.com/uploads/${page.image.includes('/') ? page.image : `locations/${page.image}`}">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="/locations/location-pages.css"><link rel="stylesheet" href="/v2-overrides.css?v=19"><script type="application/ld+json">${JSON.stringify(schema)}</script></head>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="/locations/location-pages.css"><link rel="stylesheet" href="/v2-overrides.css?v=20"><script type="application/ld+json">${JSON.stringify(schema)}</script></head>
 <body><a class="skip-link" href="#main">Skip to content</a>
 ${locationNav}
 ${locationMobileMenu}
@@ -332,7 +386,7 @@ ${locationMobileMenu}
 <section class="page-section"><div class="section-inner"><div class="split"><div class="section-heading"><div class="eyebrow">Why ${esc(page.city)} is different</div><h2>${esc(page.whyTitle)}</h2></div><div class="body-copy">${page.paragraphs.map(p=>`<p>${p}</p>`).join('')}</div></div><div class="signal-list">${signalCards}</div><p class="source-note">Market context informed by <a href="${page.sourceUrl}" target="_blank" rel="noopener">${esc(page.sourceName)}</a>.</p></div></section>
 <section class="page-section"><div class="section-inner"><div class="section-heading"><div class="eyebrow">Ideal customer profiles</div><h2>Who we can target in ${esc(page.city)}</h2><p>Campaigns are filtered by sector, company type, seniority and a credible reason for the conversation.</p></div><div class="card-grid">${sectorCards}</div></div></section>
 <section class="page-section"><div class="section-inner"><div class="section-heading"><div class="eyebrow">Execution</div><h2>How ${esc(page.city)} LinkedIn outreach is built</h2></div><div class="process-list">${steps}</div></div></section>
-<section class="page-section"><div class="section-inner"><div class="proof"><div class="proof-number">200+</div><div class="proof-copy"><strong>enterprise meetings opened through LinkedIn</strong><p>The operating system combines profile positioning, account research, personalised sequences and consistent follow-up.</p></div><a class="proof-link" href="/results/">See campaign results →</a></div></div></section>
+<section class="page-section"><div class="section-inner"><div class="proof"><div class="proof-number">500+</div><div class="proof-copy"><strong>qualified meetings booked</strong><p>Across client campaigns and managed LinkedIn profiles.</p></div><a class="proof-link" href="/results/">See campaign results →</a></div></div></section>
 ${relatedInsight}
 <section class="page-section"><div class="section-inner"><div class="section-heading"><div class="eyebrow">Questions</div><h2>${esc(page.city)} LinkedIn B2B lead generation FAQ</h2></div><div class="faq-list">${faqs}</div></div></section>
 <section class="page-section"><div class="section-inner"><div class="section-heading"><div class="eyebrow">Related markets</div><h2>Continue exploring</h2></div><div class="related-grid">${related}</div></div></section></main>
@@ -394,9 +448,31 @@ for (const item of existingPageHrCards) {
     html = html.replace('</body>', '<script src="/site-navigation.js"></script>\n</body>');
   }
   if (!html.includes('/v2-overrides.css')) {
-    html = html.replace('</head>', '<link rel="stylesheet" href="/v2-overrides.css?v=19"></head>');
+    html = html.replace('</head>', '<link rel="stylesheet" href="/v2-overrides.css?v=20"></head>');
   }
   fs.writeFileSync(item.path, html);
 }
 
-console.log(`Built ${pages.length} location pages and updated 3 existing city pages.`);
+function collectHtmlFiles(directory) {
+  return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
+    const filePath = path.join(directory, entry.name);
+    return entry.isDirectory() ? collectHtmlFiles(filePath) : entry.name.endsWith('.html') ? [filePath] : [];
+  });
+}
+
+for (const filePath of collectHtmlFiles('locations')) {
+  let html = fs.readFileSync(filePath, 'utf8');
+  html = html.replaceAll('href="/services"', 'href="/services.html"');
+  html = html.replace(
+    /<div class="proof-number">200\+<\/div><div class="proof-copy"><strong>enterprise meetings opened through LinkedIn<\/strong><p>The operating system combines profile positioning, account research, personalised sequences and consistent follow-up\.<\/p><\/div>/g,
+    '<div class="proof-number">500+</div><div class="proof-copy"><strong>qualified meetings booked</strong><p>Across client campaigns and managed LinkedIn profiles.</p></div>'
+  );
+  html = html.replace(
+    /<div class="proof-number">200\+<\/div><div class="proof-copy"><strong>Enterprise meetings opened across GCC markets<\/strong><p>A client LinkedIn network grew from roughly 500 to 7,000\+ relevant contacts, supporting conversations with major retail groups across (?:Saudi Arabia, the UAE and Qatar|the UAE, Saudi Arabia and Qatar)\.<\/p><\/div>/g,
+    '<div class="proof-number">500+</div><div class="proof-copy"><strong>qualified meetings booked</strong><p>Across client campaigns and managed LinkedIn profiles.</p></div>'
+  );
+  html = html.replace(/<!-- RELATED_INSIGHT_START -->([\s\S]*?)<!-- RELATED_INSIGHT_END -->/g, (block, content) => content.includes('href="/blog"') ? '' : block);
+  fs.writeFileSync(filePath, html);
+}
+
+console.log(`Built ${pages.length} location pages, updated 3 existing city pages, and normalized the full location library.`);

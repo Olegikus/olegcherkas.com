@@ -1,6 +1,7 @@
 (function () {
   const services = [
-    { href: '/b2b-lead-generation-service.html', label: 'B2B lead generation', description: 'LinkedIn + email, managed end to end', primary: true },
+    { href: '/services.html', label: 'All services', description: 'Compare every service and choose the right starting point', primary: true },
+    { href: '/b2b-lead-generation-service.html', label: 'B2B lead generation', description: 'LinkedIn + email, managed end to end' },
     { href: '/service-monthly-linkedin-outreach-management.html', label: 'Monthly LinkedIn outreach management' },
     { href: '/service-lead-generation.html', label: 'LinkedIn lead generation setup' },
     { href: '/service-profile-optimization.html', label: 'LinkedIn profile optimization' },
@@ -10,9 +11,12 @@
     { href: '/locations/', label: 'All locations', primary: true },
     { href: '/locations/#uae', label: 'United Arab Emirates' },
     { href: '/locations/#saudi-arabia', label: 'Saudi Arabia' },
+    { href: '/locations/#qatar', label: 'Qatar' },
+    { href: '/locations/#bahrain', label: 'Bahrain' },
+    { href: '/locations/#kuwait', label: 'Kuwait' },
+    { href: '/locations/#oman', label: 'Oman' },
     { href: '/locations/#singapore', label: 'Singapore' },
     { href: '/locations/#united-kingdom', label: 'United Kingdom' },
-    { href: '/locations/#qatar', label: 'Qatar' },
     { href: '/locations/#malaysia', label: 'Malaysia' },
     { href: '/locations/#australia', label: 'Australia' }
   ];
@@ -35,6 +39,11 @@
     :root{--oc-deep:#00271d;--oc-panel:#06392d;--oc-gold:#ddb75b;--oc-cream:#f5f1e8;--oc-mint:#48e69a}
     body.oc-menu-open{overflow:hidden!important}
     .site-nav,body>nav:not(.footer-nav){z-index:1000!important;background:rgba(0,39,29,.97)!important;border-bottom:1px solid rgba(221,183,91,.34)!important}
+    .site-nav{display:flex!important;align-items:center!important;flex-wrap:nowrap!important;gap:18px!important}
+    .site-nav>.nav-links{display:flex!important;flex:1 1 auto!important;justify-content:center!important;gap:clamp(10px,1.45vw,28px)!important;min-width:0!important}
+    .site-nav>.nav-actions{display:flex!important;flex:0 0 auto!important;flex-direction:row!important;align-items:center!important;flex-wrap:nowrap!important;gap:12px!important}
+    .site-nav>.nav-actions>.header-socials{display:flex!important;align-items:center!important;flex-wrap:nowrap!important}
+    .site-nav>.nav-actions>.nav-cta{flex:0 0 auto!important;white-space:nowrap!important;margin:0!important}
     .nav-logo{display:flex!important;align-items:center!important;gap:14px!important;text-decoration:none!important}
     .nav-logo img,.nav-logo .oc-brand-mark{width:92px!important;height:64px!important;object-fit:cover!important;border-radius:12px!important}
     .oc-brand-copy{display:flex;flex-direction:column;line-height:1.08;white-space:nowrap}
@@ -55,10 +64,11 @@
     .header-social{width:48px!important;height:48px!important;min-width:48px!important}
     .header-social .oc-official-icon{width:19px!important;height:19px!important}
     .oc-official-icon{display:block;width:20px;height:20px}
-    .whatsapp-float{position:fixed!important;display:flex!important;align-items:center!important;justify-content:center!important;right:28px!important;top:50%!important;bottom:auto!important;transform:translateY(-50%)!important;width:62px!important;height:62px!important;border-radius:50%!important;background:var(--oc-gold)!important;color:#16a765!important;border:1px solid #f0cf7c!important;box-shadow:0 18px 42px rgba(0,0,0,.35)!important;z-index:900!important}
+    .whatsapp-float{position:fixed!important;display:flex!important;align-items:center!important;justify-content:center!important;right:28px!important;top:50%!important;bottom:auto!important;transform:translateY(-50%)!important;width:62px!important;height:62px!important;border-radius:50%!important;background:#25d366!important;color:#fff!important;border:2px solid rgba(255,255,255,.9)!important;box-shadow:0 0 0 5px rgba(37,211,102,.16),0 18px 42px rgba(0,0,0,.35)!important;z-index:900!important}
     .whatsapp-float:hover{transform:translateY(-50%) scale(1.06)!important}
     .whatsapp-float .oc-official-icon,.whatsapp-float svg{width:28px!important;height:28px!important}
     footer{background:#00271d!important;border-top:1px solid rgba(221,183,91,.34)!important}
+    footer>.footer-nav,footer nav.footer-nav{background:transparent!important;box-shadow:none!important;border:0!important;padding:0!important}
     footer .oc-footer-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
     footer .oc-footer-brand img{width:92px;height:64px;object-fit:cover;border-radius:10px}
     footer .oc-footer-brand span{display:flex;flex-direction:column;text-align:left}
@@ -70,7 +80,7 @@
       .nav-logo{margin-right:auto!important}
       .nav-logo img,.nav-logo .oc-brand-mark{width:64px!important;height:48px!important;border-radius:8px!important}
       .nav-logo .oc-brand-copy{display:none!important}
-      .nav-links,.nav-actions{display:none!important}
+      .site-nav>.nav-links,.site-nav>.nav-actions{display:none!important}
       .oc-mobile-header-socials{display:flex!important;align-items:center!important;gap:8px!important;margin-right:12px!important}
       .oc-mobile-header-socials a{display:grid!important;place-items:center!important;width:38px!important;height:38px!important;padding:0!important;border:1px solid rgba(221,183,91,.42)!important;border-radius:50%!important;color:var(--oc-gold)!important;text-decoration:none!important}
       .oc-mobile-header-socials svg{width:16px;height:16px}
@@ -101,12 +111,23 @@
       footer .footer-nav{display:flex!important;flex-wrap:wrap!important;justify-content:center!important;gap:10px!important;margin:0!important;width:min(100%,420px)!important}
       footer .footer-nav a{margin:0!important}
     }
+    @media(min-width:981px) and (max-width:1480px){
+      .site-nav{gap:12px!important;padding-inline:24px!important}
+      .site-nav>.nav-links{gap:8px!important}
+      .site-nav>.nav-links>li>a{padding:11px 14px!important;font-size:13px!important}
+      .site-nav>.nav-actions{gap:8px!important}
+      .header-socials{gap:6px!important}
+      .header-social{width:42px!important;height:42px!important;min-width:42px!important}
+      .site-nav>.nav-actions>.nav-cta{padding-inline:20px!important;font-size:13px!important}
+    }
     @media(min-width:981px){.oc-mobile-header-socials{display:none!important}}
   `;
   document.head.appendChild(style);
 
   const linkMarkup = (items) => items.map((item) => `<a href="${item.href}"${item.primary ? ' class="oc-primary-link"' : ''}>${item.description ? `<strong>${item.label}</strong><span>${item.description}</span>` : item.label}</a>`).join('');
   const nav = document.querySelector('.site-nav') || document.querySelector('header nav') || document.querySelector('body > nav');
+
+  document.querySelectorAll('a[href="/services"]').forEach((link) => link.setAttribute('href', '/services.html'));
 
   document.querySelectorAll('.nav-logo').forEach((brand) => {
     const image = brand.querySelector('img') || document.createElement('img');
@@ -128,6 +149,7 @@
     [['services', services], ['locations', locations]].forEach(([type, items]) => {
       const trigger = Array.from(links.querySelectorAll(':scope > li > a')).find((a) => a.textContent.trim().toLowerCase() === type);
       if (!trigger) return;
+      trigger.href = type === 'services' ? '/services.html' : '/locations/';
       const item = trigger.closest('li');
       item.classList.add(`nav-${type}`);
       item.querySelectorAll(':scope > .nav-services-menu, :scope > .oc-desktop-dropdown').forEach((old) => old.remove());
