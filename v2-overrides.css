@@ -1058,9 +1058,6 @@ body {
 
 /* Keep the floating action clear of mobile hero copy and browser controls. */
 @media (max-width: 520px) {
-  html.preview-page-index-html .whatsapp-float {
-    display: none !important;
-  }
   .whatsapp-float {
     right: 12px !important;
     top: auto !important;

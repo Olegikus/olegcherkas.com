@@ -82,8 +82,8 @@
       .nav-logo .oc-brand-copy{display:none!important}
       .site-nav>.nav-links,.site-nav>.nav-actions{display:none!important}
       .oc-mobile-header-socials{display:flex!important;align-items:center!important;gap:8px!important;margin-right:12px!important}
-      .oc-mobile-header-socials a{display:grid!important;place-items:center!important;width:38px!important;height:38px!important;padding:0!important;border:1px solid rgba(221,183,91,.42)!important;border-radius:50%!important;color:var(--oc-gold)!important;text-decoration:none!important}
-      .oc-mobile-header-socials svg{width:16px;height:16px}
+      .oc-mobile-header-socials a{display:grid!important;place-items:center!important;width:40px!important;height:40px!important;padding:0!important;border:1px solid rgba(215,177,94,.28)!important;border-radius:50%!important;background:rgba(11,53,41,.78)!important;color:#d9e7df!important;text-decoration:none!important;overflow:visible!important;line-height:0!important}
+      .oc-mobile-header-socials .oc-official-icon,.oc-mobile-header-socials svg{display:block!important;width:18px!important;height:18px!important;min-width:18px!important;min-height:18px!important;overflow:visible!important;flex:none!important}
       .burger{display:flex!important;position:relative!important;z-index:1300!important;width:42px!important;height:42px!important;padding:10px 7px!important;margin:0!important;flex-direction:column!important;justify-content:space-between!important;align-items:stretch!important;gap:0!important;background:transparent!important;border:0!important;cursor:pointer!important}
       .burger span{display:block!important;width:28px!important;height:2px!important;min-height:2px!important;margin:0!important;background:var(--oc-cream)!important;border:0!important;border-radius:2px!important;transform-origin:center!important;transition:transform .24s ease,opacity .18s ease!important}
       .burger.open span:nth-child(1){transform:translateY(10px) rotate(45deg)!important}
@@ -99,12 +99,8 @@
       .mobile-menu .oc-mobile-submenu a{display:block!important;margin:0!important;padding:12px 8px!important;border:0!important;border-bottom:1px solid rgba(221,183,91,.14)!important;color:#c8d5cf!important;font:500 15px/1.35 'DM Sans',sans-serif!important;letter-spacing:0!important;text-align:left!important;text-transform:none!important;text-decoration:none!important}
       .mobile-menu .oc-mobile-submenu a:last-child{border-bottom:0!important}
       .mobile-menu .oc-mobile-submenu a.oc-primary-link{color:var(--oc-gold)!important;font-weight:700!important}
-      .oc-mobile-menu-socials{display:flex!important;gap:12px!important;justify-content:center!important;padding:26px 0 8px!important}
-      .mobile-menu .oc-mobile-menu-socials a{display:grid!important;place-items:center!important;width:46px!important;height:46px!important;padding:0!important;border:1px solid rgba(221,183,91,.4)!important;border-radius:50%!important;color:var(--oc-gold)!important}
-      .mobile-menu .oc-mobile-menu-socials svg{width:19px;height:19px}
       .whatsapp-float{right:12px!important;top:auto!important;bottom:calc(88px + env(safe-area-inset-bottom,0px))!important;width:50px!important;height:50px!important;transform:none!important}
       .whatsapp-float:hover{transform:translateY(-2px)!important}
-      html.preview-page-index-html .whatsapp-float{display:none!important}
       footer{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:20px!important;padding:38px 20px!important;text-align:center!important}
       footer .oc-footer-brand{justify-content:center!important}
       footer .footer-left{display:flex!important;flex-direction:column!important;align-items:center!important;gap:16px!important;margin:0!important}
@@ -211,8 +207,7 @@
       <div class="oc-mobile-accordion"><button class="oc-mobile-accordion-toggle" type="button" aria-expanded="false">Locations</button><div class="oc-mobile-submenu">${linkMarkup(locations)}</div></div>
       <a class="oc-mobile-link" href="/results/">Results</a>
       <a class="oc-mobile-link" href="/blog.html">Blog</a>
-      <a class="oc-mobile-link" href="/contact.html">Contact</a>
-      <div class="oc-mobile-menu-socials"><a href="${socialUrls.linkedin}" target="_blank" rel="noopener" aria-label="LinkedIn">${icon('linkedin')}</a><a href="${socialUrls.telegram}" target="_blank" rel="noopener" aria-label="Telegram">${icon('telegram')}</a></div>`;
+      <a class="oc-mobile-link" href="/contact.html">Contact</a>`;
     mobile.querySelectorAll('.oc-mobile-accordion-toggle').forEach((toggle) => {
       toggle.addEventListener('click', () => {
         const panel = toggle.nextElementSibling;
