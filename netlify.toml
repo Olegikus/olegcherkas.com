@@ -4,3 +4,28 @@
 
 [build.environment]
   NODE_VERSION = "20"
+
+# Consolidate every attached domain on the primary SEO host.
+[[redirects]]
+  from = "https://leadslinked.com/*"
+  to = "https://olegcherkas.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://linkeolhq.com/*"
+  to = "https://olegcherkas.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://linkeolteam.com/*"
+  to = "https://olegcherkas.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://lucky-creponne-06d09d.netlify.app/*"
+  to = "https://olegcherkas.com/:splat"
+  status = 301
+  force = true
