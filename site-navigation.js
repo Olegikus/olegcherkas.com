@@ -74,7 +74,7 @@
     footer .oc-footer-brand span{display:flex;flex-direction:column;text-align:left}
     footer .oc-footer-brand strong{font:700 15px/1.15 'Sora',sans-serif;color:var(--oc-cream)}
     footer .oc-footer-brand small{margin-top:4px;font:500 11px/1 'DM Sans',sans-serif;color:#83a397}
-    @media(max-width:980px){
+    @media(max-width:1260px){
       body{padding-top:76px!important}
       .site-nav,body>nav:not(.footer-nav){position:fixed!important;top:0!important;left:0!important;right:0!important;height:76px!important;min-height:76px!important;padding:10px 18px!important;background:rgba(0,39,29,.97)!important;border-bottom:1px solid rgba(221,183,91,.34)!important;backdrop-filter:blur(14px);display:flex!important;align-items:center!important}
       .nav-logo{margin-right:auto!important}
@@ -111,7 +111,7 @@
       footer .footer-nav{display:flex!important;flex-wrap:wrap!important;justify-content:center!important;gap:10px!important;margin:0!important;width:min(100%,420px)!important}
       footer .footer-nav a{margin:0!important}
     }
-    @media(min-width:981px) and (max-width:1480px){
+    @media(min-width:1261px) and (max-width:1480px){
       .site-nav{gap:12px!important;padding-inline:24px!important}
       .site-nav>.nav-links{gap:8px!important}
       .site-nav>.nav-links>li>a{padding:11px 14px!important;font-size:13px!important}
@@ -120,7 +120,7 @@
       .header-social{width:42px!important;height:42px!important;min-width:42px!important}
       .site-nav>.nav-actions>.nav-cta{padding-inline:20px!important;font-size:13px!important}
     }
-    @media(min-width:981px){.oc-mobile-header-socials{display:none!important}}
+    @media(min-width:1261px){.oc-mobile-header-socials{display:none!important}}
   `;
   document.head.appendChild(style);
 
@@ -129,7 +129,15 @@
 
   if (nav) nav.classList.add('site-nav');
 
-  document.querySelectorAll('a[href="/services"]').forEach((link) => link.setAttribute('href', '/services.html'));
+  const localFileRoutes = {
+    '/services': '/services.html',
+    '/blog': '/blog.html',
+    '/contact': '/contact.html'
+  };
+  document.querySelectorAll('a[href]').forEach((link) => {
+    const replacement = localFileRoutes[link.getAttribute('href')];
+    if (replacement) link.setAttribute('href', replacement);
+  });
 
   document.querySelectorAll('.nav-logo').forEach((brand) => {
     const image = brand.querySelector('img') || document.createElement('img');
@@ -200,8 +208,8 @@
       <div class="oc-mobile-accordion"><button class="oc-mobile-accordion-toggle" type="button" aria-expanded="false">Services</button><div class="oc-mobile-submenu">${linkMarkup(services)}</div></div>
       <div class="oc-mobile-accordion"><button class="oc-mobile-accordion-toggle" type="button" aria-expanded="false">Locations</button><div class="oc-mobile-submenu">${linkMarkup(locations)}</div></div>
       <a class="oc-mobile-link" href="/results/">Results</a>
-      <a class="oc-mobile-link" href="/blog">Blog</a>
-      <a class="oc-mobile-link" href="/contact">Contact</a>
+      <a class="oc-mobile-link" href="/blog.html">Blog</a>
+      <a class="oc-mobile-link" href="/contact.html">Contact</a>
       <div class="oc-mobile-menu-socials"><a href="${socialUrls.linkedin}" target="_blank" rel="noopener" aria-label="LinkedIn">${icon('linkedin')}</a><a href="${socialUrls.telegram}" target="_blank" rel="noopener" aria-label="Telegram">${icon('telegram')}</a></div>`;
     mobile.querySelectorAll('.oc-mobile-accordion-toggle').forEach((toggle) => {
       toggle.addEventListener('click', () => {
