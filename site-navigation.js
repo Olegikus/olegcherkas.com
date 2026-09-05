@@ -127,6 +127,8 @@
   const linkMarkup = (items) => items.map((item) => `<a href="${item.href}"${item.primary ? ' class="oc-primary-link"' : ''}>${item.description ? `<strong>${item.label}</strong><span>${item.description}</span>` : item.label}</a>`).join('');
   const nav = document.querySelector('.site-nav') || document.querySelector('header nav') || document.querySelector('body > nav');
 
+  if (nav) nav.classList.add('site-nav');
+
   document.querySelectorAll('a[href="/services"]').forEach((link) => link.setAttribute('href', '/services.html'));
 
   document.querySelectorAll('.nav-logo').forEach((brand) => {
