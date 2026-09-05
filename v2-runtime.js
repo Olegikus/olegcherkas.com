@@ -89,12 +89,6 @@
     link.setAttribute('aria-label', brand === 'linkedin' ? 'LinkedIn' : brand === 'telegram' ? 'Telegram' : 'WhatsApp');
   });
 
-  document.querySelectorAll('.hero-sub').forEach((paragraph) => {
-    if (paragraph.textContent.trim() === 'We help B2B founders, tech and service firms turn LinkedIn into a repeatable source of qualified conversations that win clients.') {
-      paragraph.textContent = 'We help business owners, tech and service firms turn LinkedIn into a repeatable source of qualified conversations that win clients.';
-    }
-  });
-
   if (previewPage === 'index.html') {
     const homepageHeading = document.querySelector('.hero h1');
     if (homepageHeading) homepageHeading.innerHTML = '<span>Engineering <em>B2B</em></span><span><em>growth</em> systems.</span>';
@@ -140,18 +134,6 @@
       points[0].querySelector(':scope > span').textContent = 'Targeted connections across personal and client profiles.';
     }
     if (points[1]) points[1].querySelector(':scope > span').textContent = 'Qualified meetings across client campaigns.';
-  }
-
-  if (previewPage === 'contact.html') {
-    const photo = document.querySelector('.contact-hero-img');
-    if (photo) {
-      const stage = document.createElement('div');
-      stage.className = 'oc-contact-network-visual';
-      stage.setAttribute('role', 'img');
-      stage.setAttribute('aria-label', 'International B2B conversations connected across markets');
-      stage.innerHTML = `<div class="oc-network-orbit orbit-one"></div><div class="oc-network-orbit orbit-two"></div><div class="oc-network-core"><span>OC</span><small>Growth systems</small></div><span class="oc-network-node node-one">Target</span><span class="oc-network-node node-two">Connect</span><span class="oc-network-node node-three">Follow up</span><span class="oc-network-node node-four">Convert</span>`;
-      photo.replaceWith(stage);
-    }
   }
 
   if (previewPage === 'service-linkedin-content-for-founders.html') {

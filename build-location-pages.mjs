@@ -238,40 +238,206 @@ const pages = [
   }
 ];
 
-const expansionCities = [
-  ['United Kingdom','united-kingdom','London','london','Global headquarters, finance, technology and professional services.',['Finance','Technology','Consulting','Enterprise']],
-  ['United Kingdom','united-kingdom','Manchester','manchester','Technology, media, professional services and advanced manufacturing.',['Technology','Media','Services','Manufacturing']],
-  ['United Kingdom','united-kingdom','Birmingham','birmingham','Manufacturing, logistics, property and mid-market professional services.',['Manufacturing','Logistics','Property','Services']],
-  ['United Kingdom','united-kingdom','Leeds','leeds','Finance, legal, healthcare and northern technology networks.',['Finance','Legal','Healthcare','Technology']],
-  ['Malaysia','malaysia','Kuala Lumpur','kuala-lumpur','Regional headquarters, finance, technology and enterprise services.',['Regional HQ','Finance','Technology','Consulting']],
-  ['Malaysia','malaysia','Cyberjaya','cyberjaya','Technology campuses, cloud, digital infrastructure and shared services.',['Cloud','Technology','Infrastructure','Shared services']],
-  ['Malaysia','malaysia','Johor Bahru','johor-bahru','Manufacturing, logistics, data centres and Singapore-linked commerce.',['Manufacturing','Logistics','Data centres','Trade']],
-  ['Australia','australia','Sydney','sydney','Corporate headquarters, finance, technology and consulting.',['Enterprise','Finance','Technology','Consulting']],
-  ['Australia','australia','Melbourne','melbourne','Technology, finance, healthcare, education and professional services.',['Technology','Finance','Healthcare','Education']],
-  ['Australia','australia','Brisbane','brisbane','Technology, infrastructure, energy and growing mid-market businesses.',['Technology','Infrastructure','Energy','Mid-market']],
-  ['Australia','australia','Perth','perth','Resources, engineering, logistics and specialist professional services.',['Resources','Engineering','Logistics','Services']]
-];
-
-for (const [region,regionSlug,city,citySlug,market,tags] of expansionCities) {
-  const peers = expansionCities.filter((entry) => entry[1] === regionSlug && entry[2] !== city).slice(0,3);
-  pages.push({
-    path:`locations/${regionSlug}/${citySlug}/index.html`,city,region,image:`location-assets/${citySlug}.png`,
-    imageAlt:`${city} business district`,
-    lead:`Reach relevant ${city} decision makers with LinkedIn B2B outreach built around the city's commercial landscape.`,
-    signal:market,tags,whyTitle:`${city} needs its own account and message strategy`,
-    paragraphs:[
-      `${city} has a distinct mix of ${market.toLowerCase()} A useful campaign starts by separating the accounts and roles with a credible reason to buy.`,
-      `We build <strong>market-specific targeting</strong> around company type, seniority, commercial context and timing instead of reusing a generic international list.`,
-      `The result is a focused LinkedIn and email sequence that sounds relevant to the buyer and gives each follow-up a clear purpose.`
+pages.push(
+  {
+    path: 'locations/united-kingdom/london/index.html', city: 'London', region: 'United Kingdom', image: 'location-assets/london.png',
+    imageAlt: 'London financial district and Thames skyline',
+    lead: "Reach London headquarters, scale-ups and specialist firms with evidence-led LinkedIn outreach designed for one of the world's most competitive B2B markets.",
+    signal: 'Global headquarters. Dense specialist clusters. High message competition.', tags: ['Finance','Fintech','Technology','Life sciences'],
+    whyTitle: 'London buyers see more outreach, so relevance has to be visible immediately',
+    paragraphs: [
+      "London combines global and regional headquarters with deep clusters in financial and business services, technology, life sciences, creative industries and the green economy. The opportunity is large, but so is the volume of undifferentiated outreach reaching senior people.",
+      "A credible campaign narrows the market by <strong>sector, company stage and commercial trigger</strong>. A fintech compliance buyer, a life-sciences partnership lead and a creative-agency founder should never receive the same opening argument.",
+      "We research the account and the person's remit before writing, then use concise proof and restrained follow-up to earn attention without sounding like another automated London campaign."
     ],
-    signals:[['Market structure',market],['Buying reality','Credibility depends on sector, role and local commercial context'],['Outbound implication','Research the account before writing the message']],
-    sectors:[[tags[0],`Relevant ${tags[0].toLowerCase()} companies and decision makers in ${city}.`],[tags[1],`Senior ${tags[1].toLowerCase()} buyers and commercial teams.`],[tags[2],`Established and growing organisations connected to ${tags[2].toLowerCase()}.`],[tags[3],`Specialist ${tags[3].toLowerCase()} businesses with a clear B2B need.`],['Professional services','Consulting, recruitment, legal, finance and expert-led firms.'],['B2B technology','SaaS, platforms and technology providers serving local organisations.'],['HR & recruitment','Talent, staffing, executive search and people-technology providers.']],
-    faq:[[ `Can LinkedIn generate B2B leads in ${city}?`,`Yes. It works best when the account list, proof and message are specific to the buyer's sector and role.`],[`Who can you target in ${city}?`,'Campaigns can reach founders, executives, commercial leaders and relevant functional decision makers.'],['Can LinkedIn and email work together?','Yes. Both channels can use the same account research and coordinated follow-up logic.'],[`Should ${city} use a separate campaign?`,'Yes when the market, buyer expectations or sector mix differ from the rest of the region.']],
-    sourceName:`${region} market overview`,sourceUrl:'https://www.worldbank.org/',
-    related:peers.map((entry)=>[entry[2],`/locations/${regionSlug}/${entry[3]}/`,entry[4]]),
-    cta:`Build a ${city} campaign around accounts that can actually buy.`
-  });
-}
+    signals: [['Market structure','International headquarters sit beside specialised scale-up and professional-service clusters'],['Buying reality','Senior buyers are accessible but heavily exposed to generic prospecting'],['Outbound implication','Lead with one verifiable reason the conversation belongs on this person’s agenda']],
+    sectors: [['Financial services','Banks, asset managers, insurers, payments firms and regulated financial infrastructure.'],['Fintech & regtech','Payments, lending, compliance, risk, identity and financial-data companies.'],['Enterprise technology','SaaS, cybersecurity, data, AI and platforms selling into complex organisations.'],['Life sciences','Biotech, health technology, research services and commercial partnerships.'],['Professional services','Consulting, legal, accounting, executive search and specialist advisory firms.'],['Creative & media','Agencies, production businesses, media technology and brand-led B2B providers.'],['Green economy','Climate technology, energy services, sustainable finance and decarbonisation solutions.']],
+    faq: [['How do you stand out in a crowded London inbox?','Use a narrow account hypothesis, a specific trigger and proof that fits the recipient’s remit. More personalisation tokens do not rescue an irrelevant message.'],['Which London companies are best suited to outbound?','High-value B2B firms with a defined buyer, credible evidence and enough contract value to justify account research are the strongest fit.'],['Can a campaign target both enterprises and scale-ups?','Yes, but they need separate lists, proof and calls to action because authority, risk and buying speed differ.'],['Is LinkedIn enough for London enterprise outreach?','LinkedIn can open familiarity, while coordinated email and thoughtful follow-up help reach multi-person buying groups.']],
+    sourceName: 'Greater London Authority', sourceUrl: 'https://www.london.gov.uk/programmes-strategies/business-and-economy/mayors-priorities-londons-economy-and-business/supporting-londons-sectors-growth',
+    related: [['Manchester','/locations/united-kingdom/manchester/','Digital, creative, health innovation and advanced industry'],['Birmingham','/locations/united-kingdom/birmingham/','Advanced manufacturing and next-generation services'],['Leeds','/locations/united-kingdom/leeds/','Finance, health innovation and data-led business']],
+    cta: 'Make London outreach specific enough to deserve a reply.'
+  },
+  {
+    path: 'locations/united-kingdom/manchester/index.html', city: 'Manchester', region: 'United Kingdom', image: 'location-assets/manchester.png',
+    imageAlt: 'Manchester city centre and modern business district',
+    lead: "Open conversations across Manchester's digital, creative, health-innovation and advanced-industry ecosystem with sector-specific LinkedIn outreach.",
+    signal: 'Digital scale-ups. Media and creative. Research-led industry.', tags: ['Digital & AI','Creative','Health innovation','Advanced materials'],
+    whyTitle: 'Manchester is a connected innovation ecosystem, not a smaller copy of London',
+    paragraphs: [
+      "Greater Manchester is building around five frontier sectors: digital, cyber and AI; creative industries; health innovation and life sciences; advanced materials and manufacturing; and low-carbon activity.",
+      "Commercial access often runs through a mixture of scale-ups, established employers, universities, research assets and public-private programmes. That makes <strong>ecosystem context</strong> more useful than generic city personalisation.",
+      "We separate founder-led technology firms from institutional and industrial accounts, map the right functional leaders, and shape messages around adoption, partnerships, talent or commercial growth."
+    ],
+    signals: [['Market structure','Scale-ups, research institutions and established employers operate in connected sector networks'],['Buying reality','The economic buyer may sit beside technical, clinical or partnership stakeholders'],['Outbound implication','Show awareness of the sector ecosystem and map more than one relevant role']],
+    sectors: [['Digital, cyber & AI','Software, data, cybersecurity, cloud and applied-AI businesses.'],['Creative & media','Production, broadcasting, gaming, digital content and creative technology.'],['Health innovation','Digital health, diagnostics, clinical technology and life-science services.'],['Advanced materials','Graphene, materials science, engineering technology and research commercialisation.'],['Manufacturing','Advanced production, automation, industrial software and specialist suppliers.'],['Low carbon','Energy systems, retrofit, mobility and environmental technology.'],['Professional services','Growth consulting, finance, recruitment and advisory teams supporting regional companies.']],
+    faq: [['Should Manchester use the same message as London?','No. Manchester has a different mix of scale-ups, research assets, creative businesses and advanced industry, so account selection and proof should change.'],['Can you target MediaCity and creative businesses?','Yes. We can isolate production, broadcasting, gaming and creative-technology accounts and identify commercial or partnership leaders.'],['How do you approach health-innovation buyers?','Messages should reflect the longer evidence, procurement and stakeholder journey common to clinical and institutional environments.'],['Can a campaign cover the wider Greater Manchester region?','Yes. The list can include relevant accounts across the city region while keeping sector-based message variants.']],
+    sourceName: 'Greater Manchester Combined Authority', sourceUrl: 'https://www.greatermanchester-ca.gov.uk/what-we-do/economy/sector-development-plans/',
+    related: [['London','/locations/united-kingdom/london/','Global headquarters and specialist services'],['Birmingham','/locations/united-kingdom/birmingham/','Manufacturing, health-tech and business services'],['Leeds','/locations/united-kingdom/leeds/','Finance, healthtech and northern digital networks']],
+    cta: 'Turn Manchester sector knowledge into relevant business conversations.'
+  },
+  {
+    path: 'locations/united-kingdom/birmingham/index.html', city: 'Birmingham', region: 'United Kingdom', image: 'location-assets/birmingham.png',
+    imageAlt: 'Birmingham city centre and canal-side business district',
+    lead: "Reach West Midlands manufacturers, technology firms and professional-service leaders through LinkedIn outreach grounded in Birmingham's real economic strengths.",
+    signal: 'Advanced manufacturing. Business services. Industrial transition.', tags: ['Manufacturing','Clean tech','Health tech','Business services'],
+    whyTitle: 'Birmingham connects boardroom services with a major industrial supply chain',
+    paragraphs: [
+      "Birmingham sits at the centre of a West Midlands economy strong in advanced manufacturing, electric vehicles and batteries, clean energy, health technology, digital industries and professional and financial services.",
+      "Many opportunities cross sector boundaries: a software vendor may sell into factories, a recruiter into engineering programmes, or an adviser into regulated growth projects. Outreach works when it reflects that <strong>industrial-commercial connection</strong>.",
+      "We identify whether the decision sits in operations, engineering, technology, procurement or the executive team, and adapt the evidence and next step to that buying route."
+    ],
+    signals: [['Market structure','Large industrial supply chains coexist with a substantial professional-services centre'],['Buying reality','Operational and technical stakeholders often influence the commercial decision'],['Outbound implication','Connect the offer to a programme, plant, transition or measurable business constraint']],
+    sectors: [['Advanced manufacturing','Automotive, aerospace, engineering, automation and production technology.'],['Electric vehicles & batteries','Mobility supply chains, battery innovation, testing and specialist services.'],['Clean technology','Smart energy, heat decarbonisation, efficiency and green infrastructure.'],['Health & medtech','Medical devices, digital healthcare, diagnostics and research-led businesses.'],['Digital & creative','Software, AI, 5G applications, games and creative technology.'],['Professional & financial services','Banks, insurers, consultancies, legal firms and accounting practices.'],['Logistics & infrastructure','Transport, warehousing, construction and supply-chain technology.']],
+    faq: [['Why is Birmingham different from other UK city campaigns?','Its buyer landscape links professional services with manufacturing, mobility, energy and infrastructure supply chains. Those segments need different proof.'],['Can LinkedIn reach manufacturing decision makers?','Yes. Campaigns can map plant, operations, engineering, digital, procurement and commercial roles instead of relying on one job-title filter.'],['What works for West Midlands technology vendors?','A strong message shows how the technology affects an operational, regulatory or financial priority inside the target sector.'],['Should Birmingham outreach include the wider West Midlands?','It can. For specialised offers, including relevant Coventry, Solihull, Wolverhampton or wider regional accounts can create a stronger market segment.']],
+    sourceName: 'West Midlands Combined Authority', sourceUrl: 'https://growth.wmca.org.uk/it-starts-here/mayoral-summary/',
+    related: [['London','/locations/united-kingdom/london/','Headquarters, finance and technology buyers'],['Manchester','/locations/united-kingdom/manchester/','Digital, creative and research-led sectors'],['Leeds','/locations/united-kingdom/leeds/','Finance, health innovation and digital services']],
+    cta: 'Build Birmingham outreach around real sector and buying context.'
+  },
+  {
+    path: 'locations/united-kingdom/leeds/index.html', city: 'Leeds', region: 'United Kingdom', image: 'location-assets/leeds.png',
+    imageAlt: 'Leeds skyline and financial district',
+    lead: "Reach financial, professional, health-innovation and technology buyers with LinkedIn outreach built for Leeds and the wider West Yorkshire economy.",
+    signal: 'Finance and professional services. Healthtech. Data and AI.', tags: ['Finance','Healthtech','Digital & AI','Professional services'],
+    whyTitle: 'Leeds combines regulated services with a fast-growing data and health ecosystem',
+    paragraphs: [
+      "Leeds anchors West Yorkshire strengths in financial and professional services, digital technology, health and life sciences, advanced manufacturing, creative industries and the green economy.",
+      "The overlap matters. Fintech and data providers sell into regulated institutions; healthtech companies navigate clinical and public-sector stakeholders; specialist advisers serve both established employers and scale-ups. <strong>Buyer context changes by cluster.</strong>",
+      "We build separate account hypotheses for those clusters, identify risk, technology, commercial or operational leaders, and write follow-up around the decision process rather than the city name."
+    ],
+    signals: [['Market structure','A major financial and professional-services base overlaps with health, data and technology'],['Buying reality','Regulated and institutional buyers require evidence, security and stakeholder awareness'],['Outbound implication','Segment by buying environment before deciding the message or channel mix']],
+    sectors: [['Financial services','Banking, insurance, lending, payments, wealth and supporting infrastructure.'],['Legal & professional services','Law, accounting, consulting, compliance and specialist business advisory.'],['Healthtech & life sciences','Digital health, medical technology, research services and NHS-facing suppliers.'],['Data, AI & software','Analytics, fintech infrastructure, cybersecurity and enterprise applications.'],['Advanced manufacturing','Engineering, automation, process improvement and industrial suppliers.'],['Creative industries','Digital agencies, content, design, gaming and creative technology.'],['Green economy','Low-carbon services, energy efficiency, sustainable finance and environmental solutions.']],
+    faq: [['Which Leeds sectors respond best to LinkedIn outreach?','Finance, professional services, technology and health innovation can work well when the offer and proof match the buyer’s regulated or institutional context.'],['Can campaigns target NHS-related suppliers?','Yes, but lists should distinguish private health businesses, suppliers, research organisations and public-sector stakeholders.'],['How should fintech outreach be positioned?','Lead with the commercial or risk outcome and credible evidence, not a broad claim about innovation.'],['Can Leeds and Manchester share one northern campaign?','They can share infrastructure, but each city and sector should keep distinct account lists and message variants.']],
+    sourceName: 'West Yorkshire Combined Authority', sourceUrl: 'https://www.westyorks-ca.gov.uk/business/growth-hub/invest-in-west-yorkshire/why-west-yorkshire/sectors-and-industries/',
+    related: [['Manchester','/locations/united-kingdom/manchester/','Digital, creative and advanced-industry networks'],['London','/locations/united-kingdom/london/','Global finance and headquarters buyers'],['Birmingham','/locations/united-kingdom/birmingham/','Industrial and next-generation services']],
+    cta: 'Reach Leeds buyers with the proof their sector expects.'
+  },
+  {
+    path: 'locations/malaysia/kuala-lumpur/index.html', city: 'Kuala Lumpur', region: 'Malaysia', image: 'location-assets/kuala-lumpur.png',
+    imageAlt: 'Kuala Lumpur skyline and Petronas Towers at dusk',
+    lead: "Reach regional and country decision makers across Greater Kuala Lumpur with LinkedIn outreach built for multinational hubs and Malaysia's modern-services economy.",
+    signal: 'Regional hubs. Modern services. Multinational buying teams.', tags: ['Regional HQ','Financial services','Technology','Energy'],
+    whyTitle: 'Kuala Lumpur buying roles often extend beyond one country market',
+    paragraphs: [
+      "Greater Kuala Lumpur hosts regional and global services hubs across technology, financial asset servicing, healthcare, engineering, consumer businesses and energy. A local title may carry responsibility for Malaysia, ASEAN or a global function.",
+      "That makes territory and remit essential. Outreach should establish whether the person owns a country decision, a shared-service function or a regional programme before presenting <strong>the relevant business case</strong>.",
+      "We qualify accounts by hub type, operating footprint and seniority, then write messages that respect multinational approval paths while remaining concrete enough for a local conversation."
+    ],
+    signals: [['Market structure','Country headquarters sit alongside ASEAN and global business-service functions'],['Buying reality','Authority may be split between Kuala Lumpur, another regional office and global leadership'],['Outbound implication','Verify geographic remit and decision ownership before approaching the contact']],
+    sectors: [['Regional business services','Shared services, operations hubs, customer functions and centres of excellence.'],['Financial & asset services','Banking, payments, fund services, insurance and financial technology.'],['Technology & AI','Enterprise software, data, cloud, cybersecurity and digital transformation.'],['Energy & engineering','Energy companies, renewables, technical services and regional project teams.'],['Healthcare & life sciences','Medical technology, healthcare services and regional commercial operations.'],['Consumer & retail','Regional consumer brands, distribution groups and enabling B2B providers.'],['Professional services','Consulting, recruitment, legal, accounting and market-entry advisory.']],
+    faq: [['Should outreach say Kuala Lumpur or ASEAN?','Use the scope the buyer actually owns. A country leader and a regional shared-services director need different context.'],['Can you target multinational hubs in Greater KL?','Yes. We can filter for regional functions, service centres and country operations, then map the appropriate commercial or functional stakeholder.'],['Does English work for Kuala Lumpur campaigns?','English is widely usable in many B2B and multinational segments, but language and tone should still follow the audience and company context.'],['Can Kuala Lumpur outreach support entry into Malaysia?','Yes. It can reach potential clients, partners and advisers, provided each audience has a separate value proposition.']],
+    sourceName: 'InvestKL', sourceUrl: 'https://www.investkl.gov.my/about-investkl/about-us',
+    related: [['Cyberjaya','/locations/malaysia/cyberjaya/','Digital infrastructure and technology operations'],['Johor Bahru','/locations/malaysia/johor-bahru/','Singapore-linked industry and logistics'],['Singapore','/locations/singapore/','APAC headquarters and concentrated regional buyers']],
+    cta: 'Map the real regional remit behind Kuala Lumpur job titles.'
+  },
+  {
+    path: 'locations/malaysia/cyberjaya/index.html', city: 'Cyberjaya', region: 'Malaysia', image: 'location-assets/cyberjaya.png',
+    imageAlt: 'Cyberjaya technology campus and modern office buildings',
+    lead: "Reach digital infrastructure, cloud, cybersecurity and technology operators with technical LinkedIn outreach designed for Cyberjaya's specialist ecosystem.",
+    signal: 'Digital operations. Data infrastructure. Technology talent.', tags: ['Cloud','Cybersecurity','Data centres','Digital services'],
+    whyTitle: 'Cyberjaya is defined by technology operations, not a generic corporate audience',
+    paragraphs: [
+      "Cyberjaya was developed as a digital hub and remains closely associated with technology campuses, data infrastructure, software, shared operations and the public institutions supporting Malaysia's digital economy.",
+      "Relevant buying groups are often technical. Infrastructure, security, architecture, operations and vendor-management stakeholders may shape access before a commercial leader enters the discussion. <strong>Technical credibility is the filter.</strong>",
+      "We map those roles, identify the operating environment and lead with a specific capability or risk reduction rather than broad digital-transformation language."
+    ],
+    signals: [['Market structure','Technology operators, digital agencies and institutional programmes cluster around specialised infrastructure'],['Buying reality','Technical teams can screen vendors before a senior commercial conversation begins'],['Outbound implication','Use role-specific evidence for infrastructure, security, data and operations buyers']],
+    sectors: [['Data centres','Operators, colocation, facilities, cooling, power and infrastructure suppliers.'],['Cloud & managed services','Cloud platforms, MSPs, migration, observability and enterprise support.'],['Cybersecurity','Security operations, identity, risk, compliance and managed protection.'],['AI, data & software','Analytics, automation, enterprise applications and applied artificial intelligence.'],['Shared operations','Global business services, technology support and operational centres.'],['Telecommunications','Connectivity, network services, infrastructure and enterprise communications.'],['Digital talent services','Technical recruitment, training, workforce platforms and specialist consulting.']],
+    faq: [['Which Cyberjaya roles can be targeted?','Depending on the offer, campaigns can reach infrastructure, security, data, engineering, operations, procurement and technology leadership.'],['Is Cyberjaya separate from a Kuala Lumpur campaign?','For technical offers it should usually be its own segment because the account mix and stakeholder language are more specialised.'],['What proof matters to infrastructure buyers?','Relevant deployments, security posture, operational reliability and a clear technical use case matter more than generic growth claims.'],['Can you target Malaysia Digital companies?','Yes, where suitable company and role data are available. The list should still be filtered by actual fit rather than programme membership alone.']],
+    sourceName: 'Malaysia Digital Economy Corporation', sourceUrl: 'https://www.mdec.my/locations/cyberjaya',
+    related: [['Kuala Lumpur','/locations/malaysia/kuala-lumpur/','Regional headquarters and modern services'],['Johor Bahru','/locations/malaysia/johor-bahru/','Data infrastructure, manufacturing and logistics'],['Singapore','/locations/singapore/','Regional technology and enterprise leadership']],
+    cta: 'Approach Cyberjaya technology buyers with technical relevance.'
+  },
+  {
+    path: 'locations/malaysia/johor-bahru/index.html', city: 'Johor Bahru', region: 'Malaysia', image: 'location-assets/johor-bahru.png',
+    imageAlt: 'Johor Bahru skyline and Singapore-facing waterfront',
+    lead: "Reach Johor manufacturers, data-centre operators and logistics leaders with account-based outreach shaped by the Singapore-Johor economic corridor.",
+    signal: 'Cross-border investment. Industrial supply chains. Data-centre growth.', tags: ['Manufacturing','Data centres','Logistics','Singapore link'],
+    whyTitle: 'Johor Bahru decisions often sit inside cross-border supply chains',
+    paragraphs: [
+      "Johor's growth is being shaped by advanced manufacturing, electrical and electronics, data centres, logistics, medical devices, chemicals and the Johor-Singapore Special Economic Zone.",
+      "A target company may operate in Johor while regional management, customers or investors sit across the border. The campaign therefore needs to distinguish plant responsibility, Malaysia operations and <strong>Singapore-linked authority</strong>.",
+      "We map operating sites and leadership relationships, then tailor messages for technical, procurement, supply-chain or executive stakeholders instead of treating Johor Bahru as another generic Malaysian city."
+    ],
+    signals: [['Market structure','Industrial zones and digital infrastructure are connected to Singapore-facing trade and investment'],['Buying reality','Operational ownership and regional authority may sit in different locations'],['Outbound implication','Map the site, the supply chain and the cross-border decision path before outreach']],
+    sectors: [['Electrical & electronics','Manufacturers, component suppliers, automation and testing businesses.'],['Data centres & AI infrastructure','Operators, facilities, power, cooling, connectivity and specialist services.'],['Logistics & ports','Freight, warehousing, cross-border transport and supply-chain technology.'],['Medical devices','Production, quality systems, specialist suppliers and healthcare technology.'],['Chemicals & materials','Process industries, industrial inputs, safety and environmental services.'],['Advanced manufacturing','Automation, robotics, maintenance, engineering and operational software.'],['Financial & business services','Cross-border finance, advisory, workforce and corporate services supporting investment.']],
+    faq: [['What makes Johor Bahru outreach different?','Cross-border ownership, industrial sites and Singapore-linked supply chains make account mapping more important than city-level personalisation.'],['Can you target data-centre operators and suppliers?','Yes. The campaign can segment operators, contractors, power and cooling providers, connectivity firms and other infrastructure partners.'],['Should Singapore contacts be included?','Only when they influence the Johor operation or regional decision. They should receive a distinct message reflecting that role.'],['Can LinkedIn work for factory and engineering buyers?','Yes, when the message addresses a concrete operating, quality, capacity or commercial priority and reaches the correct stakeholder.']],
+    sourceName: 'Invest Johor', sourceUrl: 'https://www.investjohor.gov.my/investment-performance-2024/',
+    related: [['Singapore','/locations/singapore/','Regional headquarters and APAC decision makers'],['Kuala Lumpur','/locations/malaysia/kuala-lumpur/','Country and regional business-service hubs'],['Cyberjaya','/locations/malaysia/cyberjaya/','Cloud, cybersecurity and digital operations']],
+    cta: 'Connect Johor operations to the people who own the decision.'
+  },
+  {
+    path: 'locations/australia/sydney/index.html', city: 'Sydney', region: 'Australia', image: 'location-assets/sydney.png',
+    imageAlt: 'Sydney central business district and harbour',
+    lead: "Reach Sydney finance, technology and professional-service buyers with direct, evidence-led LinkedIn outreach built for national and APAC decision makers.",
+    signal: 'Financial capital. Technology density. National headquarters.', tags: ['Finance & fintech','Technology','Cybersecurity','Professional services'],
+    whyTitle: 'Sydney offers senior access, but buyers expect a clear commercial case',
+    paragraphs: [
+      "Sydney is Australia's financial capital and a major technology centre, with dense networks across fintech, cybersecurity, enterprise software, professional services, health and life sciences, and national headquarters.",
+      "The same density attracts constant prospecting. Senior people respond better to direct language, relevant evidence and a defensible reason for contact than to elaborate personalisation. <strong>The business case must arrive early.</strong>",
+      "We isolate the account type and decision remit, then coordinate LinkedIn and email around a measurable priority such as growth, compliance, security, productivity or market entry."
+    ],
+    signals: [['Market structure','National headquarters and global firms sit inside strong finance and technology clusters'],['Buying reality','Buyers compare many capable vendors and quickly screen vague propositions'],['Outbound implication','State the commercial relevance early and support it with proof that fits the sector']],
+    sectors: [['Financial services','Banks, asset managers, insurers, superannuation and financial infrastructure.'],['Fintech & regtech','Payments, lending, wealth technology, compliance and risk platforms.'],['Enterprise technology','SaaS, data, AI, cloud and business applications for complex organisations.'],['Cybersecurity','Security vendors, managed services, identity and governance solutions.'],['Professional services','Consulting, legal, accounting, executive search and specialist advisory.'],['Health & life sciences','Medtech, digital health, biotechnology and research commercialisation.'],['Creative & digital','Media, design, digital platforms, agencies and technology-enabled services.']],
+    faq: [['Who should be targeted in Sydney enterprise accounts?','The answer depends on the offer. Campaigns can map an economic buyer plus technology, risk, operations, procurement or functional stakeholders.'],['Does a direct message style work in Australia?','Usually, yes. Clear relevance, credible proof and a low-friction next step tend to work better than exaggerated formality.'],['Can Sydney outreach target APAC roles?','Yes, but only after verifying that the person actually owns a regional remit and that the offer fits their geography.'],['Should fintech and general SaaS share one campaign?','No. Regulated financial buyers require different proof, language and stakeholder mapping from a broad SaaS audience.']],
+    sourceName: 'Investment NSW', sourceUrl: 'https://www.investment.nsw.gov.au/focus-sectors/technology/',
+    related: [['Melbourne','/locations/australia/melbourne/','Technology, life sciences and research-led business'],['Brisbane','/locations/australia/brisbane/','Resources, infrastructure and growth industries'],['Perth','/locations/australia/perth/','Mining, energy and industrial technology']],
+    cta: 'Give Sydney buyers a commercial reason to engage now.'
+  },
+  {
+    path: 'locations/australia/melbourne/index.html', city: 'Melbourne', region: 'Australia', image: 'location-assets/melbourne.png',
+    imageAlt: 'Melbourne skyline and Yarra River business district',
+    lead: "Open conversations across Melbourne's technology, life-sciences, advanced-manufacturing and professional-services economy with research-led outreach.",
+    signal: 'Research and talent. Life sciences. Advanced industry.', tags: ['Life sciences','Technology','Manufacturing','Clean energy'],
+    whyTitle: 'Melbourne rewards depth across research, industry and commercial networks',
+    paragraphs: [
+      "Melbourne and Victoria have established strengths in digital technology, health and life sciences, advanced manufacturing, clean energy, education and major corporate headquarters.",
+      "Many opportunities emerge where research meets commercial application: medical technology, industrial innovation, energy transition and enterprise software. The message should show that the sender understands <strong>which side of that bridge the buyer occupies</strong>.",
+      "We distinguish research-led companies, operators, investors and professional advisers, then build outreach around commercialisation, adoption, expansion or measurable operating value."
+    ],
+    signals: [['Market structure','Universities, research institutes, scale-ups and large employers form overlapping innovation networks'],['Buying reality','Scientific, technical and commercial stakeholders may evaluate different parts of the offer'],['Outbound implication','Translate expertise into the outcome and evidence each stakeholder can defend']],
+    sectors: [['Life sciences & medtech','Biotechnology, diagnostics, clinical services, devices and research partners.'],['Digital technology','SaaS, AI, data, cybersecurity and enterprise transformation.'],['Advanced manufacturing','Aerospace, defence, precision production, automation and industrial suppliers.'],['Clean energy','Renewables, storage, grid technology, efficiency and climate solutions.'],['Education & research','Universities, research institutes, training technology and commercialisation teams.'],['Corporate services','Finance, legal, consulting, recruitment and specialist business support.'],['Consumer & design','Retail, food, design, creative production and enabling B2B technology.']],
+    faq: [['How is Melbourne outreach different from Sydney?','Melbourne campaigns often lean more heavily into life sciences, research, advanced manufacturing, education and clean-energy networks.'],['Can LinkedIn reach research-commercialisation teams?','Yes, when targeting distinguishes academic leadership, technology transfer, partnerships and commercial operators.'],['What proof works for life-sciences buyers?','Relevant domain expertise, validated outcomes and an understanding of regulatory or clinical constraints are more persuasive than generic growth claims.'],['Can a campaign combine technology and manufacturing?','Yes, when the offer genuinely connects them, but plant, engineering, technology and executive roles still need tailored messages.']],
+    sourceName: 'Invest Victoria', sourceUrl: 'https://invest.vic.gov.au/understand-the-market/know-the-victorian-economy/proven-track-record',
+    related: [['Sydney','/locations/australia/sydney/','Finance, fintech and national headquarters'],['Brisbane','/locations/australia/brisbane/','Infrastructure, energy and biomedical growth'],['Perth','/locations/australia/perth/','Resources, engineering and critical technology']],
+    cta: 'Turn Melbourne expertise into commercially relevant outreach.'
+  },
+  {
+    path: 'locations/australia/brisbane/index.html', city: 'Brisbane', region: 'Australia', image: 'location-assets/brisbane.png',
+    imageAlt: 'Brisbane riverfront skyline and central business district',
+    lead: "Reach Brisbane and Queensland decision makers across resources, infrastructure, advanced technology and biomedical growth sectors.",
+    signal: 'Resources and energy. Infrastructure growth. Applied innovation.', tags: ['Energy & resources','Infrastructure','Biomedical','Digital technology'],
+    whyTitle: 'Brisbane buying context extends across a fast-growing state economy',
+    paragraphs: [
+      "Brisbane is the commercial gateway to a Queensland economy strong in resources, energy, construction, manufacturing, logistics, tourism, biomedical innovation and services.",
+      "Many headquarters teams support projects distributed across the state. A useful message therefore connects the Brisbane-based decision maker to a real operational region, asset, programme or growth constraint. <strong>Locality alone is not the insight.</strong>",
+      "We map corporate and project stakeholders, separate public, enterprise and mid-market accounts, and build follow-up around practical value rather than a generic innovation pitch."
+    ],
+    signals: [['Market structure','Brisbane headquarters often coordinate assets, projects and customers across Queensland'],['Buying reality','Project owners, technical teams and commercial leaders may share decision authority'],['Outbound implication','Anchor the message in the relevant asset, programme or sector-specific growth pressure']],
+    sectors: [['Energy & resources','Producers, service companies, engineering providers and transition technology.'],['Infrastructure & construction','Transport, utilities, property, project services and major contractors.'],['Mining technology','METS, automation, safety, remote operations and industrial software.'],['Biomedical innovation','Medical technology, diagnostics, research, clinical and health-service suppliers.'],['Digital industries','Enterprise software, data, cybersecurity, cloud and applied AI.'],['Advanced manufacturing','Aerospace, defence, robotics, food technology and specialist production.'],['Professional services','Consulting, finance, legal, recruitment and project advisory.']],
+    faq: [['Should a Brisbane campaign cover all Queensland?','It can, but accounts should be grouped by sector, geography and operating context rather than placed in one state-wide sequence.'],['Can you reach resources and infrastructure buyers on LinkedIn?','Yes. The strongest approach maps technical, project, procurement and executive roles around a defined business issue.'],['What is different about public-sector opportunities?','Government and government-owned organisations have distinct procurement, evidence and timing requirements, so they need their own segment.'],['Can Brisbane work for technology companies entering Australia?','Yes, especially where the offer fits Queensland industries and the company can demonstrate relevant local or international proof.']],
+    sourceName: 'Queensland Treasury', sourceUrl: 'https://www.treasury.qld.gov.au/policies-and-programs/investment/why-queensland/',
+    related: [['Sydney','/locations/australia/sydney/','Finance, technology and national decision makers'],['Melbourne','/locations/australia/melbourne/','Research, life sciences and advanced industry'],['Perth','/locations/australia/perth/','Mining, energy and remote operations']],
+    cta: 'Connect Brisbane headquarters to real Queensland priorities.'
+  },
+  {
+    path: 'locations/australia/perth/index.html', city: 'Perth', region: 'Australia', image: 'location-assets/perth.png',
+    imageAlt: 'Perth skyline and Swan River at sunset',
+    lead: "Reach Perth resources, energy, engineering and industrial-technology leaders with technically credible account-based LinkedIn outreach.",
+    signal: 'Mining headquarters. Energy expertise. Remote operations.', tags: ['Mining & METS','Energy','Engineering','Critical technology'],
+    whyTitle: 'Perth enterprise outreach lives or dies on technical credibility',
+    paragraphs: [
+      "Perth is a global centre for mining, mining equipment and technology services, energy, engineering, remote operations and the critical-minerals supply chain, supported by specialist professional and research capabilities.",
+      "The commercial office may be in Perth while operations sit thousands of kilometres away. Messages need to connect the decision maker's remit to safety, productivity, reliability, project delivery or energy transition. <strong>Generic enterprise language creates no trust.</strong>",
+      "We research the operator, asset and supplier relationship, map technical and commercial influence, and use proof that can survive scrutiny from engineering, operations and procurement teams."
+    ],
+    signals: [['Market structure','Global resources headquarters coordinate remote assets and specialised supplier networks'],['Buying reality','Engineering, operations, procurement and executive stakeholders test different claims'],['Outbound implication','Demonstrate domain understanding and tie the offer to an operational or project outcome']],
+    sectors: [['Mining & METS','Operators, mining services, equipment, automation and specialist technology.'],['Energy & LNG','Producers, project teams, service companies and industrial suppliers.'],['Critical minerals','Battery minerals, processing, exploration technology and supply-chain services.'],['Engineering & projects','EPC firms, consultancies, maintenance and asset-management providers.'],['Remote operations','Autonomy, robotics, communications, data and operational technology.'],['Maritime, defence & space','Marine services, defence capability, satellite data and dual-use technology.'],['Professional services','Resources-focused legal, finance, recruitment, safety and advisory firms.']],
+    faq: [['Why does Perth need a separate Australia campaign?','Its economy and buyer language are unusually concentrated around resources, energy, engineering and remote operations. Generic east-coast messaging will look superficial.'],['Which stakeholders should a mining campaign target?','Depending on the offer, targets may include operations, engineering, maintenance, technology, sustainability, projects, supply chain and procurement.'],['Can LinkedIn work for long enterprise sales cycles?','Yes. It can build familiarity across the buying group before an active project or vendor review, provided follow-up is patient and useful.'],['What proof matters in Perth industrial markets?','Comparable operating environments, safety and reliability evidence, credible technical outcomes and relevant customer references.']],
+    sourceName: 'Invest and Trade Western Australia', sourceUrl: 'https://www.investandtrade.wa.gov.au/our-industries/mining-mets',
+    related: [['Brisbane','/locations/australia/brisbane/','Resources, infrastructure and applied innovation'],['Sydney','/locations/australia/sydney/','National headquarters and financial services'],['Melbourne','/locations/australia/melbourne/','Research, manufacturing and life sciences']],
+    cta: 'Earn attention in Perth with operationally credible outreach.'
+  }
+);
 
 const metaDescriptions = {
   Sharjah: 'LinkedIn B2B lead generation in Sharjah for manufacturing, education, logistics and SME decision makers through focused, personalised outreach.',
@@ -287,6 +453,17 @@ const metaDescriptions = {
   Manama: 'LinkedIn B2B lead generation in Bahrain for finance, fintech, ICT, logistics and professional-service decision makers through focused outreach.',
   'Kuwait City': 'LinkedIn B2B lead generation in Kuwait for institutional, technology, infrastructure and professional-service buyers through account-based outreach.',
   Muscat: 'LinkedIn B2B lead generation in Oman for logistics, energy, manufacturing, technology and advisory decision makers through relationship-led outreach.',
+  London: 'LinkedIn B2B lead generation in London for finance, fintech, technology, life-sciences and professional-service buyers through evidence-led outreach.',
+  Manchester: 'LinkedIn B2B lead generation in Manchester for digital, creative, health-innovation and advanced-industry decision makers.',
+  Birmingham: 'LinkedIn B2B lead generation in Birmingham for advanced manufacturing, clean-tech, health-tech and professional-service companies.',
+  Leeds: 'LinkedIn B2B lead generation in Leeds for finance, professional services, healthtech, data and technology buyers.',
+  'Kuala Lumpur': 'LinkedIn B2B lead generation in Kuala Lumpur for regional headquarters, modern-services hubs, finance, technology and energy teams.',
+  Cyberjaya: 'LinkedIn B2B lead generation in Cyberjaya for cloud, cybersecurity, data-centre, software and digital-operations decision makers.',
+  'Johor Bahru': 'LinkedIn B2B lead generation in Johor Bahru for advanced manufacturing, data centres, logistics and Singapore-linked business.',
+  Sydney: 'LinkedIn B2B lead generation in Sydney for finance, fintech, technology, cybersecurity and professional-service decision makers.',
+  Melbourne: 'LinkedIn B2B lead generation in Melbourne for life sciences, technology, advanced manufacturing, clean energy and research-led firms.',
+  Brisbane: 'LinkedIn B2B lead generation in Brisbane for resources, energy, infrastructure, biomedical and digital-technology buyers.',
+  Perth: 'LinkedIn B2B lead generation in Perth for mining, METS, energy, engineering, remote-operations and critical-technology companies.',
   Dubai: 'LinkedIn B2B lead generation in Dubai with targeted outreach for founders, executives and decision makers in technology and professional services.',
   'Abu Dhabi': 'LinkedIn B2B lead generation in Abu Dhabi for institutional, technology, energy and professional-service markets through targeted outreach.',
   Riyadh: 'LinkedIn B2B lead generation in Riyadh through account-based outreach for technology, finance, professional services and enterprise markets.'
@@ -378,7 +555,7 @@ function render(page) {
 <title>${esc(title)}</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="${canonical}">
 <meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(page.lead)}"><meta property="og:url" content="${canonical}"><meta property="og:image" content="https://olegcherkas.com/uploads/${page.image.includes('/') ? page.image : `locations/${page.image}`}">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="LinkedIn B2B Lead Generation in ${esc(page.city)}"><meta name="twitter:description" content="${esc(page.lead)}"><meta name="twitter:image" content="https://olegcherkas.com/uploads/${page.image.includes('/') ? page.image : `locations/${page.image}`}">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="/locations/location-pages.css"><link rel="stylesheet" href="/v2-overrides.css?v=20"><script type="application/ld+json">${JSON.stringify(schema)}</script></head>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="/locations/location-pages.css"><link rel="stylesheet" href="/v2-overrides.css?v=23"><script type="application/ld+json">${JSON.stringify(schema)}</script></head>
 <body><a class="skip-link" href="#main">Skip to content</a>
 ${locationNav}
 ${locationMobileMenu}
@@ -392,7 +569,7 @@ ${relatedInsight}
 <section class="page-section"><div class="section-inner"><div class="section-heading"><div class="eyebrow">Related markets</div><h2>Continue exploring</h2></div><div class="related-grid">${related}</div></div></section></main>
 <section class="cta"><div class="cta-inner"><div><h2>${esc(page.cta)}</h2><p>Start with the market, the account and the decision maker - not a generic regional template.</p></div><a href="https://calendly.com/oleg-olegcherkas/30min" target="_blank" class="btn-primary">Book a strategy call →</a></div></section>
 ${locationFooter}
-<a class="whatsapp-float" href="https://wa.me/971563462566?text=Hi%2C%20I%20would%20like%20to%20discuss%20LinkedIn%20B2B%20lead%20generation." target="_blank" aria-label="Write on WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.04 3C9.42 3 4.03 8.34 4.03 14.91c0 2.1.55 4.15 1.6 5.96L4 27l6.3-1.64a12.1 12.1 0 0 0 5.74 1.46C22.66 26.82 28 21.48 28 14.91S22.66 3 16.04 3Zm0 21.8c-1.8 0-3.55-.48-5.1-1.4l-.37-.22-3.74.97 1-3.62-.24-.38a9.78 9.78 0 0 1-1.52-5.24c0-5.46 4.47-9.9 9.97-9.9 5.49 0 9.95 4.44 9.95 9.9 0 5.46-4.46 9.9-9.95 9.9Zm5.46-7.42c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.49s1.07 2.9 1.22 3.1c.15.2 2.1 3.19 5.08 4.47.71.3 1.26.48 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/></svg></a><script src="/site-navigation.js?v=3"></script></body></html>`;
+<a class="whatsapp-float" href="https://wa.me/971563462566?text=Hi%2C%20I%20would%20like%20to%20discuss%20LinkedIn%20B2B%20lead%20generation." target="_blank" aria-label="Write on WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.04 3C9.42 3 4.03 8.34 4.03 14.91c0 2.1.55 4.15 1.6 5.96L4 27l6.3-1.64a12.1 12.1 0 0 0 5.74 1.46C22.66 26.82 28 21.48 28 14.91S22.66 3 16.04 3Zm0 21.8c-1.8 0-3.55-.48-5.1-1.4l-.37-.22-3.74.97 1-3.62-.24-.38a9.78 9.78 0 0 1-1.52-5.24c0-5.46 4.47-9.9 9.97-9.9 5.49 0 9.95 4.44 9.95 9.9 0 5.46-4.46 9.9-9.95 9.9Zm5.46-7.42c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.49s1.07 2.9 1.22 3.1c.15.2 2.1 3.19 5.08 4.47.71.3 1.26.48 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/></svg></a><script src="/site-navigation.js?v=5"></script></body></html>`;
 }
 
 for (const page of pages) {
@@ -445,10 +622,10 @@ for (const item of existingPageHrCards) {
   html = html.replace('<a class="proof-link" href="/insights/from-cold-profile-to-50-enterprise-meetings-a-linkedin-growth-case-study/">Read the case study →</a>', '<a class="proof-link" href="/results/">See campaign results →</a>');
   html = html.replace(/<script>const burger=document\.querySelector\('\.burger'\);[\s\S]*?<\/script>/, '');
   if (!html.includes('/site-navigation.js')) {
-    html = html.replace('</body>', '<script src="/site-navigation.js?v=3"></script>\n</body>');
+    html = html.replace('</body>', '<script src="/site-navigation.js?v=5"></script>\n</body>');
   }
   if (!html.includes('/v2-overrides.css')) {
-    html = html.replace('</head>', '<link rel="stylesheet" href="/v2-overrides.css?v=20"></head>');
+    html = html.replace('</head>', '<link rel="stylesheet" href="/v2-overrides.css?v=23"></head>');
   }
   fs.writeFileSync(item.path, html);
 }

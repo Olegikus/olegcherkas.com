@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Contact - Oleg Cherkas</title>
 <meta name="description" content="Book a free strategy call or reach out directly via WhatsApp, Telegram or LinkedIn.">
+<link rel="canonical" href="https://olegcherkas.com/contact">
+<link rel="preload" as="image" href="/uploads/contact-conversation-sunset-three-people.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -17,16 +19,21 @@
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--black:#0a0a0a;--dark:#111111;--card:#161616;--border:#1e1e1e;--border2:#2a2a2a;--white:#f0ede8;--muted:#aaa39a;--accent:#c8b89a;--accent2:#e2ceb0}
 html{scroll-behavior:smooth}
-body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden}
+body{background:#031a13;color:var(--white);font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.94);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);padding:18px 56px;display:flex;justify-content:space-between;align-items:center}
 .nav-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:15px;letter-spacing:0.06em;color:var(--accent)}
 .nav-links{display:flex;gap:36px;list-style:none}
 .nav-links a{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);transition:color 0.2s}
 .nav-links a:hover{color:var(--white)}
-.nav-cta{background:transparent;border:1px solid var(--accent);color:var(--accent);font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:9px 22px;border-radius:2px;transition:all 0.2s}
-.nav-cta:hover{background:var(--accent);color:var(--black)}
-.page-hero{padding:100px 56px 72px;border-bottom:1px solid var(--border)}
+.nav-cta{background:linear-gradient(135deg,#d7b15e,#f0d48a);border:1px solid #f0d48a;color:#062118;font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:9px 22px;border-radius:999px;transition:all 0.2s}
+.nav-cta:hover{background:linear-gradient(135deg,#e0bd69,#f6dc96);color:#062118}
+.page-hero{padding:100px 56px 72px;border-bottom:1px solid var(--border);background:#05271d}
+.contact-hero-layout{display:grid;grid-template-columns:minmax(0,.82fr) minmax(460px,1fr);align-items:center;gap:clamp(42px,6vw,96px);padding-top:72px;padding-bottom:72px}
+.contact-hero-copy{min-width:0}
+.contact-hero-art{position:relative;overflow:hidden;aspect-ratio:3/2;border:1px solid rgba(221,183,91,.42);border-radius:26px;background:#03251c;box-shadow:0 28px 70px rgba(0,0,0,.28)}
+.contact-hero-art::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(135deg,rgba(221,183,91,.08),transparent 42%,rgba(72,230,154,.06))}
+.contact-hero-art img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
 .eyebrow{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;display:flex;align-items:center;gap:10px}
 .eyebrow::before{content:'';display:inline-block;width:20px;height:1px;background:var(--accent)}
 h1{font-family:'Sora',sans-serif;font-weight:800;font-size:clamp(42px,5vw,72px);line-height:1.0;letter-spacing:-0.03em;margin-bottom:20px}
@@ -67,7 +74,8 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
 .footer-nav{display:flex;gap:28px}
 .footer-nav a{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);transition:color 0.2s}
 .footer-nav a:hover{color:var(--accent)}
-@media(max-width:960px){.contact-hero-img,.contact-hero-img-placeholder{height:280px}.photo-contact-grid{grid-template-columns:1fr!important}nav{padding:16px 24px}.nav-links{display:none}.page-hero{padding:72px 24px 56px}.contact-body{grid-template-columns:1fr}.contact-left{padding:48px 24px;border-right:none;border-bottom:1px solid var(--border)}.contact-right{padding:48px 24px}.faq{padding:48px 24px}.faq-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}footer{padding:24px;flex-direction:column;gap:20px;text-align:center}}
+@media(max-width:1100px){.contact-hero-layout{grid-template-columns:1fr;gap:32px}.contact-hero-art{width:100%;max-width:760px}}
+@media(max-width:960px){.contact-hero-img,.contact-hero-img-placeholder{height:280px}.photo-contact-grid{grid-template-columns:1fr!important}nav{padding:16px 24px}.nav-links{display:none}.page-hero{padding:52px 24px 44px}.contact-hero-layout{gap:26px}.contact-hero-art{border-radius:20px}.contact-body{grid-template-columns:1fr}.contact-left{padding:48px 24px;border-right:none;border-bottom:1px solid var(--border)}.contact-right{padding:48px 24px}.faq{padding:48px 24px}.faq-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}footer{padding:24px;flex-direction:column;gap:20px;text-align:center}}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:300;position:relative}
 .burger span{display:block;width:22px;height:1.5px;background:var(--white);transition:all 0.3s}
 .burger.open span{background:var(--white)}
@@ -702,8 +710,8 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
 
 </style>
 <link rel="stylesheet" href="/readability-preview.css">
-<link rel="stylesheet" href="/v2-overrides.css?v=20">
-<script src="/v2-runtime.js?v=20" defer></script>
+<link rel="stylesheet" href="/v2-overrides.css?v=24">
+<script src="/v2-runtime.js?v=21" defer></script>
 </head>
 <body>
 <nav>
@@ -756,13 +764,15 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
 </nav>
 
 
-<!-- HERO VISUAL — replaced at runtime with the branded conversation network -->
-<img src="/media-87ae5c3c2186a707.jpg" alt="Oleg Cherkas" class="contact-hero-img" style="object-fit:cover;object-position:center 5%">
-
-<div class="page-hero">
-  <div class="eyebrow">Contact</div>
-  <h1>Let's talk.</h1>
-  <p class="lead">Book a free 30-minute strategy call or reach out directly. I respond fast.</p>
+<div class="page-hero contact-hero-layout">
+  <div class="contact-hero-copy">
+    <div class="eyebrow">Contact</div>
+    <h1>Let's talk.</h1>
+    <p class="lead">Book a free 30-minute strategy call or reach out directly. I respond fast.</p>
+  </div>
+  <figure class="contact-hero-art">
+    <img src="/uploads/contact-conversation-sunset-three-people.png" alt="Three business professionals in conversation at sunset" width="1536" height="1024" loading="eager" fetchpriority="high">
+  </figure>
 </div>
 
 
@@ -844,8 +854,8 @@ footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:
       <p>It's a free 30-minute call with no agenda other than understanding your situation. I'll ask about your target market, current pipeline and goals - and you'll leave with at least one concrete idea you can act on immediately.</p>
     </div>
     <div class="faq-item">
-      <strong>Do you work with companies outside GCC and Singapore?</strong>
-      <p>Yes. Our strongest market experience is across GCC and Singapore, but the same LinkedIn profile, content and outreach principles can be adapted for other B2B service markets. The key is having a clear offer, a defined target audience and a professional sales process.</p>
+      <strong>Can you adapt the campaign to my market?</strong>
+      <p>Yes. We adapt the targeting, positioning, messaging and follow-up to your market, buyer roles and business context. Before launch, we assess the audience and determine the right campaign approach.</p>
     </div>
     <div class="faq-item">
       <strong>Do you do the outreach yourself or teach me?</strong>
@@ -903,6 +913,6 @@ function toggleMobileServices(){
   </svg>
 </a>
 
-<script src="/site-navigation.js?v=3"></script>
+<script src="/site-navigation.js?v=5"></script>
 </body>
 </html>

@@ -37,7 +37,7 @@
   style.id = 'oc-global-navigation-styles';
   style.textContent = `
     :root{--oc-deep:#00271d;--oc-panel:#06392d;--oc-gold:#ddb75b;--oc-cream:#f5f1e8;--oc-mint:#48e69a}
-    body.oc-menu-open{overflow:hidden!important}
+    html.oc-menu-open,body.oc-menu-open{overflow:hidden!important}
     .site-nav,body>nav:not(.footer-nav){z-index:1000!important;background:rgba(0,39,29,.97)!important;border-bottom:1px solid rgba(221,183,91,.34)!important}
     .site-nav{display:flex!important;align-items:center!important;flex-wrap:nowrap!important;gap:18px!important}
     .site-nav>.nav-links{display:flex!important;flex:1 1 auto!important;justify-content:center!important;gap:clamp(10px,1.45vw,28px)!important;min-width:0!important}
@@ -102,7 +102,9 @@
       .oc-mobile-menu-socials{display:flex!important;gap:12px!important;justify-content:center!important;padding:26px 0 8px!important}
       .mobile-menu .oc-mobile-menu-socials a{display:grid!important;place-items:center!important;width:46px!important;height:46px!important;padding:0!important;border:1px solid rgba(221,183,91,.4)!important;border-radius:50%!important;color:var(--oc-gold)!important}
       .mobile-menu .oc-mobile-menu-socials svg{width:19px;height:19px}
-      .whatsapp-float{right:16px!important;width:54px!important;height:54px!important}
+      .whatsapp-float{right:12px!important;top:auto!important;bottom:calc(88px + env(safe-area-inset-bottom,0px))!important;width:50px!important;height:50px!important;transform:none!important}
+      .whatsapp-float:hover{transform:translateY(-2px)!important}
+      html.preview-page-index-html .whatsapp-float{display:none!important}
       footer{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:20px!important;padding:38px 20px!important;text-align:center!important}
       footer .oc-footer-brand{justify-content:center!important}
       footer .footer-left{display:flex!important;flex-direction:column!important;align-items:center!important;gap:16px!important;margin:0!important}
@@ -225,6 +227,7 @@
       mobile.classList.remove('open');
       burger.classList.remove('open');
       burger.setAttribute('aria-expanded', 'false');
+      document.documentElement.classList.remove('oc-menu-open');
       document.body.classList.remove('oc-menu-open');
     };
     burger.removeAttribute('onclick');
@@ -235,6 +238,7 @@
       mobile.classList.toggle('open', open);
       burger.classList.toggle('open', open);
       burger.setAttribute('aria-expanded', String(open));
+      document.documentElement.classList.toggle('oc-menu-open', open);
       document.body.classList.toggle('oc-menu-open', open);
     };
     mobile.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu));
