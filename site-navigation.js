@@ -1,7 +1,7 @@
 (function () {
   const services = [
     { href: '/services.html', label: 'All services', description: 'Compare every service and choose the right starting point', primary: true },
-    { href: '/b2b-lead-generation-service.html', label: 'B2B lead generation', description: 'LinkedIn + email, managed end to end' },
+    { href: '/b2b-lead-generation-service.html', label: 'B2B lead generation', description: 'LinkedIn + email, managed end to end', primary: true },
     { href: '/service-monthly-linkedin-outreach-management.html', label: 'Monthly LinkedIn outreach management' },
     { href: '/service-lead-generation.html', label: 'LinkedIn lead generation setup' },
     { href: '/service-profile-optimization.html', label: 'LinkedIn profile optimization' },
@@ -98,7 +98,10 @@
       .oc-mobile-submenu.open{display:block!important}
       .mobile-menu .oc-mobile-submenu a{display:block!important;margin:0!important;padding:12px 8px!important;border:0!important;border-bottom:1px solid rgba(221,183,91,.14)!important;color:#c8d5cf!important;font:500 15px/1.35 'DM Sans',sans-serif!important;letter-spacing:0!important;text-align:left!important;text-transform:none!important;text-decoration:none!important}
       .mobile-menu .oc-mobile-submenu a:last-child{border-bottom:0!important}
-      .mobile-menu .oc-mobile-submenu a.oc-primary-link{color:var(--oc-gold)!important;font-weight:700!important}
+      .mobile-menu .oc-mobile-submenu a strong{display:block!important;color:var(--oc-cream)!important;font:700 15px/1.3 'Sora',sans-serif!important}
+      .mobile-menu .oc-mobile-submenu a span{display:block!important;margin-top:3px!important;color:#9fbaaF!important;font:500 13px/1.4 'DM Sans',sans-serif!important}
+      .mobile-menu .oc-mobile-submenu a.oc-primary-link{display:block!important;margin:6px 0!important;padding:12px 10px!important;border:1px solid rgba(221,183,91,.45)!important;border-radius:10px!important;background:rgba(221,183,91,.08)!important;color:var(--oc-gold)!important;font-weight:700!important}
+      .mobile-menu .oc-mobile-submenu a.oc-primary-link strong{color:var(--oc-gold)!important}
       .whatsapp-float{right:12px!important;top:auto!important;bottom:calc(88px + env(safe-area-inset-bottom,0px))!important;width:50px!important;height:50px!important;transform:none!important}
       .whatsapp-float:hover{transform:translateY(-2px)!important}
       footer{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:20px!important;padding:38px 20px!important;text-align:center!important}
