@@ -29,3 +29,14 @@
   to = "https://olegcherkas.com/:splat"
   status = 301
   force = true
+
+# The case study URL said 50 meetings while the article reports 200.
+[[redirects]]
+  from = "/insights/from-cold-profile-to-50-enterprise-meetings-a-linkedin-growth-case-study"
+  to = "/insights/from-cold-profile-to-200-enterprise-meetings-a-linkedin-growth-case-study/"
+  status = 301
+
+[[redirects]]
+  from = "/insights/from-cold-profile-to-50-enterprise-meetings-a-linkedin-growth-case-study/"
+  to = "/insights/from-cold-profile-to-200-enterprise-meetings-a-linkedin-growth-case-study/"
+  status = 301

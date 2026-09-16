@@ -490,7 +490,7 @@ const relatedInsights = {
   Madinah: saudiGuide,
   Doha: {
     title: 'From Cold Profile to 200 Enterprise Meetings: A LinkedIn Growth Case Study',
-    href: '/insights/from-cold-profile-to-50-enterprise-meetings-a-linkedin-growth-case-study/',
+    href: '/insights/from-cold-profile-to-200-enterprise-meetings-a-linkedin-growth-case-study/',
     text: 'A GCC campaign that opened enterprise conversations across the UAE, Saudi Arabia and Qatar.'
   },
   Singapore: {
@@ -619,7 +619,7 @@ for (const item of existingPageHrCards) {
   } else {
     html = html.replace(/(<section class="page-section"><div class="section-inner"><div class="section-heading"><div class="eyebrow">Questions<\/div>)/, `${relatedInsight}\n$1`);
   }
-  html = html.replace('<a class="proof-link" href="/insights/from-cold-profile-to-50-enterprise-meetings-a-linkedin-growth-case-study/">Read the case study →</a>', '<a class="proof-link" href="/results/">See campaign results →</a>');
+  html = html.replace('<a class="proof-link" href="/insights/from-cold-profile-to-200-enterprise-meetings-a-linkedin-growth-case-study/">Read the case study →</a>', '<a class="proof-link" href="/results/">See campaign results →</a>');
   html = html.replace(/<script>const burger=document\.querySelector\('\.burger'\);[\s\S]*?<\/script>/, '');
   if (!html.includes('/site-navigation.js')) {
     html = html.replace('</body>', '<script src="/site-navigation.js?v=6"></script>\n</body>');
