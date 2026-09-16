@@ -164,6 +164,10 @@ function blogSeo() {
 <meta property="og:url" content="${siteUrl}/blog">
 <meta property="og:site_name" content="Oleg Cherkas">
 <meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="${siteUrl}/uploads/oleg-cherkas-social-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="${siteUrl}/uploads/oleg-cherkas-social-preview.jpg">
 <link rel="alternate" type="application/rss+xml" title="Oleg Cherkas Insights" href="${siteUrl}/feed.xml">
 <!-- BLOG_SEO_END -->`;
 }
