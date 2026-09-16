@@ -1250,6 +1250,18 @@ footer{padding:28px 56px;
 }
 /* ===== End softer, larger homepage portrait ===== */
 
+
+/* Ticker between hero and about */
+.oc-ticker{overflow:hidden;background:#031a13;border-top:1px solid rgba(221,183,91,.22);border-bottom:1px solid rgba(221,183,91,.22);padding:18px 0}
+.oc-ticker-track{display:flex;width:max-content;animation:oc-ticker 40s linear infinite;will-change:transform}
+.oc-ticker:hover .oc-ticker-track{animation-play-state:paused}
+.oc-ticker-group{display:flex;align-items:center;white-space:nowrap}
+.oc-ticker-group span{font-family:'Sora',sans-serif;font-weight:600;font-size:clamp(15px,1.35vw,20px);line-height:1;color:#f5f3ea;letter-spacing:.01em;padding:0 26px}
+.oc-ticker-group span.is-city{color:#ddb75b}
+.oc-ticker-group i{display:inline-block;flex:none;width:6px;height:6px;border-radius:50%;background:#ddb75b}
+@keyframes oc-ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (max-width:640px){.oc-ticker{padding:14px 0}.oc-ticker-group span{padding:0 18px}}
+@media (prefers-reduced-motion:reduce){.oc-ticker-track{animation:none;width:auto}.oc-ticker-group{flex-wrap:wrap;row-gap:12px}.oc-ticker-group[aria-hidden]{display:none}}
 </style>
 <link rel="stylesheet" href="/readability-preview.css">
 <link rel="stylesheet" href="/v2-overrides.css?v=26">
@@ -1356,6 +1368,14 @@ footer{padding:28px 56px;
     </div>
   </div>
 </section>
+
+<!-- TICKER -->
+<div class="oc-ticker" aria-label="Services and markets">
+  <div class="oc-ticker-track">
+    <span class="oc-ticker-group"><span>LinkedIn Outreach</span><i></i><span class="is-city">Dubai</span><i></i><span>Email Sequences</span><i></i><span class="is-city">Riyadh</span><i></i><span>Founder Content</span><i></i><span class="is-city">Singapore</span><i></i><span>Qualified Meetings</span><i></i><span class="is-city">London</span><i></i><span>ICP Research</span><i></i><span class="is-city">Doha</span><i></i><span>Profile Positioning</span><i></i><span class="is-city">Sydney</span><i></i></span>
+    <span class="oc-ticker-group" aria-hidden="true"><span>LinkedIn Outreach</span><i></i><span class="is-city">Dubai</span><i></i><span>Email Sequences</span><i></i><span class="is-city">Riyadh</span><i></i><span>Founder Content</span><i></i><span class="is-city">Singapore</span><i></i><span>Qualified Meetings</span><i></i><span class="is-city">London</span><i></i><span>ICP Research</span><i></i><span class="is-city">Doha</span><i></i><span>Profile Positioning</span><i></i><span class="is-city">Sydney</span><i></i></span>
+  </div>
+</div>
 
 <!-- ABOUT -->
 <section id="about" style="padding-top:44px;padding-bottom:44px">
