@@ -297,7 +297,7 @@ function renderArticle(post, template) {
   );
 
   const image = post.image
-    ? `<div class="article-visual has-image" style="background:linear-gradient(135deg,rgba(10,10,10,.10),rgba(10,10,10,.72)),url('${escapeHtml(encodeURI(post.image))}') center/cover" role="img" aria-label="${escapeHtml(post.title)}"></div>`
+    ? `<div class="article-visual has-image" style="background:linear-gradient(135deg,rgba(10,10,10,.10),rgba(10,10,10,.72)),url('${escapeHtml(encodeURI(post.image))}') center/contain no-repeat #0a0a0a" role="img" aria-label="${escapeHtml(post.title)}"></div>`
     : '';
   const article = `<section class="article-hero"><div class="mini-hero-bg" aria-hidden="true">
     <span class="glow-blob mgb1"></span>
