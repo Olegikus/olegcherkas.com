@@ -60,9 +60,7 @@
     .oc-desktop-dropdown a strong{display:block;color:var(--oc-cream);font:700 14px/1.25 'Sora',sans-serif}
     .oc-desktop-dropdown a span{display:block;margin-top:4px;color:#9fbaaF;font-size:12px}
     .header-socials{gap:10px!important}
-    .header-social[href*="linkedin.com"],.social-link[href*="linkedin.com"],.oc-mobile-header-socials a[href*="linkedin.com"]{color:#0A66C2!important}
-    .header-social[href*="t.me"],.social-link[href*="t.me"],.oc-mobile-header-socials a[href*="t.me"]{color:#26A5E4!important}
-    .header-social[href*="wa.me"],.social-link[href*="wa.me"]{color:#25D366!important}
+    .header-socials .header-social,footer .social-links .social-link,.oc-mobile-header-socials a{color:var(--oc-cream)!important}
     .header-social{width:48px!important;height:48px!important;min-width:48px!important}
     .header-social .oc-official-icon{width:19px!important;height:19px!important}
     .oc-official-icon{display:block;width:20px;height:20px}
