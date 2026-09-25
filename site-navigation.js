@@ -62,8 +62,10 @@
     .header-socials{gap:10px!important}
     .header-socials .header-social,footer .social-links .social-link,.oc-mobile-header-socials a{color:var(--oc-cream)!important}
     .header-social{width:48px!important;height:48px!important;min-width:48px!important}
-    .header-social .oc-official-icon{width:19px!important;height:19px!important}
+    .header-social .oc-official-icon{width:26px!important;height:26px!important;flex:none!important}
     .oc-official-icon{display:block;width:20px;height:20px}
+    footer .social-links .social-link{width:48px!important;height:48px!important;min-width:48px!important;padding:0!important}
+    footer .social-links .social-link .oc-official-icon{width:26px!important;height:26px!important;flex:none!important}
     .whatsapp-float{position:fixed!important;display:flex!important;align-items:center!important;justify-content:center!important;right:28px!important;top:50%!important;bottom:auto!important;transform:translateY(-50%)!important;width:62px!important;height:62px!important;border-radius:50%!important;background:#25d366!important;color:#fff!important;border:2px solid rgba(255,255,255,.9)!important;box-shadow:0 0 0 5px rgba(37,211,102,.16),0 18px 42px rgba(0,0,0,.35)!important;z-index:900!important}
     .whatsapp-float:hover{transform:translateY(-50%) scale(1.06)!important}
     .whatsapp-float .oc-official-icon,.whatsapp-float svg{width:28px!important;height:28px!important}
@@ -83,7 +85,7 @@
       .site-nav>.nav-links,.site-nav>.nav-actions{display:none!important}
       .oc-mobile-header-socials{display:flex!important;align-items:center!important;gap:8px!important;margin-right:12px!important}
       .oc-mobile-header-socials a{display:grid!important;place-items:center!important;width:48px!important;height:48px!important;padding:0!important;border:1px solid rgba(215,177,94,.28)!important;border-radius:50%!important;background:rgba(11,53,41,.78)!important;text-decoration:none!important;overflow:visible!important;line-height:0!important}
-      .oc-mobile-header-socials .oc-official-icon,.oc-mobile-header-socials svg{display:block!important;width:19px!important;height:19px!important;min-width:19px!important;min-height:19px!important;overflow:visible!important;flex:none!important}
+      .oc-mobile-header-socials .oc-official-icon,.oc-mobile-header-socials svg{display:block!important;width:26px!important;height:26px!important;min-width:26px!important;min-height:26px!important;overflow:visible!important;flex:none!important}
       .burger{display:flex!important;position:relative!important;z-index:1300!important;width:42px!important;height:42px!important;padding:10px 7px!important;margin:0!important;flex-direction:column!important;justify-content:space-between!important;align-items:stretch!important;gap:0!important;background:transparent!important;border:0!important;cursor:pointer!important}
       .burger span{display:block!important;width:28px!important;height:2px!important;min-height:2px!important;margin:0!important;background:var(--oc-cream)!important;border:0!important;border-radius:2px!important;transform-origin:center!important;transition:transform .24s ease,opacity .18s ease!important}
       .burger.open span:nth-child(1){transform:translateY(10px) rotate(45deg)!important}
