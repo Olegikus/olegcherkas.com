@@ -151,17 +151,21 @@ function markdownToHtml(markdown = '') {
   return output.join('\n');
 }
 
-function blogSeo() {
-  const title = 'B2B LinkedIn Growth Insights - Oleg Cherkas';
+function blogSeo(pageNum = 1, totalPages = 1) {
+  const suffix = pageNum > 1 ? ` - Page ${pageNum}` : '';
+  const title = `B2B LinkedIn Growth Insights - Oleg Cherkas${suffix}`;
   const description = 'Practical articles on LinkedIn growth, B2B outreach, founder content and sales systems for service firms.';
+  const canonicalPath = pageNum > 1 ? `/blog-${pageNum}` : '/blog';
+  const prevLink = pageNum > 1 ? `<link rel="prev" href="${siteUrl}${pageNum === 2 ? '/blog' : `/blog-${pageNum - 1}`}">\n` : '';
+  const nextLink = pageNum < totalPages ? `<link rel="next" href="${siteUrl}/blog-${pageNum + 1}">\n` : '';
   return `<!-- BLOG_SEO_START -->
 <title>${title}</title>
 <meta name="description" content="${description}">
-<link rel="canonical" href="${siteUrl}/blog">
-<meta property="og:type" content="website">
+<link rel="canonical" href="${siteUrl}${canonicalPath}">
+${prevLink}${nextLink}<meta property="og:type" content="website">
 <meta property="og:title" content="${title}">
 <meta property="og:description" content="${description}">
-<meta property="og:url" content="${siteUrl}/blog">
+<meta property="og:url" content="${siteUrl}${canonicalPath}">
 <meta property="og:site_name" content="Oleg Cherkas">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:image" content="${siteUrl}/uploads/oleg-cherkas-social-preview.jpg">
@@ -172,16 +176,54 @@ function blogSeo() {
 <!-- BLOG_SEO_END -->`;
 }
 
-function renderBlogPosts() {
+const BLOG_PAGE_SIZE = 12;
+
+function blogTotalPagesCount() {
+  if (posts.length <= BLOG_PAGE_SIZE) return 1;
+  return 1 + Math.ceil((posts.length - BLOG_PAGE_SIZE) / BLOG_PAGE_SIZE);
+}
+
+function blogPageUrl(pageNum) {
+  return pageNum <= 1 ? 'blog.html' : `blog-${pageNum}.html`;
+}
+
+function renderPagination(pageNum, totalPages) {
+  if (totalPages <= 1) return '';
+  const prev = pageNum > 1 ? `<a class="page-link prev" href="${blogPageUrl(pageNum - 1)}">← Previous</a>` : '';
+  const next = pageNum < totalPages ? `<a class="page-link next" href="${blogPageUrl(pageNum + 1)}">Next →</a>` : '';
+  return `
+<nav class="blog-pagination" aria-label="Blog pagination">${prev}<span class="page-current">Page ${pageNum} of ${totalPages}</span>${next}</nav>`;
+}
+
+function renderBlogPosts(pageNum, totalPages) {
   if (!posts.length) {
     return '<section class="blog-list"><div class="blog-empty">No posts yet.</div></section>';
   }
 
-  const featured = posts[0];
-  const featuredImage = featured.image
-    ? ` style="background:linear-gradient(135deg,rgba(10,10,10,.12),rgba(10,10,10,.72)),url('${escapeHtml(encodeURI(featured.image))}') center/cover"`
-    : '';
-  const cards = posts.slice(1).map((post) => {
+  const isFirstPage = pageNum === 1;
+  const featured = isFirstPage ? posts[0] : null;
+  const gridPosts = isFirstPage
+    ? posts.slice(1, BLOG_PAGE_SIZE)
+    : posts.slice(BLOG_PAGE_SIZE + (pageNum - 2) * BLOG_PAGE_SIZE, BLOG_PAGE_SIZE + (pageNum - 1) * BLOG_PAGE_SIZE);
+
+  const featuredBlock = featured ? (() => {
+    const featuredImage = featured.image
+      ? ` style="background:linear-gradient(135deg,rgba(10,10,10,.12),rgba(10,10,10,.72)),url('${escapeHtml(encodeURI(featured.image))}') center/cover"`
+      : '';
+    return `
+<a class="featured-post" href="${localArticleUrl(featured.slug)}">
+  <div class="featured-visual"${featuredImage}></div>
+  <div class="featured-content">
+    <div class="blog-tag">${escapeHtml(featured.category || 'LinkedIn growth')}</div>
+    <div class="blog-meta"><time datetime="${escapeHtml(featured.date || '')}">${escapeHtml(formatDate(featured.date))}</time> · ${escapeHtml(featured.author || 'Oleg Cherkas')}</div>
+    <h2>${escapeHtml(featured.title)}</h2>
+    <p>${escapeHtml(cleanText(featured.excerpt || '', 360))}</p>
+    <span class="blog-arrow">Read article →</span>
+  </div>
+</a>`;
+  })() : '';
+
+  const cards = gridPosts.map((post) => {
     const cardImage = post.image
       ? `<div class="post-card-visual" style="background-image:url('${escapeHtml(encodeURI(post.image))}')"></div>`
       : '';
@@ -198,38 +240,33 @@ function renderBlogPosts() {
 </a>`;
   }).join('');
 
-  return `<section class="blog-list"><!-- BLOG_POSTS_START -->
-<a class="featured-post" href="${localArticleUrl(featured.slug)}">
-  <div class="featured-visual"${featuredImage}></div>
-  <div class="featured-content">
-    <div class="blog-tag">${escapeHtml(featured.category || 'LinkedIn growth')}</div>
-    <div class="blog-meta"><time datetime="${escapeHtml(featured.date || '')}">${escapeHtml(formatDate(featured.date))}</time> · ${escapeHtml(featured.author || 'Oleg Cherkas')}</div>
-    <h2>${escapeHtml(featured.title)}</h2>
-    <p>${escapeHtml(cleanText(featured.excerpt || '', 360))}</p>
-    <span class="blog-arrow">Read article →</span>
-  </div>
-</a>
+  return `<section class="blog-list"><!-- BLOG_POSTS_START -->${featuredBlock}
 <div class="posts-grid">${cards}
-</div>
+</div>${renderPagination(pageNum, totalPages)}
 <!-- BLOG_POSTS_END --></section>`;
 }
 
 function buildBlogIndex() {
-  let html = fs.readFileSync(blogPath, 'utf8');
-  const seo = blogSeo();
-  if (html.includes('<!-- BLOG_SEO_START -->')) {
-    html = html.replace(/<!-- BLOG_SEO_START -->[\s\S]*?<!-- BLOG_SEO_END -->/, seo);
-  } else {
-    html = html.replace(/<title>Blog - Oleg Cherkas<\/title><meta name="description"[^>]*>/, seo);
-  }
+  const template = fs.readFileSync(blogPath, 'utf8');
+  const totalPages = blogTotalPagesCount();
 
-  html = html.replace(
-    /<section class="blog-list">[\s\S]*?<\/section><section class="cta-strip">/,
-    `${renderBlogPosts()}<section class="cta-strip">`,
-  );
-  html = html.replace(/<script>\s*function escapeHtml\(str\)[\s\S]*?loadPosts\(\);\s*<\/script>\s*/, '');
-  html = html.replace(/<script src="https:\/\/identity\.netlify\.com\/v1\/netlify-identity-widget\.js"><\/script>\s*<script>if\(window\.netlifyIdentity\)[\s\S]*?<\/script>/, '');
-  fs.writeFileSync(blogPath, html);
+  for (let pageNum = 1; pageNum <= totalPages; pageNum += 1) {
+    let html = template;
+    const seo = blogSeo(pageNum, totalPages);
+    if (html.includes('<!-- BLOG_SEO_START -->')) {
+      html = html.replace(/<!-- BLOG_SEO_START -->[\s\S]*?<!-- BLOG_SEO_END -->/, seo);
+    } else {
+      html = html.replace(/<title>Blog - Oleg Cherkas<\/title><meta name="description"[^>]*>/, seo);
+    }
+
+    html = html.replace(
+      /<section class="blog-list">[\s\S]*?<\/section><section class="cta-strip">/,
+      `${renderBlogPosts(pageNum, totalPages)}<section class="cta-strip">`,
+    );
+    html = html.replace(/<script>\s*function escapeHtml\(str\)[\s\S]*?loadPosts\(\);\s*<\/script>\s*/, '');
+    html = html.replace(/<script src="https:\/\/identity\.netlify\.com\/v1\/netlify-identity-widget\.js"><\/script>\s*<script>if\(window\.netlifyIdentity\)[\s\S]*?<\/script>/, '');
+    fs.writeFileSync(path.join(root, blogPageUrl(pageNum)), html);
+  }
 }
 
 function makeRootRelativeLinks(html) {
@@ -367,6 +404,10 @@ function buildSitemap() {
     { url: '/locations/australia/perth/' },
   ];
   const urls = staticUrls.map(({ url }) => `  <url><loc>${siteUrl}${url}</loc><lastmod>${siteUpdated}</lastmod></url>`);
+  const blogTotalPages = blogTotalPagesCount();
+  for (let pageNum = 2; pageNum <= blogTotalPages; pageNum += 1) {
+    urls.push(`  <url><loc>${siteUrl}/blog-${pageNum}</loc><lastmod>${siteUpdated}</lastmod></url>`);
+  }
   for (const post of posts) {
     urls.push(`  <url><loc>${articleUrl(post.slug)}</loc><lastmod>${escapeHtml(post.updated || post.date || '')}</lastmod></url>`);
   }
