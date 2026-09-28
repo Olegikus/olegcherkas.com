@@ -1,0 +1,33 @@
+name: Report changed pages to IndexNow
+
+# Netlify publishes every push to main. Once it has, tell Bing and the other IndexNow
+# engines which pages are new, changed or removed, so they recrawl them within hours.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      all:
+        description: 'Submit every page in the sitemap'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  indexnow:
+    # Commits marked [skip netlify] are not published, so there is nothing new to report.
+    if: github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[skip netlify]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/indexnow.mjs ${{ inputs.all && '--all' || '' }}
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
