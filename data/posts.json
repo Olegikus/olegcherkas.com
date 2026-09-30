@@ -2,6 +2,16 @@
   "posts": [
     {
       "author": "Oleg Cherkas",
+      "category": "Markets",
+      "title": "Stop Asking for 15 Minutes in the Gulf",
+      "slug": "stop-asking-for-15-minutes-in-the-gulf",
+      "date": "2026-09-30",
+      "excerpt": "A 15-minute call request feels efficient, but in the Gulf it tells a C-level buyer your time and your offer are both cheap.",
+      "body": "\"Let's hop on a 15-minute call\" has cost more enterprise deals than a weak pitch ever did.\n\nIt sounds efficient. In reality, it signals the opposite of what you want a C-level buyer to feel about you.\n\n## A short ask reads as a cheap offer\n\nA 15-minute request reads as low-value, low-stakes, something a buyer can squeeze between real meetings. Before you say a word, you have told them that your time and your offer are both cheap.\n\nEnterprise buyers in the Gulf calibrate status fast. They notice who asks for scraps of time and who asks for a real conversation.\n\n## What changed when I stopped asking for scraps\n\nI stopped pitching quick calls. I started asking for 30 minutes, framed around one specific problem I had already researched in their business.\n\nFewer people said yes right away. But the ones who did showed up ready to talk, not to be pitched in a rush.\n\nA short call request feels polite. It actually undersells you before the meeting even starts.\n\n## What changes in practice\n\n1. Ask for 30 minutes, not 15, when the topic is a real business problem.\n2. Name the specific problem in the ask, not \"a quick chat about synergies.\"\n3. Show the research before the call, not during it.\n4. Expect fewer immediate yeses. Expect the ones who say yes to show up ready.\n\nThis is the same math behind [not selling like a petitioner](/insights/stop-selling-like-a-petitioner-in-the-gulf/): ask for less than your work is worth, and the room treats you like it.\n\nAsk for the time your value requires, not the time you think will not be refused.\n\nDifferent market, same door. You still have to knock right on LinkedIn.",
+      "updated": "2026-09-30"
+    },
+    {
+      "author": "Oleg Cherkas",
       "category": "Lead Generation",
       "title": "AI Agents Need a Leash: What OpenAI's Pause Means for Founders",
       "slug": "ai-agents-need-a-leash-openai-training-pause",
