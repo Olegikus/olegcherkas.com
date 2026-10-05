@@ -2,6 +2,16 @@
   "posts": [
     {
       "author": "Oleg Cherkas",
+      "category": "Lead Generation",
+      "title": "OpenAI Halved Its $200 Plan: Budget for AI Price Rises",
+      "slug": "openai-halves-200-plan-budget-for-ai-price-rises",
+      "date": "2026-10-05",
+      "excerpt": "OpenAI kept its $200 plan at $200 but cut the usage in half, and added a $500 tier. Founders running on one AI subscription should plan for higher costs.",
+      "body": "OpenAI has halved the usage allowance on its $200 plan and launched a new $500 plan. According to [The New Stack](https://thenewstack.io/openai-halves-200-plan/), the plan that costs $200 now gives you half of what it did before.\n\n## What changed\n\nThe $200 plan stays at $200, but it now includes half the usage. Same price, half the work.\n\nOpenAI also added a $500 plan. The reported details are 25x the usage and a mode in Codex that runs up to 8x faster. OpenAI's explanation is that cheaper models mean you get more work done anyway.\n\n## We have seen this move before\n\nApple took the charger out of the iPhone box and said it was for the environment. You still needed a charger. You just paid for it separately.\n\nThis looks like the same move. Remove the thing, call it progress, sell it back as an upgrade.\n\n## Why I expect prices to keep rising\n\nThese models cost real money to run, and a $20 flat plan cannot carry that forever. The era of cheap, flat-rate AI plans looks like it is ending.\n\nThe fair question for every founder is whether other providers, Anthropic included, will follow. You do not need the answer today. You need a budget that survives either one.\n\n## What founders should do now\n\n1. List every AI subscription your team pays for, and what each one is used for.\n2. Put a price rise into your budget today, even a rough one.\n3. Check which tasks really need the top model and which can run on a cheaper one.\n4. Do not build a process that only works on one tool at one price.\n\nThe same logic applies to AI agents: set limits before you scale, as in [AI agents need a leash](/insights/ai-agents-need-a-leash-openai-training-pause/).\n\nDifferent market, same door. You still have to knock right on LinkedIn.\n\n## Source\n\n- [The New Stack: OpenAI halves $200 plan allowance, launches $500 plan](https://thenewstack.io/openai-halves-200-plan/)",
+      "updated": "2026-10-05"
+    },
+    {
+      "author": "Oleg Cherkas",
       "category": "Markets",
       "title": "Stop Asking for 15 Minutes in the Gulf",
       "slug": "stop-asking-for-15-minutes-in-the-gulf",
