@@ -2,6 +2,17 @@
   "posts": [
     {
       "author": "Oleg Cherkas",
+      "category": "Content",
+      "title": "A Quarter Million Impressions From a Brand New LinkedIn Profile in 14 Days",
+      "slug": "quarter-million-linkedin-impressions-new-profile-14-days",
+      "date": "2026-10-20",
+      "image": "/uploads/linkedin-quarter-million-cover.jpg",
+      "excerpt": "A profile that started with 1 connection got 261,764 impressions and reached 124,023 members in 14 days. 97% of the impressions came from outside the network.",
+      "body": "My COO in Kenya started with 1 connection on LinkedIn. Me.\n\nI designed his posts. From October 5 to October 18, his profile got 261,764 impressions and reached 124,023 members. LinkedIn shows that as 676% more than the prior 14 days. Now he has 320+ followers, and the posts brought 1,000+ clicks to [work.ke](https://work.ke).\n\n![LinkedIn content performance chart showing 261,764 impressions from October 5 to October 18, up 676 percent on the prior 14 days](/uploads/results/content-quarter-million-chart.webp)\n\n## Nobody knew him, and it did not matter\n\n97% of those impressions came from people outside his network. Nobody knew him. They stopped for the topic.\n\n![LinkedIn Discovery analytics showing 261,764 impressions, 3 percent in network, 97 percent out of network and 124,023 members reached](/uploads/results/content-quarter-million-discovery.webp)\n\n## What we did\n\n1. We wrote about the reader's problem, not about the company.\n2. The first line is always 1 clear claim or 1 number. People decide in 2 seconds.\n3. Every post has 1 big image with a few strong words.\n4. We tested different topics, because you cannot know in advance which one people want.\n\n## What this is not\n\nImpressions are not clients. But a profile that people see is a profile that people can answer.\n\nI wrote about the first week of this profile in [From 2 Connections to 83,285 Post Impressions in 7 Days](/insights/from-2-connections-to-83000-linkedin-impressions-work-ke/), and about why reach alone is not pipeline in [50,000 views and zero pipeline](/insights/content-vs-outreach-for-b2b-founders/). More screenshots are on the [Results page](/results/#content).\n\nDifferent market, same door. You still have to knock right on LinkedIn.",
+      "updated": "2026-10-20"
+    },
+    {
+      "author": "Oleg Cherkas",
       "category": "LinkedIn Strategy",
       "title": "LinkedIn Is Retiring Classic Job Search: What It Means for Job Seekers and Employers",
       "slug": "linkedin-retires-classic-job-search-ai",
