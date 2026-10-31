@@ -187,6 +187,12 @@ function blogPageUrl(pageNum) {
   return pageNum <= 1 ? 'blog.html' : `blog-${pageNum}.html`;
 }
 
+function cardImageUrl(image = '') {
+  const base = path.basename(String(image)).replace(/\.[^.]+$/, '');
+  const thumb = path.join(root, 'uploads', 'thumbs', `${base}.jpg`);
+  return base && fs.existsSync(thumb) ? `/uploads/thumbs/${base}.jpg` : image;
+}
+
 function renderPagination(pageNum, totalPages) {
   if (totalPages <= 1) return '';
   const prev = pageNum > 1 ? `<a class="page-link prev" href="${blogPageUrl(pageNum - 1)}">← Previous</a>` : '';
@@ -225,7 +231,7 @@ function renderBlogPosts(pageNum, totalPages) {
 
   const cards = gridPosts.map((post) => {
     const cardImage = post.image
-      ? `<div class="post-card-visual" style="background-image:url('${escapeHtml(encodeURI(post.image))}')"></div>`
+      ? `<div class="post-card-visual" style="background-image:url('${escapeHtml(encodeURI(cardImageUrl(post.image)))}')"></div>`
       : '';
     return `
 <a class="post-card" href="${localArticleUrl(post.slug)}">

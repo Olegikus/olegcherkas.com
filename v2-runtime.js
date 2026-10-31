@@ -202,21 +202,21 @@
         id: 'bahrain', label: '04 · Bahrain', title: 'LinkedIn B2B outbound in Bahrain',
         intro: 'Bahrain brings finance, ICT, logistics, manufacturing and professional services into a compact market where senior decision-makers are unusually accessible.',
         cities: [
-          ['Manama', '/uploads/location-assets/manama-bahrain.jpg', 'Financial services, fintech, ICT, logistics, manufacturing and regional professional-services buyers.']
+          ['Manama', '/uploads/location-assets/thumbs/manama-bahrain.jpg', 'Financial services, fintech, ICT, logistics, manufacturing and regional professional-services buyers.']
         ]
       },
       {
         id: 'kuwait', label: '05 · Kuwait', title: 'LinkedIn B2B outbound in Kuwait',
         intro: 'Kuwait combines institutional buyers, family-owned groups and ambitious infrastructure and technology programmes. Credibility and account selection matter more than volume.',
         cities: [
-          ['Kuwait City', '/uploads/location-assets/kuwait-city.jpg', 'Finance, technology, infrastructure, logistics, professional services and diversified business groups.']
+          ['Kuwait City', '/uploads/location-assets/thumbs/kuwait-city.jpg', 'Finance, technology, infrastructure, logistics, professional services and diversified business groups.']
         ]
       },
       {
         id: 'oman', label: '06 · Oman', title: 'LinkedIn B2B outbound in Oman',
         intro: 'Oman offers focused opportunities across logistics, energy, manufacturing, tourism, mining and ICT, with relationship-led access centred in Muscat.',
         cities: [
-          ['Muscat', '/uploads/location-assets/muscat-oman.jpg', 'Logistics, energy, manufacturing, tourism, mining, ICT and advisory services.']
+          ['Muscat', '/uploads/location-assets/thumbs/muscat-oman.jpg', 'Logistics, energy, manufacturing, tourism, mining, ICT and advisory services.']
         ]
       },
       {
@@ -230,29 +230,29 @@
         id: 'united-kingdom', label: '08 · United Kingdom', title: 'LinkedIn B2B outbound across the United Kingdom',
         intro: 'The UK combines dense professional-services networks with mature technology and industrial clusters. Messaging should reflect the commercial identity of each city.',
         cities: [
-          ['London', `${locationAssetRoot}/london.jpg`, 'Global headquarters, finance, technology, consulting and high-value professional services.'],
-          ['Manchester', `${locationAssetRoot}/manchester.jpg`, 'Technology, digital services, media, advanced manufacturing and regional headquarters.'],
-          ['Birmingham', `${locationAssetRoot}/birmingham.jpg`, 'Professional services, manufacturing, logistics, property and mid-market enterprises.'],
-          ['Leeds', `${locationAssetRoot}/leeds.jpg`, 'Financial services, legal, healthcare, technology and northern business networks.']
+          ['London', `${locationAssetRoot}/thumbs/london.jpg`, 'Global headquarters, finance, technology, consulting and high-value professional services.'],
+          ['Manchester', `${locationAssetRoot}/thumbs/manchester.jpg`, 'Technology, digital services, media, advanced manufacturing and regional headquarters.'],
+          ['Birmingham', `${locationAssetRoot}/thumbs/birmingham.jpg`, 'Professional services, manufacturing, logistics, property and mid-market enterprises.'],
+          ['Leeds', `${locationAssetRoot}/thumbs/leeds.jpg`, 'Financial services, legal, healthcare, technology and northern business networks.']
         ]
       },
       {
         id: 'malaysia', label: '09 · Malaysia', title: 'LinkedIn B2B outbound across Malaysia',
         intro: 'Malaysia offers a strong mix of regional headquarters, technology operations, manufacturing and cross-border services. We focus on its three clearest B2B centres.',
         cities: [
-          ['Kuala Lumpur', `${locationAssetRoot}/kuala-lumpur.jpg`, 'Regional headquarters, finance, technology, consulting and enterprise services.'],
-          ['Cyberjaya', `${locationAssetRoot}/cyberjaya.jpg`, 'Technology campuses, cloud, digital infrastructure, shared services and innovation teams.'],
-          ['Johor Bahru', `${locationAssetRoot}/johor-bahru.jpg`, 'Manufacturing, logistics, data centres and Singapore-linked commercial activity.']
+          ['Kuala Lumpur', `${locationAssetRoot}/thumbs/kuala-lumpur.jpg`, 'Regional headquarters, finance, technology, consulting and enterprise services.'],
+          ['Cyberjaya', `${locationAssetRoot}/thumbs/cyberjaya.jpg`, 'Technology campuses, cloud, digital infrastructure, shared services and innovation teams.'],
+          ['Johor Bahru', `${locationAssetRoot}/thumbs/johor-bahru.jpg`, 'Manufacturing, logistics, data centres and Singapore-linked commercial activity.']
         ]
       },
       {
         id: 'australia', label: '10 · Australia', title: 'LinkedIn B2B outbound across Australia',
         intro: 'Australia rewards clear commercial relevance and credible proof. Each major city has a distinct mix of enterprise, technology and professional-services buyers.',
         cities: [
-          ['Sydney', `${locationAssetRoot}/sydney.jpg`, 'Corporate headquarters, finance, technology, consulting and enterprise services.'],
-          ['Melbourne', `${locationAssetRoot}/melbourne.jpg`, 'Technology, finance, healthcare, education and professional-services networks.'],
-          ['Brisbane', `${locationAssetRoot}/brisbane.jpg`, 'Fast-growing technology, infrastructure, energy and mid-market business communities.'],
-          ['Perth', `${locationAssetRoot}/perth.jpg`, 'Resources, engineering, technology, logistics and specialist professional services.']
+          ['Sydney', `${locationAssetRoot}/thumbs/sydney.jpg`, 'Corporate headquarters, finance, technology, consulting and enterprise services.'],
+          ['Melbourne', `${locationAssetRoot}/thumbs/melbourne.jpg`, 'Technology, finance, healthcare, education and professional-services networks.'],
+          ['Brisbane', `${locationAssetRoot}/thumbs/brisbane.jpg`, 'Fast-growing technology, infrastructure, energy and mid-market business communities.'],
+          ['Perth', `${locationAssetRoot}/thumbs/perth.jpg`, 'Resources, engineering, technology, logistics and specialist professional services.']
         ]
       }
     ];
