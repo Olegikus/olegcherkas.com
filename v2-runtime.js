@@ -121,7 +121,7 @@
       story.className = 'oc-about-story';
       const figure = document.createElement('figure');
       figure.className = 'oc-about-saudi-photo';
-      figure.innerHTML = '<img src="/uploads/about-saudi-friend.png" alt="Oleg Cherkas with a Saudi business contact"><figcaption>Relationships built in the markets where our clients sell.</figcaption>';
+      figure.innerHTML = '<img src="/uploads/about-saudi-friend.jpg" alt="Oleg Cherkas with a Saudi business contact"><figcaption>Relationships built in the markets where our clients sell.</figcaption>';
       aboutCopy.before(story);
       story.append(aboutCopy, figure);
     }
@@ -161,7 +161,7 @@
       panel.classList.add('oc-locations-visual');
       panel.innerHTML = `
         <div class="oc-market-summary"><span><strong>27</strong> cities</span><span><strong>10</strong> countries</span></div>
-        <img class="oc-global-network" src="${locationAssetRoot}/global-network.png" alt="Global B2B outbound network connecting priority markets">
+        <img class="oc-global-network" src="${locationAssetRoot}/global-network.jpg" alt="Global B2B outbound network connecting priority markets">
         <div class="oc-market-priority" aria-label="Priority markets">
           <a href="#uae">UAE</a><a href="#saudi-arabia">Saudi Arabia</a><a href="#qatar">Qatar</a><a href="#bahrain">Bahrain</a><a href="#kuwait">Kuwait</a><a href="#oman">Oman</a><a href="#singapore">Singapore</a><a href="#united-kingdom">United Kingdom</a><a href="#malaysia">Malaysia</a><a href="#australia">Australia</a>
         </div>`;
@@ -230,29 +230,29 @@
         id: 'united-kingdom', label: '08 · United Kingdom', title: 'LinkedIn B2B outbound across the United Kingdom',
         intro: 'The UK combines dense professional-services networks with mature technology and industrial clusters. Messaging should reflect the commercial identity of each city.',
         cities: [
-          ['London', `${locationAssetRoot}/london.png`, 'Global headquarters, finance, technology, consulting and high-value professional services.'],
-          ['Manchester', `${locationAssetRoot}/manchester.png`, 'Technology, digital services, media, advanced manufacturing and regional headquarters.'],
-          ['Birmingham', `${locationAssetRoot}/birmingham.png`, 'Professional services, manufacturing, logistics, property and mid-market enterprises.'],
-          ['Leeds', `${locationAssetRoot}/leeds.png`, 'Financial services, legal, healthcare, technology and northern business networks.']
+          ['London', `${locationAssetRoot}/london.jpg`, 'Global headquarters, finance, technology, consulting and high-value professional services.'],
+          ['Manchester', `${locationAssetRoot}/manchester.jpg`, 'Technology, digital services, media, advanced manufacturing and regional headquarters.'],
+          ['Birmingham', `${locationAssetRoot}/birmingham.jpg`, 'Professional services, manufacturing, logistics, property and mid-market enterprises.'],
+          ['Leeds', `${locationAssetRoot}/leeds.jpg`, 'Financial services, legal, healthcare, technology and northern business networks.']
         ]
       },
       {
         id: 'malaysia', label: '09 · Malaysia', title: 'LinkedIn B2B outbound across Malaysia',
         intro: 'Malaysia offers a strong mix of regional headquarters, technology operations, manufacturing and cross-border services. We focus on its three clearest B2B centres.',
         cities: [
-          ['Kuala Lumpur', `${locationAssetRoot}/kuala-lumpur.png`, 'Regional headquarters, finance, technology, consulting and enterprise services.'],
-          ['Cyberjaya', `${locationAssetRoot}/cyberjaya.png`, 'Technology campuses, cloud, digital infrastructure, shared services and innovation teams.'],
-          ['Johor Bahru', `${locationAssetRoot}/johor-bahru.png`, 'Manufacturing, logistics, data centres and Singapore-linked commercial activity.']
+          ['Kuala Lumpur', `${locationAssetRoot}/kuala-lumpur.jpg`, 'Regional headquarters, finance, technology, consulting and enterprise services.'],
+          ['Cyberjaya', `${locationAssetRoot}/cyberjaya.jpg`, 'Technology campuses, cloud, digital infrastructure, shared services and innovation teams.'],
+          ['Johor Bahru', `${locationAssetRoot}/johor-bahru.jpg`, 'Manufacturing, logistics, data centres and Singapore-linked commercial activity.']
         ]
       },
       {
         id: 'australia', label: '10 · Australia', title: 'LinkedIn B2B outbound across Australia',
         intro: 'Australia rewards clear commercial relevance and credible proof. Each major city has a distinct mix of enterprise, technology and professional-services buyers.',
         cities: [
-          ['Sydney', `${locationAssetRoot}/sydney.png`, 'Corporate headquarters, finance, technology, consulting and enterprise services.'],
-          ['Melbourne', `${locationAssetRoot}/melbourne.png`, 'Technology, finance, healthcare, education and professional-services networks.'],
-          ['Brisbane', `${locationAssetRoot}/brisbane.png`, 'Fast-growing technology, infrastructure, energy and mid-market business communities.'],
-          ['Perth', `${locationAssetRoot}/perth.png`, 'Resources, engineering, technology, logistics and specialist professional services.']
+          ['Sydney', `${locationAssetRoot}/sydney.jpg`, 'Corporate headquarters, finance, technology, consulting and enterprise services.'],
+          ['Melbourne', `${locationAssetRoot}/melbourne.jpg`, 'Technology, finance, healthcare, education and professional-services networks.'],
+          ['Brisbane', `${locationAssetRoot}/brisbane.jpg`, 'Fast-growing technology, infrastructure, energy and mid-market business communities.'],
+          ['Perth', `${locationAssetRoot}/perth.jpg`, 'Resources, engineering, technology, logistics and specialist professional services.']
         ]
       }
     ];

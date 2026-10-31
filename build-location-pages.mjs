@@ -240,7 +240,7 @@ const pages = [
 
 pages.push(
   {
-    path: 'locations/united-kingdom/london/index.html', city: 'London', region: 'United Kingdom', image: 'location-assets/london.png',
+    path: 'locations/united-kingdom/london/index.html', city: 'London', region: 'United Kingdom', image: 'location-assets/london.jpg',
     imageAlt: 'London financial district and Thames skyline',
     lead: "Reach London headquarters, scale-ups and specialist firms with evidence-led LinkedIn outreach designed for one of the world's most competitive B2B markets.",
     signal: 'Global headquarters. Dense specialist clusters. High message competition.', tags: ['Finance','Fintech','Technology','Life sciences'],
@@ -258,7 +258,7 @@ pages.push(
     cta: 'Make London outreach specific enough to deserve a reply.'
   },
   {
-    path: 'locations/united-kingdom/manchester/index.html', city: 'Manchester', region: 'United Kingdom', image: 'location-assets/manchester.png',
+    path: 'locations/united-kingdom/manchester/index.html', city: 'Manchester', region: 'United Kingdom', image: 'location-assets/manchester.jpg',
     imageAlt: 'Manchester city centre and modern business district',
     lead: "Open conversations across Manchester's digital, creative, health-innovation and advanced-industry ecosystem with sector-specific LinkedIn outreach.",
     signal: 'Digital scale-ups. Media and creative. Research-led industry.', tags: ['Digital & AI','Creative','Health innovation','Advanced materials'],
@@ -276,7 +276,7 @@ pages.push(
     cta: 'Turn Manchester sector knowledge into relevant business conversations.'
   },
   {
-    path: 'locations/united-kingdom/birmingham/index.html', city: 'Birmingham', region: 'United Kingdom', image: 'location-assets/birmingham.png',
+    path: 'locations/united-kingdom/birmingham/index.html', city: 'Birmingham', region: 'United Kingdom', image: 'location-assets/birmingham.jpg',
     imageAlt: 'Birmingham city centre and canal-side business district',
     lead: "Reach West Midlands manufacturers, technology firms and professional-service leaders through LinkedIn outreach grounded in Birmingham's real economic strengths.",
     signal: 'Advanced manufacturing. Business services. Industrial transition.', tags: ['Manufacturing','Clean tech','Health tech','Business services'],
@@ -294,7 +294,7 @@ pages.push(
     cta: 'Build Birmingham outreach around real sector and buying context.'
   },
   {
-    path: 'locations/united-kingdom/leeds/index.html', city: 'Leeds', region: 'United Kingdom', image: 'location-assets/leeds.png',
+    path: 'locations/united-kingdom/leeds/index.html', city: 'Leeds', region: 'United Kingdom', image: 'location-assets/leeds.jpg',
     imageAlt: 'Leeds skyline and financial district',
     lead: "Reach financial, professional, health-innovation and technology buyers with LinkedIn outreach built for Leeds and the wider West Yorkshire economy.",
     signal: 'Finance and professional services. Healthtech. Data and AI.', tags: ['Finance','Healthtech','Digital & AI','Professional services'],
@@ -312,7 +312,7 @@ pages.push(
     cta: 'Reach Leeds buyers with the proof their sector expects.'
   },
   {
-    path: 'locations/malaysia/kuala-lumpur/index.html', city: 'Kuala Lumpur', region: 'Malaysia', image: 'location-assets/kuala-lumpur.png',
+    path: 'locations/malaysia/kuala-lumpur/index.html', city: 'Kuala Lumpur', region: 'Malaysia', image: 'location-assets/kuala-lumpur.jpg',
     imageAlt: 'Kuala Lumpur skyline and Petronas Towers at dusk',
     lead: "Reach regional and country decision makers across Greater Kuala Lumpur with LinkedIn outreach built for multinational hubs and Malaysia's modern-services economy.",
     signal: 'Regional hubs. Modern services. Multinational buying teams.', tags: ['Regional HQ','Financial services','Technology','Energy'],
@@ -330,7 +330,7 @@ pages.push(
     cta: 'Map the real regional remit behind Kuala Lumpur job titles.'
   },
   {
-    path: 'locations/malaysia/cyberjaya/index.html', city: 'Cyberjaya', region: 'Malaysia', image: 'location-assets/cyberjaya.png',
+    path: 'locations/malaysia/cyberjaya/index.html', city: 'Cyberjaya', region: 'Malaysia', image: 'location-assets/cyberjaya.jpg',
     imageAlt: 'Cyberjaya technology campus and modern office buildings',
     lead: "Reach digital infrastructure, cloud, cybersecurity and technology operators with technical LinkedIn outreach designed for Cyberjaya's specialist ecosystem.",
     signal: 'Digital operations. Data infrastructure. Technology talent.', tags: ['Cloud','Cybersecurity','Data centres','Digital services'],
@@ -348,7 +348,7 @@ pages.push(
     cta: 'Approach Cyberjaya technology buyers with technical relevance.'
   },
   {
-    path: 'locations/malaysia/johor-bahru/index.html', city: 'Johor Bahru', region: 'Malaysia', image: 'location-assets/johor-bahru.png',
+    path: 'locations/malaysia/johor-bahru/index.html', city: 'Johor Bahru', region: 'Malaysia', image: 'location-assets/johor-bahru.jpg',
     imageAlt: 'Johor Bahru skyline and Singapore-facing waterfront',
     lead: "Reach Johor manufacturers, data-centre operators and logistics leaders with account-based outreach shaped by the Singapore-Johor economic corridor.",
     signal: 'Cross-border investment. Industrial supply chains. Data-centre growth.', tags: ['Manufacturing','Data centres','Logistics','Singapore link'],
@@ -366,7 +366,7 @@ pages.push(
     cta: 'Connect Johor operations to the people who own the decision.'
   },
   {
-    path: 'locations/australia/sydney/index.html', city: 'Sydney', region: 'Australia', image: 'location-assets/sydney.png',
+    path: 'locations/australia/sydney/index.html', city: 'Sydney', region: 'Australia', image: 'location-assets/sydney.jpg',
     imageAlt: 'Sydney central business district and harbour',
     lead: "Reach Sydney finance, technology and professional-service buyers with direct, evidence-led LinkedIn outreach built for national and APAC decision makers.",
     signal: 'Financial capital. Technology density. National headquarters.', tags: ['Finance & fintech','Technology','Cybersecurity','Professional services'],
@@ -384,7 +384,7 @@ pages.push(
     cta: 'Give Sydney buyers a commercial reason to engage now.'
   },
   {
-    path: 'locations/australia/melbourne/index.html', city: 'Melbourne', region: 'Australia', image: 'location-assets/melbourne.png',
+    path: 'locations/australia/melbourne/index.html', city: 'Melbourne', region: 'Australia', image: 'location-assets/melbourne.jpg',
     imageAlt: 'Melbourne skyline and Yarra River business district',
     lead: "Open conversations across Melbourne's technology, life-sciences, advanced-manufacturing and professional-services economy with research-led outreach.",
     signal: 'Research and talent. Life sciences. Advanced industry.', tags: ['Life sciences','Technology','Manufacturing','Clean energy'],
@@ -402,7 +402,7 @@ pages.push(
     cta: 'Turn Melbourne expertise into commercially relevant outreach.'
   },
   {
-    path: 'locations/australia/brisbane/index.html', city: 'Brisbane', region: 'Australia', image: 'location-assets/brisbane.png',
+    path: 'locations/australia/brisbane/index.html', city: 'Brisbane', region: 'Australia', image: 'location-assets/brisbane.jpg',
     imageAlt: 'Brisbane riverfront skyline and central business district',
     lead: "Reach Brisbane and Queensland decision makers across resources, infrastructure, advanced technology and biomedical growth sectors.",
     signal: 'Resources and energy. Infrastructure growth. Applied innovation.', tags: ['Energy & resources','Infrastructure','Biomedical','Digital technology'],
@@ -420,7 +420,7 @@ pages.push(
     cta: 'Connect Brisbane headquarters to real Queensland priorities.'
   },
   {
-    path: 'locations/australia/perth/index.html', city: 'Perth', region: 'Australia', image: 'location-assets/perth.png',
+    path: 'locations/australia/perth/index.html', city: 'Perth', region: 'Australia', image: 'location-assets/perth.jpg',
     imageAlt: 'Perth skyline and Swan River at sunset',
     lead: "Reach Perth resources, energy, engineering and industrial-technology leaders with technically credible account-based LinkedIn outreach.",
     signal: 'Mining headquarters. Energy expertise. Remote operations.', tags: ['Mining & METS','Energy','Engineering','Critical technology'],
